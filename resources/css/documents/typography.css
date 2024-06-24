@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+/* point */
+.dsp-l {
+  font-family: 'SCoreDream';
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 3rem;
+  letter-spacing: 0; 
+}
+.dsp-m {
+  font-family: 'SCoreDream';
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 2.6rem;
+  letter-spacing: 0; 
+}
+.dsp-s {
+  font-family: 'SCoreDream';
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: 0; 
+}
+
+/* default */
+.tit-xl {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+  letter-spacing: -0.02rem;
+}
+.tit-l {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 3rem;
+  letter-spacing: -0.02rem;
+}
+.tit-m {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  letter-spacing: -0.02rem;
+}
+.tit-s {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  letter-spacing: -0.02rem;
+}
+.tit-xs {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  letter-spacing: -0.01rem;
+}
+
+/* body */
+.txt-xl {
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 3rem;
+  letter-spacing: -0.02rem;
+}
+.txt-l {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.02rem;
+}
+.txt-m {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  letter-spacing: -0.02rem;
+}
+.txt-s {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: -0.01rem;
+}
+.txt-xs {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+  letter-spacing: -0.01rem;
+}
+.txt-xxs {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: -0.01rem;
+}
+.desc {
+  color: var(--grays-2);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+  letter-spacing: -0.02rem;
+}
+.txt-xl.normal,
+.txt-l.normal,
+.txt-m.normal,
+.txt-s.normal,
+.txt-xs.normal,
+.txt-xxs.normal {
+  font-weight: 400;
+}
+/* caption */
+.cap-l {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: -0.01rem;
+}
+.cap-m {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: -0.01rem;
+}
+.cap-s {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  letter-spacing: 0;
+}
+.cap-l.bold,
+.cap-m.bold,
+.cap-s.bold {
+  font-weight: 600;
+}
+.cap-l.normal,
+.cap-m.normal,
+.cap-s.normal {
+  font-weight: 400;
+}

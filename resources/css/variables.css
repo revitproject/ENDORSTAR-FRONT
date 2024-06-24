@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* Colors */
+:root {
+  --primary       : #F16122;
+  --secondary-1   : #FFE3D6;
+  --grays-0       : #000000;
+  --grays-1       : #111111;
+  --grays-2       : #666666;
+  --grays-3       : #888888;
+  --grays-4       : #CCCCCC;
+  --grays-5       : #DDDDDD;
+  --grays-6       : #F4F4F5; 
+  --system-1      : #E80000;
+  --system-2      : #FFAA00;
+  --system-3      : #00A04A;
+  --button-1      : #111111;
+  --button-2      : #F16122;
+  --button-3      : #FFE3D6;
+  --button-4      : #E7E7E7;
+  --button-5      : #CDCDCD;
+}

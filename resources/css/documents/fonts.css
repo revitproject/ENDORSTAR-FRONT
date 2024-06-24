@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* Pretendard */
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 900;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_black"),
+       url("../../fonts/pretendard/pretendard_black.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_black.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 800;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_extra_bold"),
+       url("../../fonts/pretendard/pretendard_extra_bold.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_extra_bold.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 700;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_bold"),
+       url("../../fonts/pretendard/pretendard_bold.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_bold.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 600;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_semi_bold"),
+       url("../../fonts/pretendard/pretendard_semi_bold.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_semi_bold.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 500;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_medium"),
+       url("../../fonts/pretendard/pretendard_medium.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_medium.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 400;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_regular"),
+       url("../../fonts/pretendard/pretendard_regular.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_regular.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 300;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_light"),
+       url("../../fonts/pretendard/pretendard_light.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_light.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 200;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_extra_light"),
+       url("../../fonts/pretendard/pretendard_extra_light.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_extra_light.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 100;
+	/* font-display: swap; */
+	src: local("Pretendard"),
+	     local("pretendard_thin"),
+       url("../../fonts/pretendard/pretendard_thin.woff2") format("woff2"),
+       url("../../fonts/pretendard/pretendard_thin.woff") format("woff");
+}
+
+/* SCoreDream */
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 600;
+	font-style: normal;
+	/* font-display: swap; */
+	src: url('../../fonts/scoredream/SCoreDreamBold.eot');
+	src: url('../../fonts/scoredream/SCoreDreamBold.eot?#iefix') format('embedded-opentype'),
+			url('../../fonts/scoredream/SCoreDreamBold.woff2') format('woff2'),
+			url('../../fonts/scoredream/SCoreDreamBold.woff') format('woff'),
+			url('../../fonts/scoredream/SCoreDreamBold.ttf') format("truetype");
+}
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 800;
+	/* font-display: swap; */
+	font-style: normal;
+	src: url('../../fonts/scoredream/SCoreDreamHeavy.eot');
+	src: url('../../fonts/scoredream/SCoreDreamHeavy.eot?#iefix') format('embedded-opentype'),
+			url('../../fonts/scoredream/SCoreDreamHeavy.woff2') format('woff2'),
+			url('../../fonts/scoredream/SCoreDreamHeavy.woff') format('woff'),
+			url('../../fonts/scoredream/SCoreDreamHeavy.ttf') format("truetype");
+}

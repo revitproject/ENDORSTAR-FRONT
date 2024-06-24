@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/* guide */
+.guide-wrap .guide-submenu {
+	background: var(--grays-5);
+	border-bottom: .1rem solid var(--grays-3);
+}
+.guide-wrap .guide-section {
+	display: flex;
+	flex: 1 auto;
+	padding: 1rem 2rem;
+	box-sizing: border-box;
+}
+.guide-wrap .area-guide {
+	flex-grow: 1;
+	margin-left: 2rem;
+}
+.guide-wrap .tbl-htmllist td[class^="dep"] {
+	text-align: left;
+}
+.guide-header {
+	overflow: hidden;
+	height: 4rem;
+	z-index: 99;
+}
+.guide-header .wrap-guide-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 4rem;
+	background-color: #fafafa;
+}
+.guide-header .guide-logo {
+	display: inline-block;
+	width: 15.4rem;
+	height: 2.9rem;
+	margin: 0 2rem;
+	background: url('../../images/common/logo.svg') no-repeat 0 50%;
+	background-size: 90% auto;
+}
+.guide-tab-menu {
+	position: sticky;
+	top: 4rem;
+	background: #fff;
+}
+.guide-tab-menu ul {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+	gap: .8rem;
+}
+.guide-tab-menu ul li button:hover,
+.guide-tab-menu ul li a:hover {
+	background: var(--grays-6);
+	text-decoration: none;
+}
+.guide-tab-menu .btn {
+	height: auto;
+	padding: .4rem 1rem;
+	font-size: 1.3rem;
+}
+.guide-tab-menu ul li.on button,
+.guide-tab-menu ul li.on a {
+	background-color: #b4b2b3;
+	color: #fff;
+}
+.guide-iframe {
+	position: sticky;
+	top: 4rem;
+	left: 1rem;
+	width: 36rem;
+	height: 80rem;
+	padding-top: 1rem;
+	background: #fff;
+}
+.guide-iframe > .guide-viewer {
+	width: 36rem;
+	height: 80rem;
+	border: .1rem solid #ddd;
+}
+.guide-iframe > .guide-viewer::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 3.6rem;
+	background: #fff url('../../images/common/img-statusbar.png') no-repeat center;
+	background-size: auto 3.6rem;
+}
+.guide-iframe > .guide-viewer iframe {
+	width: 100%;
+	height: 76.2rem;
+	overflow: hidden;
+}
+.guide-link-blank {
+	display: inline-block;
+	color: var(--grays-4);
+	font-size: 1.1rem;
+	letter-spacing: -1px;
+	vertical-align: top;
+	font-size: 0;
+}
+.guide-link-blank::before {
+	content: '';
+	display: inline-block;
+	width: 1.2rem;
+	height: 1rem;
+	margin-left: .4rem;
+	box-sizing: border-box;
+	border: .2rem solid var(--grays-4);
+	border-top-width: .3rem;
+	vertical-align: middle;
+}
+.guide-wrap .tbl-htmllist .status.ing {color: var(--primary);} 
+.guide-wrap .tbl-htmllist .status.modify {color: #04AA6D;} 
+.guide-wrap .tbl-htmllist .status.complete {color: #007CEF;} 
+.guide-wrap .tbl-htmllist .status.confirm {color: #E5493A;}
+/* guide.html */
+.component .language-markup {
+	margin-top: 2rem;
+}
+.component .ui-tab {margin-top: 3rem;}
+.component .ui-tab .tab-link {
+	padding: 0 2rem;
+}
+.component .wrap-group:not(:first-child) {
+	margin-top: 6rem;
+}
+.component .wrap-group .guide-tit {
+	margin-bottom: 2rem;
+	font-size: 3rem;
+	font-weight: 600;
+}
+.component .wrap-group .guide-subtit {
+	margin-bottom: 1rem;
+	font-size: 2.2rem;
+	font-weight: 600;
+}
+.component .wrap-group .guide-subtit > span {
+	color: var(--grays-3);
+	font-size: 1.6rem;
+}
+.component .wrap-group .grid-layout {
+	margin-top: 3rem;
+}
+.component .grid-head {
+	border-bottom: .1rem solid #000;
+}
+.component .grid-head div {
+	color: var(--grays-1);
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+.component .grid-head,
+.component .grid-body {
+	display: flex;
+	padding: 2rem 0;
+}
+.component .grid-head div:nth-child(1),
+.component .grid-body div:nth-child(1) {
+	min-width: 17.4rem;
+}
+.component .grid-body {
+	padding: 3.2rem 0;
+	border-bottom: .1rem solid #E1E3E5;
+}
+.component .grid-body .type {
+	font-size: 2rem;
+}
+.component .grid-body .list-base {
+	margin-top: 2rem;
+}
+.component .grid-body .typeface h1:not(:first-child),
+.component .grid-body .typeface h2:not(:first-child),
+.component .grid-body .typeface p:not(:first-child) {
+	margin-top: 1.6rem;
+}
+.component .tab-content {
+	min-height: 100vh;
+	padding: 4rem 2rem;
+}
+.component .tab-content .wrap-group .btn-group {
+	margin-top: 2rem;
+	max-width: 32rem;
+}
+.component .wrap-markup {
+	margin-left: 17.4rem;
+}
