@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap mission">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-close"><span class="hidden">닫기</span></button>
+				<h1 class="header-title">조커 스탬프 사용</h1>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head noline">
+        <h2 class="tit-xl">
+          <span class="text-primary">조커 스탬프</span>를 사용할<br>
+          빙고를 선택해 주세요
+        </h2>
+        <p class="desc">조커 스탬프는 사용 후 사라지며<br>취소할 수 없어요.</p>
+      </div>
+      <div class="wrap-body">
+        <div class="wrap-bingo">
+          <h2 class="tit-xs">빙고 현황</h2>
+          <div class="bingo-box type-joker">
+            <!-- bingo-item class : 
+              미션 완료 비활성화 : is-clear.disabled, 버튼 attr disabled
+            -->
+            <div class="bingo-item" data-index="0">
+              <button type="button" class="btn-bingo">
+                <span class="mission-name">걷기 누적</span>
+                <span class="mission-status">
+                  <em class="current">00,000</em>/<em class="total">30,000</em>보
+                </span>
+              </button>
+            </div>
+            <div class="bingo-item" data-index="1">
+              <button type="button" class="btn-bingo">
+                <span class="mission-name">친구 초대 챌린지 공유</span>
+                <span class="mission-status">
+                  <em class="current">0</em>/<em class="total">3</em>회
+                </span>
+              </button>
+            </div>
+            <div class="bingo-item is-clear disabled" data-index="2">
+              <button type="button" class="btn-bingo" disabled>
+                <span class="mission-name">핫딜구매</span>
+                <span class="mission-status">
+                  <em class="current">0</em>/<em class="total">3</em>회
+                </span>
+              </button>
+            </div>
+            <!--  bingo-item class :
+              빙고 버튼 선택 시 : selected 클래스 추가
+            -->
+            <div class="bingo-item selected" data-index="3">
+              <button type="button" class="btn-bingo">
+                <span class="mission-name">알림&마케팅 동의</span>
+                <span class="mission-status">
+                  <em class="current">0</em>/<em class="total">3</em>회
+                </span>
+              </button>
+            </div>
+            <div class="bingo-item is-clear disabled" data-index="4">
+              <button type="button" class="btn-bingo" disabled>
+                <span class="mission-name">엔돌캐시획득</span>
+                <span class="mission-status">
+                  <em class="current">0,000</em>/<em class="total">3,000</em>캐시
+                </span>
+              </button>
+            </div>
+            <div class="bingo-item is-clear disabled" data-index="5">
+              <button type="button" class="btn-bingo" disabled>
+                <span class="mission-name">해피캐시교환</span>
+                <span class="mission-status">
+                  <em class="current">0</em>/<em class="total">3</em>회
+                </span>
+              </button>
+            </div>
+            <div class="bingo-item is-clear disabled" data-index="6">
+              <button type="button" class="btn-bingo" disabled>
+                <span class="mission-name">엔돌스타 배경구매</span>
+                <span class="mission-status">
+                  <em class="current">0</em>/<em class="total">1</em>회
+                </span>
+              </button>
+            </div>
+            <div class="bingo-item" data-index="7">
+              <button type="button" class="btn-bingo">
+                <span class="mission-name">미확인 해피툰보기</span>
+                <span class="mission-status">
+                  <em class="current">0,000</em>/<em class="total">1</em>회
+                </span>
+              </button>
+            </div>
+            <div class="bingo-item" data-index="8">
+              <button type="button" class="btn-bingo">
+                <span class="mission-name">해피몽 레벨업</span>
+                <span class="mission-status">
+                  <em class="current">0</em>/<em class="total">3</em>회
+                </span>
+              </button>
+            </div>
+
+            <!-- 빙고 라인 -->
+            <div class="bingo-line horizontal" data-line="horizontal-1"></div>
+            <div class="bingo-line horizontal" data-line="horizontal-2"></div> 
+            <div class="bingo-line horizontal" data-line="horizontal-3"></div> 
+            <div class="bingo-line vertical" data-line="vertical-1"></div> 
+            <div class="bingo-line vertical" data-line="vertical-2"></div> 
+            <div class="bingo-line vertical" data-line="vertical-3"></div> 
+            <div class="bingo-line diagonal-left" data-line="diagonal-left"></div>
+            <div class="bingo-line diagonal-right" data-line="diagonal-right"></div>
+          </div>
+
+          <div class="btn-group">
+            <button id="useBtn" class="btn is-grays-1" disabled>사용하기</button>
+          </div>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+  <!-- page script -->
+  <script>
+    // UI확인용 스크립트, 개발시 삭제
+    document.addEventListener("DOMContentLoaded", () => {
+      const bingoItems = document.querySelectorAll('.bingo-item');
+      const useBtn = document.getElementById('useBtn');
+      let selectedItem = null;
+
+      bingoItems.forEach(item => {
+        const btnBingo = item.querySelector('.btn-bingo');
+        toggleButtonState(item, btnBingo);
+
+        item.addEventListener('click', function() {
+          if (btnBingo.classList.contains('selected')) {
+            btnBingo.classList.remove('selected');
+            item.classList.remove('selected');
+            selectedItem = null;
+            useBtn.classList.add('disabled');
+            useBtn.disabled = true;
+          } else {
+            if (selectedItem) {
+              selectedItem.classList.remove('selected');
+              selectedItem.closest('.bingo-item').classList.remove('selected');
+            }
+            btnBingo.classList.add('selected');
+            item.classList.add('selected');
+            selectedItem = btnBingo;
+            useBtn.classList.remove('disabled');
+            useBtn.disabled = false;
+          }
+        });
+      });
+
+      useBtn.addEventListener('click', function() {
+        if (selectedItem) {
+          const isJoker = confirm("조커 스탬프로 표시하시겠습니까?");
+          const parentItem = selectedItem.closest('.bingo-item');
+          
+          if (isJoker) {
+            parentItem.classList.add('is-joker');
+          } else {
+            parentItem.classList.add('is-clear');
+          }
+          selectedItem.classList.remove('selected');
+          parentItem.classList.remove('selected');
+          selectedItem = null;
+          this.classList.add('disabled');
+          this.disabled = true;
+          checkBingoCompletion();
+          toggleButtonState(parentItem, parentItem.querySelector('.btn-bingo'));
+        }
+      });
+
+      function checkBingoCompletion() {
+        const bingoLines = [
+          // Horizontal lines
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          // Vertical lines
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          // Diagonal lines
+          [0, 4, 8],
+          [2, 4, 6]
+        ];
+
+        bingoLines.forEach(line => {
+          const isLineComplete = line.every(index => {
+            const item = document.querySelector(`.bingo-item[data-index="${index}"]`);
+            return item.classList.contains('is-clear') || item.classList.contains('is-joker');
+          });
+
+          if (isLineComplete) {
+            const lineType = getLineType(line);
+            document.querySelector(`.bingo-line[data-line="${lineType}"]`).classList.add('is-active');
+          }
+        });
+      }
+
+      function getLineType(line) {
+        const lines = {
+          "0,1,2": "horizontal-1",
+          "3,4,5": "horizontal-2",
+          "6,7,8": "horizontal-3",
+          "0,3,6": "vertical-1",
+          "1,4,7": "vertical-2",
+          "2,5,8": "vertical-3",
+          "0,4,8": "diagonal-left",
+          "2,4,6": "diagonal-right"
+        };
+        return lines[line.join(',')];
+      }
+
+      function toggleButtonState(item, btnBingo) {
+        if (item.classList.contains('is-clear') || item.classList.contains('is-joker')) {
+          btnBingo.setAttribute('disabled', 'disabled');
+        } else {
+          btnBingo.removeAttribute('disabled');
+        }
+      }
+    });
+  </script>
+  <!-- //page script -->
+	</body>
+</html>
