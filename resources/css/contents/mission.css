@@ -37,10 +37,10 @@
 .mission .wrap-notice .tit-notice {
   color: var(--grays-1);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 2.2rem;
 }
-.mission .notice-panel .list-base {
+.mission .notice-panel {
   margin-top: 1.2rem;
 }
 .mission .notice-panel .list-base li {
@@ -275,6 +275,7 @@
   box-shadow: 2px 2px 4px 0px #537A0061,
               3px -3px 14px 0px #6B9C01 inset,
               3px 3px 14px 0px #96DB00 inset;
+  border-radius: 2rem;
 }
 .bingo-box .bingo-item.is-joker {
   background: #F16122 url("../../images/page/img-stamp-joker.png") no-repeat 50% 50% / contain;
@@ -282,6 +283,7 @@
   box-shadow: 2px 2px 4px 0px #BC39004D,
               -3px -3px 14px 0px #C52400 inset,
               3px 3px 14px 0px #FFA337 inset;
+  border-radius: 2rem;
 }
 .bingo-box .bingo-item.is-clear .btn-bingo,
 .bingo-box .bingo-item.is-joker .btn-bingo {
@@ -295,7 +297,7 @@
   width: 100%;
   height: 100%;
   padding: 1.6rem;
-  color: var(--grays-2);
+  color: var(--grays-3);
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.7rem;
@@ -321,11 +323,12 @@
 }
 .bingo-box .bingo-item .btn-bingo .mission-name {
   display: block;
+  color: var(--grays-2);
 }
 .bingo-box .bingo-item .btn-bingo .mission-status {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
   margin-top: 1.2rem;
   color: #B0B0B0;
   font-weight: 600;
@@ -409,6 +412,9 @@
 .bingo-box.type-joker .bingo-item .btn-bingo {
   padding: 1.2rem;
 }
+.bingo-box.type-joker .bingo-line.is-active {
+  background-color: var(--grays-4);
+}
 .bingo-box .bingo-item.is-clear.disabled {
   background-color: var(--button-5);
   background-image: url("../../images/page/img-bkstamp-clear.png");
@@ -448,6 +454,7 @@
 }
 .mission .bingo-reward .btn-reward .reward-state {
   padding: .4rem 2rem;
+  color: #fff;
   background: var(--button-5);
   border-radius: 0 0 1.2rem 1.2rem;
   line-height: 2rem;
@@ -474,7 +481,6 @@
   background-image: url("../../images/ico/ico-reward-complete.svg");
 }
 .mission .bingo-reward div .btn-reward.is-accept .reward-state {
-  color: #fff;
   background: var(--primary);
 }
 .wrap-event-gateway .btn-group {margin-top: 4rem;}

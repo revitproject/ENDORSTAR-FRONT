@@ -7,6 +7,8 @@
   color: var(--grays-2);
   font-size: 1.3rem;
   line-height: 1.5;
+  letter-spacing: -0.011rem;
+  word-break: break-word;
 }
 .list-base > li:not(:first-child) {
   margin-top: .6rem;
@@ -21,7 +23,7 @@
   width: 0.3rem;
   height: 0.3rem;
   border-radius: 50%;
-  background-color: var(--grays-2);
+  background-color: var(--grays-3);
 }
 .list-base[data-bullet=hyphen] > div::before,
 .list-base[data-bullet=hyphen] > li::before {

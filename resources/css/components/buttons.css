@@ -65,7 +65,7 @@
 .btn.is-primary:disabled,
 .btn.is-primary.disabled {
   color: #fff;
-  background-color: var(--button-4);
+  background-color: var(--grays-4);
 }
 .btn.is-secondary-1 {
   color: var(--primary);
@@ -85,8 +85,8 @@
 }
 .btn.is-grays-1.disabled,
 .btn.is-grays-1:disabled {
-  color: var(--grays-3);
-  background-color: var(--button-4);
+  color: #fff;
+  background-color: var(--grays-4);
 }
 
 /* 검색 */

@@ -99,6 +99,9 @@
   line-height: 2.2rem;
   letter-spacing: -0.02rem;
 }
+[class^="tit-"] + .desc {
+  margin-top: .4rem;
+}
 .txt-xl.normal,
 .txt-l.normal,
 .txt-m.normal,

@@ -63,6 +63,97 @@
                   </div>
                 </div>
               </div>
+
+              <!-- CASE1) 답변 2개 -->
+              <div class="answer">
+                <strong class="mark">A</strong>
+                <div class="answer-list">
+                  <div class="form-radio is-text">
+                    <label>
+                      <input type="radio" name="question2" class="inp-radio">
+                      <span class="inp-radiotxt">1번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question2" class="inp-radio">
+                      <span class="inp-radiotxt">2번 답변</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CASE1) 답변 3개 -->
+              <div class="answer">
+                <strong class="mark">A</strong>
+                <div class="answer-list">
+                  <div class="form-radio is-text">
+                    <label>
+                      <input type="radio" name="question3" class="inp-radio">
+                      <span class="inp-radiotxt">1번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question3" class="inp-radio">
+                      <span class="inp-radiotxt">2번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question3" class="inp-radio">
+                      <span class="inp-radiotxt">3번 답변</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CASE1) 답변 5개 -->
+              <div class="answer">
+                <strong class="mark">A</strong>
+                <div class="answer-list">
+                  <div class="form-radio is-text">
+                    <label>
+                      <input type="radio" name="question4" class="inp-radio">
+                      <span class="inp-radiotxt">1번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question4" class="inp-radio">
+                      <span class="inp-radiotxt">2번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question4" class="inp-radio">
+                      <span class="inp-radiotxt">3번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question4" class="inp-radio">
+                      <span class="inp-radiotxt">4번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question4" class="inp-radio">
+                      <span class="inp-radiotxt">5번 답변</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="answer">
+                <strong class="mark">A</strong>
+                <div class="answer-list">
+                  <div class="form-radio is-text">
+                    <label>
+                      <input type="radio" name="question5" class="inp-radio">
+                      <span class="inp-radiotxt">1번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question5" class="inp-radio">
+                      <span class="inp-radiotxt">2번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question5" class="inp-radio">
+                      <span class="inp-radiotxt">3번 답변</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="question5" class="inp-radio">
+                      <span class="inp-radiotxt">4번 답변</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
             </li>
             <li>
               <div class="question">
@@ -73,7 +164,7 @@
                 <strong class="mark">A</strong>
                 <div class="answer-list">
                   <div class="wrap-textarea">
-                    <textarea id="byteTextarea" placeholder="답변을 적어주세요." class="inp-textarea"></textarea>
+                    <textarea id="byteTextarea" placeholder="답변을 적어주세요." maxlength="1000" class="inp-textarea"></textarea>
                     <div class="byte-info">
                       <span id="byteCount" class="byte">0</span> / 1000
                     </div>
@@ -104,7 +195,7 @@
     <footer class="base-footer">
       <div class="wrap-footer">
 				<div class="btn-group">
-					<button class="btn is-primary">제출하기</button>
+					<button class="btn is-primary" disabled>제출하기</button>
 				</div>
 			</div>
     </footer>
