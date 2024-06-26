@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-.base-wrap.mission .base-content {
-  /* padding-bottom: 0; */
-}
 .mission .wrap-head {
   padding: 2rem 0;
   border-bottom: .1rem solid var(--button-4);
@@ -10,9 +7,6 @@
 .mission .wrap-head.noline {
   padding-bottom: 0;
   border-bottom: 0;
-}
-.mission .wrap-head .tit-m {
-
 }
 .mission .wrap-head .date {
   margin-top: .2rem;
@@ -49,9 +43,6 @@
 }
 .mission .wrap-qnalist li:not(:first-child) {
   margin-top: 3rem;
-}
-.mission .wrap-qnalist li .question {
-
 }
 .mission .wrap-qnalist li .answer {
   margin-top: 1.4rem;
@@ -99,7 +90,7 @@
   height: calc(2.2rem * 3); 
 }
 
-/* 이미지 등록 */
+/* 인증 이벤트 - 이미지 등록 */
 .mission .wrap-upload {
   margin-top: 3rem;
 }
@@ -184,7 +175,6 @@
   object-fit: cover;
   border-radius: .6rem;
 }
-
 .mission .thumbnail .delete-btn {
   position: absolute;
   top: -.5rem;
@@ -243,7 +233,7 @@
 
 /* 빙고게임 */
 .wrap-bingo .tit-xs {
-  margin: 3rem 0 1.6rem;
+  margin-bottom: 1.6rem;
 }
 .bingo-box {
   position: relative;
@@ -260,26 +250,28 @@
   justify-content: center;
   flex: 1 1 calc(33.333% - 1.6rem);
   min-width: calc(33.333% - 1.6rem);
-  height: calc(33.333vw - 1.6rem);
+  height: calc(33.333vw - 2.4rem);
+  min-height: 9.6rem;
+  max-height: 19.2rem;
   background: #fff;
+  border-radius: 1.2rem;
   box-shadow: -3px -3px 13px 0px #0000001F inset,
               2px 2px 3px 0px #0000001F;
-  border-radius: 1.2rem;
 }
 .bingo-box .bingo-item.is-clear {
   background: #7DB700 url("../../images/page/img-stamp-clear.png") no-repeat 50% 50% / contain;
-  box-shadow: 2px 2px 4px 0px #537A0061,
-              3px -3px 14px 0px #6B9C01 inset,
-              3px 3px 14px 0px #96DB00 inset;
   border-radius: 2rem;
+  box-shadow: 2px 2px 4px 0px #537A0061,
+              -3px -3px 14px 0px #6B9C01 inset,
+              3px 3px 14px 0px #96DB00 inset;
 }
 .bingo-box .bingo-item.is-joker {
   background: #F16122 url("../../images/page/img-stamp-joker.png") no-repeat 50% 50% / contain;
   background-repeat: no-repeat;
+  border-radius: 2rem;
   box-shadow: 2px 2px 4px 0px #BC39004D,
               -3px -3px 14px 0px #C52400 inset,
               3px 3px 14px 0px #FFA337 inset;
-  border-radius: 2rem;
 }
 .bingo-box .bingo-item.is-clear .btn-bingo,
 .bingo-box .bingo-item.is-joker .btn-bingo {
@@ -288,7 +280,7 @@
 .bingo-box .bingo-item .btn-bingo {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -299,8 +291,8 @@
   line-height: 1.7rem;
   border-radius: 1.2rem;
   text-align: center;
-  word-break: keep-all;
   cursor: pointer;
+  opacity: 1;
 }
 .bingo-box .bingo-item.selected {
   background-color: var(--primary);
@@ -320,12 +312,16 @@
 .bingo-box .bingo-item .btn-bingo .mission-name {
   display: block;
   color: var(--grays-2);
+  min-height: 3.4rem;
+  word-break: keep-all;
 }
 .bingo-box .bingo-item .btn-bingo .mission-status {
-  /* display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  justify-content: center; */
-  margin-top: 1.2rem;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 3.4rem;
   color: #B0B0B0;
   font-weight: 600;
 }
@@ -333,7 +329,19 @@
   color: var(--primary);
 }
 .bingo-box .bingo-item .btn-bingo .mission-status .total {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: .5rem;
   color: #B0B0B0;
+}
+.bingo-box .bingo-item .btn-bingo .mission-status .total::before {
+  content: '/';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: .5rem;
+  height: 1.7rem;
 }
 .wrap-bingo .btn-group {
   margin-top: 2rem;
@@ -428,6 +436,7 @@
   flex: 1 1 calc(33.333% - 1rem);
   min-height: 12rem;
   height: calc(33.333vw - 1rem);
+  max-height: 19.2rem;
 }
 .mission .bingo-reward .btn-reward {
   position: relative;
@@ -446,11 +455,13 @@
   width: 100%;
   padding: 1.2rem 2rem;
   color: var(--grays-3);
+  font-size: 1.3rem;
   font-weight: 500;
 }
 .mission .bingo-reward .btn-reward .reward-state {
   padding: .4rem 2rem;
   color: #fff;
+  font-size: 1.3rem;
   background: var(--button-5);
   border-radius: 0 0 1.2rem 1.2rem;
   line-height: 2rem;
@@ -480,3 +491,55 @@
   background: var(--primary);
 }
 .wrap-event-gateway .btn-group {margin-top: 4rem;}
+
+/* mediaquery */
+@media (max-width: 350px) {
+  .mission .wrap-bingo .bingo-box {
+    gap: 1rem;
+  }
+  .bingo-box .bingo-item {
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: calc(33.333% - 1rem);
+    min-height: 8.6rem;
+  }
+  .bingo-box .bingo-item .btn-bingo {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  .mission .bingo-reward .bingo-reward-item {
+    min-height: 11rem;
+  }
+  .mission .bingo-reward div .btn-reward::before {
+    width: 3.8rem;
+    height: 3.8rem;
+    background-size: 100%;
+  }
+  .mission .bingo-reward .btn-reward span {
+    padding: .8rem 1rem;
+    font-size: 1.2rem;
+  }
+  .mission .bingo-reward .btn-reward .reward-state {
+    padding: 0.2rem 1rem;
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 600px) {
+  .mission .wrap-bingo,
+  .mission .wrap-qnalist,
+  .mission .wrap-upload {
+    max-width: 96rem;
+    margin: 3rem auto 0;
+  }
+  .mission .wrap-bingo .bingo-box .bingo-item .btn-bingo {
+    font-size: 1.4rem;
+  }
+  .mission .bingo-reward div .btn-reward::before {
+    width: 6.4rem;
+    height: 6.4rem;
+    background-size: 100%;
+  }
+  .bingo-line.diagonal-left,
+  .bingo-line.diagonal-right {
+    width: 80%;
+  }
+}

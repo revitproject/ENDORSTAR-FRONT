@@ -132,9 +132,28 @@ function initPhotoRegistration(config) {
     if (window.NativeInterface && window.NativeInterface.showDeletePopup) {
       window.NativeInterface.showDeletePopup(photoToDeleteIndex);
     } else {
-      alert("Native interface not available");
+      // 사진 삭제 안내 모달 웹뷰 확인용 스크립트
+      console.log("Native interface not available");
+
+      const deletePopup = document.getElementById(config.deletePopupId);
+      const closePopupBtn = document.getElementById(config.closePopupBtnId);
+      const deletePhotoBtn = document.getElementById(config.deletePhotoBtnId);
+  
+      deletePopup.style.display = "flex";
+  
+      // 삭제 버튼 클릭 이벤트
+      deletePhotoBtn.onclick = function () {
+        window.handleDeletePhoto(photoToDeleteIndex);
+        deletePopup.style.display = "none";
+      };
+  
+      // 닫기 버튼 클릭 이벤트
+      closePopupBtn.onclick = function () {
+        deletePopup.style.display = "none"; 
+      };
     }
   }
+  
 
   // 네이티브에서 호출할 함수
   window.handleDeletePhoto = function(index) {
