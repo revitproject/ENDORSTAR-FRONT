@@ -232,6 +232,9 @@
 }
 
 /* 빙고게임 */
+.mission .wrap-bingo {
+  margin-top: 3rem;
+}
 .wrap-bingo .tit-xs {
   margin-bottom: 1.6rem;
 }
@@ -259,19 +262,19 @@
               2px 2px 3px 0px #0000001F;
 }
 .bingo-box .bingo-item.is-clear {
-  background: #7DB700 url("../../images/page/img-stamp-clear.png") no-repeat 50% 50% / contain;
-  border-radius: 2rem;
-  box-shadow: 2px 2px 4px 0px #537A0061,
-              -3px -3px 14px 0px #6B9C01 inset,
-              3px 3px 14px 0px #96DB00 inset;
-}
-.bingo-box .bingo-item.is-joker {
-  background: #F16122 url("../../images/page/img-stamp-joker.png") no-repeat 50% 50% / contain;
-  background-repeat: no-repeat;
+  background: #F16122 url("../../images/page/img-stamp-clear.png") no-repeat 50% 50% / contain;
   border-radius: 2rem;
   box-shadow: 2px 2px 4px 0px #BC39004D,
               -3px -3px 14px 0px #C52400 inset,
               3px 3px 14px 0px #FFA337 inset;
+}
+.bingo-box .bingo-item.is-joker {
+  background: #7DB700 url("../../images/page/img-stamp-joker.png") no-repeat 50% 50% / contain;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 4px 0px #537A0061,
+            -3px -3px 14px 0px #6B9C01 inset,
+            3px 3px 14px 0px #96DB00 inset;
 }
 .bingo-box .bingo-item.is-clear .btn-bingo,
 .bingo-box .bingo-item.is-joker .btn-bingo {
@@ -358,7 +361,7 @@
   background: var(--grays-6);
 }
 .bingo-line.is-active {
-  background-color: #D6EDA7;
+  background-color: var(--secondary-1);
 }
 .bingo-line.horizontal {
   width: 100%;
@@ -412,14 +415,11 @@
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-.bingo-box.type-joker .bingo-item .btn-bingo {
-  padding: 1.2rem;
-}
 .bingo-box.type-joker .bingo-line.is-active {
   background-color: var(--grays-4);
 }
 .bingo-box .bingo-item.is-clear.disabled {
-  background-color: var(--button-5);
+  background-color: var(--grays-4);
   background-image: url("../../images/page/img-bkstamp-clear.png");
   box-shadow: -3px -3px 14px 0px #909090 inset,
               3px 3px 14px 0px #E6E6E6 inset,
@@ -462,7 +462,7 @@
   padding: .4rem 2rem;
   color: #fff;
   font-size: 1.3rem;
-  background: var(--button-5);
+  background: var(--grays-4);
   border-radius: 0 0 1.2rem 1.2rem;
   line-height: 2rem;
 }
@@ -490,7 +490,117 @@
 .mission .bingo-reward div .btn-reward.is-accept .reward-state {
   background: var(--primary);
 }
-.wrap-event-gateway .btn-group {margin-top: 4rem;}
+/* 이벤트 공유 gateway */
+.base-wrap.mission .event-gateway {
+  padding: 0 0 10.6rem;
+}
+.mission .event-gateway .wrap-body {
+  padding: 0;
+  text-align: center;
+}
+.mission .event-gateway .wrap-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+}
+.mission .event-gateway .wrap-body .desc {
+  padding: .8rem 2rem 2rem;
+  text-align: center;
+}
+
+/* 랭킹보드 */
+.ranking-board {
+  background: linear-gradient(180deg, #FFC501 -5.13%, #F16122 25.9%);
+}
+.ranking-board .base-header {
+  background: transparent;
+}
+.ranking-board .base-header .wrap-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ranking-board .base-header .btn-prev {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5L10 15L20 25' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+.ranking-board .base-header .btn-menu {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7H25' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5 15H25' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5 23H25' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+.ranking-board .base-header .btn-home {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 14.4762L15 4L28 14.4762H24V26H18V18.6667H12V26H6V14.4762H2Z' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+.ranking-board .base-header .header-title {
+  color: #fff;
+}
+.ranking-board .base-content {
+  width: 100%;
+  padding: 7rem 0 0;
+  background: url("../../images/page/bg-linear.png") no-repeat 0 0 / 100%;
+}
+.ranking-board .wrap-head {
+  padding: 0 2rem;
+}
+.ranking-board .round-title p {
+  display: inline-flex;
+  align-items: center;
+  padding: .1rem 1.2rem;
+  color: var(--grays-1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: #FFFFFFC7;
+  border-radius: 3rem;
+  border: .1rem solid #fff;
+  letter-spacing: -0.03rem;
+  line-height: 2rem;
+  box-shadow: 0px 4px 62px 0px #0000001F;
+}
+.ranking-board .round-title p::before {
+  content: '';
+  display: inline-block;
+  margin-right: .3rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  background: url("../../images/ico/ico-trophy.svg") no-repeat 50% 50% / 100%;
+}
+.ranking-board .wrap-ranking {
+  padding: 2rem 2rem 0;
+}
+.ranking-board .wrap-ranking-list {
+  padding: 2.4rem 2 2rem;
+  background: #fff;
+}
+.ranking-board .wrap-ranking {
+  display: flex;
+  justify-content: space-around;
+
+}
+.ranking-board .wrap-ranking .ranking-item {
+  flex: 1;
+}
+.ranking-box {
+  text-align: center;
+  background: linear-gradient(180deg, #FEE37A 0%, #FFB84E 100%),
+              linear-gradient(90deg, rgba(255, 138, 0, 0) 54.56%, rgba(213, 115, 0, 0.35) 87.8%);
+  border-radius: 1.3rem 1.3rem 0 0;
+}
+.ranking-item .ranking-box strong {
+  font-family: 'SCoreDream';
+  color: #CB691F;
+  font-size: 3.8rem;
+  font-weight: 900;
+}
+.ranking-item.is-silver .ranking-box {
+  min-height: 6.5rem;
+
+}
+.ranking-item.is-gold .ranking-box {
+  min-height: 9.2rem;
+}
+.ranking-item.is-bronze .ranking-box {
+  min-height: 4.7rem;
+}
 
 /* mediaquery */
 @media (max-width: 350px) {
@@ -523,7 +633,7 @@
     font-size: 1.2rem;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .mission .wrap-bingo,
   .mission .wrap-qnalist,
   .mission .wrap-upload {
