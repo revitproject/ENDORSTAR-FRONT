@@ -31,7 +31,7 @@
 }
 .tab-content {
   display: none;
-  padding: 2.4rem 2rem;
+  padding: 1.4rem 2rem;
 }
 .tab-content.is-active {
   display: block;
@@ -46,4 +46,35 @@
 .tab-item.is-active .tab-link {
   padding-bottom: .4rem;
   border-bottom: .2rem solid var(--grays-1);
+}
+
+/* round */
+.ui-tab.is-round {
+  margin: 0;
+}
+.ui-tab.is-round .tab-menu {
+  flex-wrap: wrap;
+  border: 0;
+  gap: 1rem .6rem;
+}
+.ui-tab.is-round .tab-item {
+  padding: 0;
+}
+.ui-tab.is-round .tab-link {
+  height: 3.2rem;
+  padding: .5rem 1.4rem;
+  color: var(--grays-2);
+  font-size: 1.4rem;
+  border: .1rem solid var(--button-4);
+  border-radius: 2rem;
+}
+.ui-tab.is-round .tab-item.is-active .tab-link {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.ui-tab.is-round .tab-contents {
+  margin-top: 2.2rem;
+}
+.ui-tab.is-round .tab-content {
+  padding: 0;
 }

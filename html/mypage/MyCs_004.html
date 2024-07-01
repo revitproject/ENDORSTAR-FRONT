@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap mypage">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head noline">
+        <h2 class="tit-xl">자주하는 질문 (FAQ)</h2>
+      </div>
+      <div class="wrap-body">
+        <div class="wrap-faqlist">
+          <div class="form-searchbox">
+            <label for="inpSearch"><span class="hidden">자주하는 질문 (FAQ) 검색</span></label>
+            <input type="search" id="inpSearch" class="inp-base inp-search" name="inp-search" placeholder="궁금한 내용을 검색하세요">
+            <button type="button" id="btnCancelSearch" class="btn btn-cancel"><span class="hidden">취소</span></button>
+            <button type="submit" id="btnSearch"  class="btn-search"><span class="hidden">검색</span></button>
+          </div>
+
+          <!-- 검색폼 입력 활성화시 문구 노출 -->
+          <div class="faq-search-init">
+            <p>
+              ‘챌린지’, ‘엔돌캐시’, ‘회원전환’ 등<br>
+              궁금한 내용을 검색해 보세요.
+            </p>
+          </div>
+          <!-- 검색 auto -->
+          <!-- 검색 결과 -->
+          <div class="faq-search-result">
+            <h3 class="tit-xxs"><span class="result-key">‘챌린지’</span> 검색 결과</h3>
+            <ul class="result-list"> 
+              <li>
+                <a href="#none" class="result-link">
+                  <span class="key">챌린지</span>
+                  <p class="result-txt"><span class="highlight">챌린지</span> 참여는 어떻게 하나요?</p>
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="result-link">
+                  <span class="key">챌린지</span>
+                  <p class="result-txt"><span class="highlight">챌린지</span> 실패 시 불이익이 있나요?</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+	<!-- page script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const inpSearch = document.getElementById('inpSearch');
+      const btnCancelSearch = document.getElementById('btnCancelSearch');
+      const faqSearchInit = document.querySelector('.faq-search-init');
+      const faqList = document.getElementById('faqList');
+      const btnSearch = document.getElementById('btnSearch');
+      
+      inpSearch.addEventListener('focus', function () {
+        console.log('focus')
+        faqSearchInit.classList.add('is-active');
+      });
+
+      inpSearch.addEventListener('input', function () {
+        console.log('input')
+        const query = this.value.trim();
+        btnCancelSearch.style.display = query ? 'inline-block' : 'none';
+        faqSearchInit.style.display = query ? 'none' : 'block';
+      });
+
+      btnCancelSearch.addEventListener('click', function () {
+        inpSearch.value = '';
+        this.style.display = 'none';
+        faqSearchInit.style.display = 'block';
+        inpSearch.focus();
+        clearFaqList();
+      });
+
+      btnSearch.addEventListener('click', function (event) {
+        event.preventDefault();
+        const query = inpSearch.value.trim();
+        if (query) {
+          searchFaq(query);
+        }
+      });
+
+      function clearFaqList() {
+        faqList.innerHTML = '';
+      }
+
+      function searchFaq(query) {
+        clearFaqList();
+        // 검색 기능 구현 (예: 서버에서 검색 결과를 가져오는 API 호출)
+        // 여기서는 예시로 검색 결과를 추가하는 코드 작성
+        addFaqItem('유형1', `검색어 "${query}"에 대한 문의 내용1`);
+        addFaqItem('유형2', `검색어 "${query}"에 대한 문의 내용2`);
+        addFaqItem('유형3', `검색어 "${query}"에 대한 문의 내용3`);
+      }
+
+      function addFaqItem(type, content) {
+        const listItem = document.createElement('li');
+        listItem.className = 'link-list-item';
+        
+        const anchor = document.createElement('a');
+        anchor.href = './MyGu_002.html';
+        anchor.className = 'link-list-anchor';
+
+        const em = document.createElement('em');
+        em.className = 'cap-l status';
+        em.textContent = type;
+        anchor.appendChild(em);
+
+        const p = document.createElement('p');
+        p.className = 'txt-s desc';
+        p.textContent = content;
+        anchor.appendChild(p);
+
+        listItem.appendChild(anchor);
+        faqList.appendChild(listItem);
+      }
+    });
+  </script>
+  <!-- //page script -->
+	</body>
+</html>

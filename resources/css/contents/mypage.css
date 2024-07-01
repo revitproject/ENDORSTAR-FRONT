@@ -1,0 +1,364 @@
+@charset "UTF-8";
+
+.mypage .cap-m.date {
+  color: var(--grays-3);
+  font-weight: 400;
+}
+.mypage .wrap-link-list .link-list-item {
+  border-bottom: .1rem solid #F2F5F7;
+}
+.mypage .wrap-link-list .link-list-anchor {
+  position: relative;
+  display: block;
+  padding: 2rem 3rem 2rem 1rem;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.mypage .wrap-link-list .link-list-anchor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1107_11393)'%3E%3Cpath d='M6 3.20312L10 8.00313L6 12.8031' stroke='%23999999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1107_11393'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat 50% / 100%;
+  transform: translateY(-50%);
+}
+/* 1:1 문의 */
+.mypage .wrap-list-qna .list-qna-item {
+  position: relative;
+  padding: 1rem .4rem;
+  border-bottom: .1rem solid var(--button-4)
+}
+.mypage .wrap-list-qna .tit {
+  display: flex;
+  align-items: center;
+  color: var(--grays-3);
+}
+.mypage .wrap-list-qna .list-qna-desc {
+  display: block;
+  height: 2.2rem; 
+  margin-top: .3rem;
+  padding-right: 2.4rem;
+  overflow: hidden;
+  color: var(--grays-1);
+  line-height: 2.2rem; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.mypage .wrap-list-qna .list-qna-anchor {
+  position: absolute;
+  top: 50%;
+  right: .4rem;
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 1L10 7L4 13' stroke='%23888888' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 100% 50% / 1.4rem;
+  transform: translateY(-50%);
+}
+.mypage .flag-status {
+  display: inline-flex;
+  align-items: center;
+  min-width: 5.4rem;
+  margin-left: .8rem;
+  padding: .2rem .9rem;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  letter-spacing: -0.02rem;
+  border-radius: 1.5rem;
+}
+.flag-status.is-waiting {
+  background: var(--grays-2);
+}
+.flag-status.is-complete {
+  background: var(--system-3);
+}
+.mypage .wrap-list-qna.no-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-height: calc((100vh - 16.3rem - 10.6rem) - (1.4rem * 2)); /* (전체100vh - header(title포함) - footer) - (tabcontent 상하 padding) */
+}
+.no-result {
+  padding: 12.4rem 0;
+}
+.no-result p {
+  color: var(--grays-3);
+  font-size: 1.6rem;
+  letter-spacing: -0.02rem;
+  text-align: center;
+}
+.no-result p::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4.8rem;
+  margin-bottom: 1rem;
+  background: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22.5' stroke='%23DDDDDD' stroke-width='3'/%3E%3Cpath d='M24 13V27' stroke='%23DDDDDD' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M24 34V35' stroke='%23DDDDDD' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A") no-repeat 50% / 4.8rem;
+}
+
+/* 1:1문의 */
+.mypage .tab-content .tit-xs {
+  margin: 2rem 0 .6rem;
+}
+.mypage .wrap-upload {
+  margin-top: 2rem;
+}
+.mypage .wrap-select {
+  margin-top: 1rem;
+}
+.mypage .wrap-select + .wrap-textarea {
+  margin-top: 1rem;
+}
+.mypage .thumbnail-update {
+  /* position: absolute;
+  bottom: 1.4rem;
+  left: 50%; */
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='5.60156' width='0.8' height='12' fill='%23666666'/%3E%3Crect x='12' y='5.6001' width='0.800001' height='12' transform='rotate(90 12 5.6001)' fill='%23666666'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: translateX(-50%);
+}
+.wrap-qnalist.is-detail .qna-panel {
+  padding: 2rem .4rem;
+}
+.wrap-qnalist.is-detail .tit-xxs {
+  font-weight: 700;
+}
+.wrap-question-tit,
+.wrap-answer-tit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.wrap-qnalist.is-detail .question-tit,
+.wrap-qnalist.is-detail .answer-tit {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+}
+.wrap-qnalist.is-detail .question-tit {
+  padding-right: 5rem;
+}
+.wrap-qnalist.is-detail .wrap-question-tit .btn-delete {
+  position: absolute;
+  right: 0;
+  display: inline-flex;
+  padding: .6rem 1.3rem;
+  background: var(--button-4);
+  color: var(--grays-2);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  border-radius: .6rem;
+}
+.wrap-qnalist.is-detail .question-txt {
+  color: var(--grays-2);
+}
+.wrap-qnalist.is-detail .question-imglist {
+  margin-top: 2rem;
+}
+.wrap-qnalist.is-detail .mark {
+  margin: 0 0 0 .4rem;
+  min-width: 3.2rem;
+}
+.wrap-qnalist.is-detail .question-tit .tit-xxs,
+.wrap-qnalist.is-detail .question-tit .date,
+.wrap-qnalist.is-detail .answer-tit .tit-xxs,
+.wrap-qnalist.is-detail .answer-tit .date  {
+  display: block;
+  width: 100%;
+}
+.wrap-qnalist.is-detail .question-item,
+.wrap-qnalist.is-detail .answer-item {
+  padding-left: 4.6rem;
+}
+.wrap-qnalist.is-detail .answer {
+  border-top: .1rem solid var(--button-5);
+}
+
+.wrap-upload {
+  margin-top: 3rem;
+}
+.question-thumblist {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.question-thumblist .thumbnail-container {
+  display: flex;
+  gap: 1.4rem;
+  margin-left: 0;
+}
+.question-thumblist .thumbnail {
+  position: relative;
+  width: 6.8rem;
+  height: 6.8rem;
+  border: .1rem solid var(--button-5);
+  border-radius: .6rem;
+}
+.question-thumblist .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: .6rem;
+}
+.question-thumblist .thumbnail .delete-btn {
+  position: absolute;
+  top: -.5rem;
+  right: -.5rem;
+  background: var(--grays-1) url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1L1 7' stroke='white' stroke-linecap='round'/%3E%3Cpath d='M1 1L7 7' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A") no-repeat 50%;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+}
+
+
+/* faq */
+.wrap-faqlist {
+  position: relative;
+  padding-bottom: 12.2rem;
+}
+.wrap-faqlist .form-searchbox + .ui-tab {
+  margin-top: 2rem;
+}
+.faq-search-init {
+  display: none;
+  margin: 2.4rem 0 2rem;
+  color: var(--grays-2);
+  font-size: 1.4rem;
+  text-align: center;
+}
+.faq-search-init.is-active {
+  display: block;
+}
+.wrap-faqlist .wrap-link-list .link-list-anchor {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 3rem 1rem 1rem;
+}
+.wrap-faqlist .wrap-link-list .link-list-anchor .status {
+  display: block;
+  width: 100%;
+  color: var(--grays-3);
+}
+.wrap-faqlist .wrap-link-list .link-list-anchor .desc {
+  margin-top: .2rem;
+  color: var(--grays-1);
+}
+.wrap-bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background-color: #fff;
+  z-index: 1;
+}
+.wrap-faq-update {
+  padding: 1.6rem 8.6rem 1.6rem 1.6rem;
+  border-radius: .6rem;
+  background-color: var(--grays-6);
+  box-sizing: border-box;
+}
+.wrap-faq-update p {
+  color: var(--grays-1);
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+.wrap-faq-update .btn-link {
+  display: block;
+  margin-top: .4rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  text-decoration: underline;
+}
+.wrap-faq-update::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 2.3rem;
+  display: inline-block;
+  width: 7rem;
+  height: 7rem;
+  background: url("../../images/page/img-faq-update.png") no-repeat 50% / 100%;
+  transform: translateY(-50%);
+}
+.wrap-faqlist .inp-search {
+  position: relative;
+}
+.wrap-faqlist .btn-cancel {
+  display: none; 
+  position: absolute;
+  top: 1.9rem;
+  right: 7.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  border: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='9' fill='%23CCCCCC'/%3E%3Cpath d='M6 12L12 6' stroke='white' stroke-linecap='round'/%3E%3Cpath d='M12 12L6 6' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+.faq-search-result {
+  margin-top: 3.2rem;
+}
+.faq-search-result .tit-xxs {
+  font-weight: 700;
+}
+.faq-search-result .result-list {
+  margin-top: 1rem;
+}
+.faq-search-result .result-list .key {
+  display: block;
+  width: 100%;
+  color: var(--grays-3);
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+.faq-search-result .result-list .result-link {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem .4rem;
+  font-size: 1.5rem;
+}
+.faq-search-result .result-list li {
+  border-bottom: .1rem solid var(--button-4);
+}
+.faq-search-result .result-txt {
+  margin-top: .2rem;
+  line-height: 2.2rem;
+}
+.faq-search-result .result-list .highlight {
+  color: var(--primary);
+}
+
+/* 공지사항 */
+.wrap-link-list.notice .link-list-anchor {
+  padding: 1rem 3.4rem 1rem .4rem;
+}
+
+/* 이용약관 */
+.wrap-terms {
+  /* 임시 style */
+  min-height: 70vh;
+  padding: 2rem;
+  background: var(--grays-6);
+}

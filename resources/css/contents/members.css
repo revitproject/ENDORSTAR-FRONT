@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+.members .wrap-head {
+  padding-bottom: 2.4rem;
+  border-bottom: 0;
+}
+.members .cap-l {
+  color: var(--grays-2);
+  font-weight: 400;
+}
+.members .tit-xl {
+  font-weight: 700;
+  line-height: 3.2rem;
+}
+.userinfo-benefit {
+  padding: 3rem 2.8rem;
+  background: var(--grays-6);
+  text-align: center;
+  border-radius: 1.2rem;
+}
+.userinfo-benefit .tit-s {
+  font-weight: 700;
+}
+.userinfo-benefit .wrap-point-change {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.6rem 0;
+  gap: 7.1rem;
+}
+.userinfo-benefit .wrap-point-change::before {
+  content: '';
+  position: absolute;
+  top: 3.4rem;
+  left: 50%;
+  display: block;
+  width: 3.1rem;
+  height: 2rem;
+  background: url("data:image/svg+xml,%3Csvg width='31' height='20' viewBox='0 0 31 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='6' width='27' height='8' rx='2' fill='%23888888'/%3E%3Cpath d='M20 17.7394V2.26055C20 1.39241 21.0303 0.936637 21.6727 1.52061L30.1861 9.26006C30.6225 9.65682 30.6225 10.3432 30.1861 10.7399L21.6727 18.4794C21.0303 19.0634 20 18.6076 20 17.7394Z' fill='%23888888'/%3E%3C/svg%3E%0A") no-repeat 50%;
+  transform: translateX(-50%);
+}
+.userinfo-benefit .wrap-point-change .change-item {
+  display: flex;
+  flex-direction: column;
+}
+.userinfo-benefit .wrap-point-change .change-item span {
+  display: block;
+  margin-top: .6rem;
+  color: var(--grays-1);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+}
+.userinfo-benefit .wrap-point-change .change-item::before {
+  content: '';
+  display: block;
+  width: 8.4rem;
+  height: 8.4rem;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.userinfo-benefit .wrap-point-change .change-item.is-happy::before {
+  background-image: url('../../images/page/img-happypoint.png');
+}
+.userinfo-benefit .wrap-point-change .change-item.is-endor::before {
+  background-image: url('../../images/page/img-endorcash.png');
+}
+.members .wrap-box {
+  padding: 1.6rem;
+  border: .1rem solid var(--grays-4);
+  border-radius: 1.2rem;
+}
+.members .wrap-box dl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.members .wrap-group {
+  margin-top: 2.4rem;
+}
+.members .wrap-box {
+  margin: 1rem 0;
+}
+.members .wrap-box.bg {
+  background: var(--grays-6);
+  border: 0;
+}
+.members .wrap-box dl + dl {
+  margin-top: 1.4rem;
+}
+.members .wrap-box dt {
+  color: var(--grays-2);
+}
+.members .wrap-box dd {
+  color: var(--grays-1);
+}
+.members .wrap-box dd > em {
+  font-weight: 600;
+}
+.members .area-form-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.members .area-form-checkbox .form-checkbox > label {
+  font-weight: 700;
+}
+
+/* 약관 */
+.terms .wrap-head {
+  padding-bottom: 0;
+}
+.terms .wrap-head .desc {
+  margin-top: 1.2rem;
+}
+.terms .wrap-head .label-reward {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.2rem;
+  padding: .6rem 1.2rem;
+  color: var(--grays-2);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: .1rem solid var(--button-5);
+  border-radius: .6rem;
+}
+.terms .wrap-head .label-reward::before {
+  content: '';
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-right: .6rem;
+  background: url("../../images/ico/ico-hammer.svg") no-repeat 50% / 100%;
+}
+.terms .wrap-head .label-reward .text-primary {
+  font-size: 2rem;
+  margin-left: .6rem;
+}
+.terms .wrap-head .label-reward + .desc {
+  margin-top: 2rem;
+}
+.wrap-allcheck-box .allcheck-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.4rem;
+  padding: 1.4rem 1.6rem;
+  background: var(--grays-6);
+  border-radius: .6rem;
+}
+.wrap-allcheck-box .allcheck-head .inp-checkbox, 
+.wrap-allcheck-box .allcheck-head .inp-checkbox::after {
+  width: 2.6rem;
+  height: 2.6rem;
+  background-size: 1.2rem;
+}
+.wrap-allcheck-box .allcheck-head .form-checkbox > label {
+  color: var(--grays-1);
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+}
+.wrap-allcheck-box .allcheck-body {
+  display: none;
+  padding: 2rem .6rem;
+}
+.wrap-allcheck-box .allcheck-body.open {
+  display: block;
+}
+.wrap-allcheck-box .allcheck-body .wrap-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrap-allcheck-box .allcheck-body .wrap-checkbox .form-checkbox > label {
+  color: var(--grays-2);
+  font-weight: 400;
+}
+.wrap-allcheck-box .allcheck-body li:not(:first-child) {
+  margin-top: 1.2rem;
+}
+.wrap-allcheck-box .area-subcheck .wrap-checkbox.option-item {
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin-left: 3.2rem;
+  padding-top: .6rem;
+}
+.wrap-allcheck-box .area-subcheck .wrap-checkbox.option + .wrap-checkbox.option {
+  margin-top: 1.2rem;
+}
+.wrap-allcheck-box .wrap-checkbox.option-item .form-checkbox {
+  margin-top: 0;
+}
+.wrap-allcheck-box .wrap-checkbox.option-item .form-checkbox > label {
+  color: var(--grays-2);
+}
+.area-form .wrap-inp.inbtn .btn-cancel {
+  display: none; 
+  position: absolute;
+  top: 3.5rem;
+  right: 9.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  border: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='9' fill='%23CCCCCC'/%3E%3Cpath d='M6 12L12 6' stroke='white' stroke-linecap='round'/%3E%3Cpath d='M12 12L6 6' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+.area-form .wrap-inp.inbtn .inp-base.is-cancel {
+  padding-right: 2.8rem;
+}
+.area-form + .list-base {
+  margin-top: 2rem;
+}
+.wrap-signup-complete::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 25.6rem;
+  background: url("../../images/page/img-signup-complete.png") no-repeat 50% / contain;
+}
+.wrap-signup-complete .tit-xs {
+  margin-bottom: 1rem;
+}
+.wrap-signup-complete .wrap-box em {
+  font-weight: 700;
+}
+.reward-text {
+  display: inline-flex;
+  align-items: center;
+}
+.reward-text[class*="ico-"]::before {
+  content: '';
+  display: inline-block;
+  margin-right: .4rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.reward-text.ico-goldhammer::before {
+  background-image: url("../../images/ico/ico-hammer.svg");
+}
+.reward-text.ico-endorcash::before {
+  background-image: url("../../images/ico/ico-endorcash.svg");
+}
+
+.members .wrap-profile {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.members .wrap-profile .user-img {
+  width: 5.4rem;
+  height: 5.4rem;
+  margin-right: 1.2rem;
+}
+.members .wrap-profile .user-id {
+  color: var(--grays-1);
+  font-weight: 500;
+  line-height: 2.4rem;
+}
+.members .wrap-profile .signup-date {
+  color: var(--grays-2);
+  margin-top: .2rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+}

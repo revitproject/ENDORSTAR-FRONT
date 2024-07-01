@@ -20,7 +20,9 @@
 @import "components/tabs.css";
 
 /* contents */
+@import "contents/members.css";
 @import "contents/mission.css";
+@import "contents/mypage.css";
 
 /* utilities */
 @import "utilities.css";
