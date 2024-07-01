@@ -236,6 +236,9 @@
   position: relative;
   padding-bottom: 12.2rem;
 }
+.wrap-faqlist .ui-tab.is-round {
+  margin-top: 2rem;
+}
 .wrap-faqlist .form-searchbox + .ui-tab {
   margin-top: 2rem;
 }
