@@ -27,11 +27,13 @@
       <div class="wrap-body">
         <div class="wrap-faqlist">
           <div class="form-searchbox">
-            <label for="inp-search"><span class="hidden">자주하는 질문 (FAQ) 검색</span></label>
-            <input type="search" id="inp-search" class="inp-base inp-search" name="inp-search" placeholder="궁금한 내용을 검색하세요">
+            <label for="inpSearch"><span class="hidden">자주하는 질문 (FAQ) 검색</span></label>
+            <input type="search" id="inpSearch" class="inp-base inp-search" name="inp-search" placeholder="궁금한 내용을 검색하세요">
+            <button type="button" class="btn btn-cancel"><span class="hidden">취소</span></button>
             <button type="submit" class="btn-search"><span class="hidden">검색</span></button>
           </div>
 
+          <!-- 입력시 초기 문구 -->
           <div class="faq-search-init">
             <p>
               ‘챌린지’, ‘엔돌캐시’, ‘회원전환’ 등<br>
@@ -39,6 +41,45 @@
             </p>
           </div>
 
+          <!-- 검색어 하이라이트 -->
+          <div class="faq-search-result hidden">
+            <ul class="result-autolist"> 
+              <li>
+                <span class="key">챌린지</span>
+                <p class="result-txt"><span class="highlight">챌린지</span> 참여는 어떻게 하나요?</p>
+              </li>
+              <li>
+                <span class="key">챌린지</span>
+                <p class="result-txt"><span class="highlight">챌린지</span> 참여는 어떻게 하나요?</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 검색 결과 -->
+          <div class="faq-search-result hidden">
+            <h3 class="tit-xxs"><span class="result-key">‘챌린지’</span> 검색 결과</h3>
+            <ul class="result-list"> 
+              <li>
+                <a href="#none" class="result-link">
+                  <span class="key">챌린지</span>
+                  <p class="result-txt"><span class="highlight">챌린지</span> 참여는 어떻게 하나요?</p>
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="result-link">
+                  <span class="key">챌린지</span>
+                  <p class="result-txt"><span class="highlight">챌린지</span> 실패 시 불이익이 있나요?</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 검색 결과 없는 CASE -->
+          <div class="faq-search-result hidden no-result">
+            <p>해당 검색어를 포함한 내용이 없어요.</p>
+          </div>
+
+          <!-- faq 카테고리 -->
           <div class="ui-tab is-round">
             <ul class="tab-menu">
               <li class="tab-item is-active"> 
@@ -131,7 +172,116 @@
 	<script src="../../resources/js/common/ui.common.js"></script>
   <script src="../../resources/js/common/ui.template.js"></script>
 
-	<!-- page script -->
+  <script>
+    // UI확인용 스크립트
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.querySelector('.inp-search');
+      const cancelSearchButton = document.querySelector('.btn-cancel');
+      const searchButton = document.querySelector('.btn-search');
+      const faqSearchInit = document.querySelector('.faq-search-init');
+      const faqSearchResults = document.querySelectorAll('.faq-search-result');
+      const resultAutoList = document.querySelector('.result-autolist');
+      const resultList = document.querySelector('.result-list');
+      const resultKey = document.querySelector('.result-key');
+      const noResult = document.querySelector('.no-result');
+
+      const faqData = [
+        { key: '챌린지', text: '챌린지 참여는 어떻게 하나요?' },
+        { key: '챌린지', text: '챌린지 실패 시 불이익이 있나요?' },
+        { key: '엔돌캐시', text: '엔돌캐시는 어떻게 사용하나요?' },
+        { key: '회원전환', text: '회원 전환은 어떻게 하나요?' },
+      ];
+
+      // 검색 결과 초기화
+      const clearSearchResults = () => {
+        resultAutoList.innerHTML = '';
+        resultList.innerHTML = '';
+        faqSearchResults.forEach(el => el.classList.add('hidden'));
+        noResult.classList.add('hidden'); // 검색 결과가 없을 때 메시지 숨기기
+      };
+
+      // 자동 완성 결과 표시
+      const displayAutoCompleteResults = (filteredData) => {
+        clearSearchResults();
+        filteredData.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <span class="key">${item.key}</span>
+            <p class="result-txt">${highlightText(item.text, searchInput.value)}</p>
+          `;
+          resultAutoList.appendChild(li);
+        });
+        faqSearchResults[0].classList.remove('hidden');
+      };
+
+      // 검색 결과 표시
+      const displaySearchResults = (filteredData) => {
+        clearSearchResults();
+        if (filteredData.length > 0) {
+          resultKey.textContent = `‘${searchInput.value}’`;
+          filteredData.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <a href="#none" class="result-link">
+                <span class="key">${item.key}</span>
+                <p class="result-txt">${highlightText(item.text, searchInput.value)}</p>
+              </a>
+            `;
+            resultList.appendChild(li);
+          });
+          faqSearchResults[1].classList.remove('hidden');
+        } else {
+          noResult.classList.remove('hidden'); // 검색 결과가 없을 때 메시지 표시
+        }
+      };
+
+      // 검색어 하이라이트
+      const highlightText = (text, searchTerm) => {
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        return text.replace(regex, '<span class="highlight">$1</span>');
+      };
+
+      // 검색 입력 이벤트 처리
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm.length > 0) {
+          faqSearchInit.classList.add('hidden');
+          cancelSearchButton.style.display = 'block'; // 검색어 입력 시 취소 버튼 표시
+          const filteredData = faqData.filter(item => item.text.includes(searchTerm));
+          displayAutoCompleteResults(filteredData);
+        } else {
+          faqSearchInit.classList.remove('hidden');
+          cancelSearchButton.style.display = 'none'; // 검색어가 없을 때 취소 버튼 숨기기
+          clearSearchResults();
+        }
+      });
+
+      // 검색창 클릭 시 FAQ 초기 문구 노출
+      searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim().length === 0) {
+          faqSearchInit.classList.remove('hidden');
+          clearSearchResults();
+        }
+      });
+
+      // 검색 취소 버튼 클릭 이벤트 처리
+      cancelSearchButton.addEventListener('click', () => {
+        searchInput.value = '';
+        faqSearchInit.classList.remove('hidden');
+        cancelSearchButton.style.display = 'none'; // 취소 버튼 숨기기
+        clearSearchResults();
+      });
+
+      // 검색 버튼 클릭 이벤트
+      searchButton.addEventListener('click', () => {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm.length > 0) {
+          const filteredData = faqData.filter(item => item.text.includes(searchTerm));
+          displaySearchResults(filteredData);
+        }
+      });
+    });
+  </script>
   <!-- //page script -->
 	</body>
 </html>

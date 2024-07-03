@@ -29,11 +29,11 @@
           <div class="form-searchbox">
             <label for="inpSearch"><span class="hidden">자주하는 질문 (FAQ) 검색</span></label>
             <input type="search" id="inpSearch" class="inp-base inp-search" name="inp-search" placeholder="궁금한 내용을 검색하세요">
-            <button type="button" class="btn btn-cancel"><span class="hidden">취소</span></button>
-            <button type="submit" class="btn-search"><span class="hidden">검색</span></button>
+            <button type="button" id="btnCancelSearch" class="btn btn-cancel"><span class="hidden">취소</span></button>
+            <button type="submit" id="btnSearch" class="btn-search"><span class="hidden">검색</span></button>
           </div>
 
-          <!-- 입력시 초기 문구 -->
+          <!-- 검색폼 입력 활성화시 문구 노출 -->
           <div class="faq-search-init hidden">
             <p>
               ‘챌린지’, ‘엔돌캐시’, ‘회원전환’ 등<br>
@@ -41,7 +41,7 @@
             </p>
           </div>
 
-          <!-- 검색어 하이라이트 -->
+          <!-- 검색 중 자동 완성 -->
           <div class="faq-search-result hidden">
             <ul class="result-autolist"> 
               <li>
@@ -75,7 +75,7 @@
           </div>
 
           <!-- 검색 결과 없는 CASE -->
-          <div class="faq-search-result hidden no-result">
+          <div class="faq-search-result no-result">
             <p>해당 검색어를 포함한 내용이 없어요.</p>
           </div>
         </div>

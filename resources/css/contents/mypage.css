@@ -51,7 +51,10 @@
   transform: translateX(-50%);
 }
 .mypage .wrap-qnalist.is-detail .qna-panel {
-  padding: 2rem .4rem;
+  padding: 2.4rem .4rem;
+}
+.mypage .wrap-qnalist.is-detail .qna-panel:first-child {
+  padding-top: 0;
 }
 .mypage .wrap-qnalist.is-detail .tit-xxs {
   font-weight: 700;
@@ -71,7 +74,7 @@
   margin-left: 1rem;
 }
 .mypage .wrap-qnalist.is-detail .question-tit {
-  padding-right: 5rem;
+  padding-right: 5.9rem;
 }
 .mypage .wrap-qnalist.is-detail .wrap-question-tit .btn-delete {
   position: absolute;
@@ -106,11 +109,7 @@
 .mypage .wrap-qnalist.is-detail .answer-item {
   padding-left: 4.6rem;
 }
-.mypage .wrap-qnalist.is-detail .question {
-  padding-bottom: 2.4rem;
-}
 .mypage .wrap-qnalist.is-detail .answer {
-  padding-top: 2.4rem;
   border-top: .1rem solid var(--button-5);
 }
 .mypage .question-thumblist {
@@ -163,7 +162,6 @@
   margin-top: 2rem;
 }
 .mypage .faq-search-init {
-  display: none;
   margin: 2.4rem 0 2rem;
   color: var(--grays-2);
   font-size: 1.4rem;
@@ -233,12 +231,18 @@
   display: none; 
   position: absolute;
   top: 1.9rem;
-  right: 7.4rem;
+  right: 5.4rem;
   width: 1.8rem;
   height: 1.8rem;
   padding: 0;
   border: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='9' fill='%23CCCCCC'/%3E%3Cpath d='M6 12L12 6' stroke='white' stroke-linecap='round'/%3E%3Cpath d='M12 12L6 6' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='8' fill='%23CCCCCC'/%3E%3Cpath d='M6 6L12.0104 12.0104' stroke='white'/%3E%3Cpath d='M12 6L5.98959 12.0104' stroke='white'/%3E%3C/svg%3E%0A");
+}
+.mypage .faq-search-result.hidden {
+  display: none;
+}
+.mypage .faq-search-result .result-autolist li {
+  margin-top: 1rem;
 }
 .mypage .faq-search-result {
   margin-top: 3.2rem;
@@ -249,29 +253,45 @@
 .mypage .faq-search-result .result-list {
   margin-top: 1rem;
 }
-.mypage .faq-search-result .result-list .key {
+.mypage .faq-search-result .key {
   display: block;
   width: 100%;
   color: var(--grays-3);
   font-size: 1.3rem;
   line-height: 2rem;
 }
+.mypage .faq-search-result .result-txt {
+  margin-top: .2rem;
+  line-height: 2.2rem;
+}
+.mypage .faq-search-result .highlight {
+  color: var(--primary);
+}
+.mypage .faq-search-result .result-list li {
+  border-bottom: .1rem solid var(--button-4);
+}
 .mypage .faq-search-result .result-list .result-link {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 1rem .4rem;
   font-size: 1.5rem;
 }
-.mypage .faq-search-result .result-list li {
-  border-bottom: .1rem solid var(--button-4);
+.result-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: .4rem;
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 1L10 7L4 13' stroke='%23888888' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 100% 50% / 1.4rem;
+  transform: translateY(-50%);
 }
-.mypage .faq-search-result .result-txt {
-  margin-top: .2rem;
-  line-height: 2.2rem;
+.mypage .faq-search-result.no-result {
+
 }
-.mypage .faq-search-result .result-list .highlight {
-  color: var(--primary);
-}
+
 
 /* 공지사항 */
 
