@@ -51,8 +51,8 @@
 .guide-tab-menu ul {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 1rem 0;
 	gap: .8rem;
+	padding: 1rem 0;
 }
 .guide-tab-menu ul li button:hover,
 .guide-tab-menu ul li a:hover {
@@ -92,17 +92,16 @@
 	background-size: auto 3.6rem;
 }
 .guide-iframe > .guide-viewer iframe {
+	overflow: hidden;
 	width: 100%;
 	height: 76.2rem;
-	overflow: hidden;
 }
 .guide-link-blank {
 	display: inline-block;
 	color: var(--grays-4);
-	font-size: 1.1rem;
+	font-size: 0;
 	letter-spacing: -1px;
 	vertical-align: top;
-	font-size: 0;
 }
 .guide-link-blank::before {
 	content: '';
@@ -115,15 +114,25 @@
 	border-top-width: .3rem;
 	vertical-align: middle;
 }
-.guide-wrap .tbl-htmllist .status.ing {color: var(--primary);} 
-.guide-wrap .tbl-htmllist .status.modify {color: #04AA6D;} 
-.guide-wrap .tbl-htmllist .status.complete {color: #007CEF;} 
-.guide-wrap .tbl-htmllist .status.confirm {color: #E5493A;}
+.guide-wrap .tbl-htmllist .status.ing {
+	color: var(--primary);
+}
+.guide-wrap .tbl-htmllist .status.modify {
+	color: #04AA6D;
+}
+.guide-wrap .tbl-htmllist .status.complete {
+	color: #007CEF;
+}
+.guide-wrap .tbl-htmllist .status.confirm {
+	color: #E5493A;
+}
 /* guide.html */
 .component .language-markup {
 	margin-top: 2rem;
 }
-.component .ui-tab {margin-top: 3rem;}
+.component .ui-tab {
+	margin-top: 3rem;
+}
 .component .ui-tab .tab-link {
 	padding: 0 2rem;
 }
@@ -140,7 +149,7 @@
 	font-size: 2.2rem;
 	font-weight: 600;
 }
-.component .wrap-group .guide-subtit > span {
+.component .wrap-group .guide-subtit>span {
 	color: var(--grays-3);
 	font-size: 1.6rem;
 }

@@ -46,7 +46,6 @@ body {
 .base-header.notitle .header-title {
 	font-size: 0;
 }
-
 .wrap-header {
 	position: relative;
 	display: flex;
@@ -74,7 +73,6 @@ body {
 	padding: 6rem 2rem 10.6rem;
 	background: #fff;
 }
-
 .base-content .content-title {
 	margin-bottom: 1rem;
 	color: var(--grays-1);
@@ -100,102 +98,34 @@ body {
 	z-index: 1000;
 	background: #fff;
 }
-
 .wrap-footer {
 	padding: 2rem 2rem 3.4rem;
 	position: relative;
 }
-.footer-nav {
-	background: url('../../images/common/footer-top.png') no-repeat;
-	background-position: 0 0;
-	background-size: cover;
-	border-top: .1rem solid #eee;
-}
-.footer-nav ul {
-	display: flex;
-	justify-content: space-between;
-	padding: 1.2rem 2rem 2.4rem;
-}
 
-.footer-link {
-	position: relative;
-	height: 4.2rem;
+/* nodata */
+.no-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	height: 100%;
+	padding: 4rem 0;
+	color: var(--grays-3);
+  font-size: 1.6rem;
+  letter-spacing: -0.02rem;
+  text-align: center; 
 }
-
-.footer-link .btn {
-	display: block;
-	padding: 0;
-	color: var(--grays-4);
+.no-result p {
+  color: var(--grays-3);
+  font-size: 1.6rem;
+  letter-spacing: -0.02rem;
+  text-align: center;
 }
-.footer-quick {
-	display: flex;
-	justify-content: center;
-}
-.footer-quick .quick-menu {
-	display: none;
-	position: absolute;
-	top: -8rem;
-	left: 50%;
-	width: calc(100% - 2rem);
-	min-height: 8rem;
-	transform: translateX(-50%);
-}
-
-.footer-quick.is-active .quick-menu {
-	display: flex;
-}
-
-.footer-quick .quick-menu {
-	justify-content: space-around;
-	align-items: center;
-	padding: 2rem;
-	border-radius: 1rem;
-	background: #ededed;
-}
-
-.footer-link {
-	text-align: center;
-}
-.footer-link .btn {
-	display: flex;
-	flex-wrap: wrap;
-	width: 4.2rem;
-	height: 4.2rem;
-	font-size: 1.2rem;
-	font-weight: 500;
-}
-.footer-link .btn::before {
-	content: '';
-	display: block;
-	width: 2.8rem;
-	height: 2.8rem;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: 50%;
-}
-.footer-link .btn.is-active {
-	color: var(--grays-0);
-}
-.btn-home::before {
-	background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.33041 11.2074L13.3903 3.46901C13.7497 3.19251 14.2503 3.19251 14.6097 3.46901L24.6696 11.2074C25.4264 11.7896 25.0147 13 24.0599 13H24C23.4477 13 23 13.4477 23 14V23C23 23.5523 22.5523 24 22 24H18C17.4477 24 17 23.5523 17 23V18C17 17.4477 16.5523 17 16 17H12C11.4477 17 11 17.4477 11 18V23C11 23.5523 10.5523 24 10 24H6C5.44772 24 5 23.5523 5 23V14C5 13.4477 4.55228 13 4 13H3.94012C2.98527 13 2.57358 11.7896 3.33041 11.2074Z' fill='black'/%3E%3C/svg%3E%0A");
-}
-.btn-challenge::before {
-	background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.5125 19.167C26.4536 15.9566 26.068 12.71 25.4352 9.43369C24.9201 7.15716 23.0658 5.12948 20.104 4.98119C17.9171 4.89221 17.4947 6.11692 15.0164 6.09377C14.3379 6.08943 13.6595 6.08943 12.981 6.09377C10.5034 6.11692 10.0789 4.89221 7.8934 4.98119C4.93089 5.12948 3.01917 7.1521 2.56 9.43369C1.92718 12.71 1.5416 15.9558 1.48346 19.1663C1.46948 21.4016 3.71381 22.8889 5.19506 22.9909C8.05676 23.2035 10.3298 18.2425 12.062 18.2425C13.3526 18.2497 14.644 18.2497 15.9347 18.2425C17.6669 18.2425 19.9392 23.2035 22.8016 22.9916C24.2821 22.8896 26.5853 21.3929 26.5117 19.167H26.5125Z' fill='%23CCCCCC'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.49282 7.99219C8.01887 7.99219 7.63465 8.3764 7.63465 8.85036V10.1406H6.34792C5.87396 10.1406 5.48975 10.5248 5.48975 10.9988C5.48975 11.4728 5.87396 11.857 6.34792 11.857H7.63465V13.1412C7.63465 13.6152 8.01887 13.9994 8.49282 13.9994C8.96678 13.9994 9.351 13.6152 9.351 13.1412V11.857H10.6388C11.1127 11.857 11.497 11.4728 11.497 10.9988C11.497 10.5248 11.1127 10.1406 10.6388 10.1406H9.351V8.85036C9.351 8.3764 8.96678 7.99219 8.49282 7.99219Z' fill='%23D9D9D9'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.49282 7.99219C8.01887 7.99219 7.63465 8.3764 7.63465 8.85036V10.1406H6.34792C5.87396 10.1406 5.48975 10.5248 5.48975 10.9988C5.48975 11.4728 5.87396 11.857 6.34792 11.857H7.63465V13.1412C7.63465 13.6152 8.01887 13.9994 8.49282 13.9994C8.96678 13.9994 9.351 13.6152 9.351 13.1412V11.857H10.6388C11.1127 11.857 11.497 11.4728 11.497 10.9988C11.497 10.5248 11.1127 10.1406 10.6388 10.1406H9.351V8.85036C9.351 8.3764 8.96678 7.99219 8.49282 7.99219Z' fill='white'/%3E%3Ccircle cx='20.7574' cy='9.24369' r='1.2515' fill='%23D9D9D9'/%3E%3Ccircle cx='20.7574' cy='9.24369' r='1.2515' fill='white'/%3E%3Ccircle cx='18.7544' cy='12.2515' r='1.2515' fill='%23D9D9D9'/%3E%3Ccircle cx='18.7544' cy='12.2515' r='1.2515' fill='white'/%3E%3C/svg%3E%0A");
-}
-.btn-shop::before {
-	background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.67013 4.91283C4.71532 4.39631 5.14782 4 5.66632 4H22.3337C22.8522 4 23.2847 4.39631 23.3299 4.91283L24.8097 21.8257C24.912 22.9946 23.9907 24 22.8174 24H5.18264C4.00927 24 3.08798 22.9946 3.19025 21.8257L4.67013 4.91283Z' fill='%23CCCCCC'/%3E%3Cpath d='M9 7V10C9 12.7614 11.2386 15 14 15V15C16.7614 15 19 12.7614 19 10V7' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A");
-}
-.btn-my::before {
-	background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='9' r='5' fill='%23CCCCCC'/%3E%3Cpath d='M22 24C22.5523 24 23.0058 23.5509 22.9445 23.002C22.7192 20.9822 21.8149 19.0869 20.364 17.636C18.6761 15.9482 16.3869 15 14 15C11.6131 15 9.32387 15.9482 7.63604 17.636C6.18514 19.0869 5.28078 20.9822 5.05548 23.002C4.99425 23.5509 5.44772 24 6 24L14 24H22Z' fill='%23CCCCCC'/%3E%3C/svg%3E%0A");
-}
-.btn-quick {
-  width: 9.2rem;
-  height: 9.2rem;
-  padding: 1rem;
-  background: url('../../images/common/quick-open.png') no-repeat;
-  background-size: 100%;
-  transition: all .5s;
-}
-.footer-quick.is-active .btn-quick {
-  background-image: url('../../images/common/quick-close.png');
+.no-result p::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4.8rem;
+  margin-bottom: 1rem;
+  background: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22.5' stroke='%23DDDDDD' stroke-width='3'/%3E%3Cpath d='M24 13V27' stroke='%23DDDDDD' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M24 34V35' stroke='%23DDDDDD' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A") no-repeat 50% / 4.8rem;
 }

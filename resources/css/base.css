@@ -20,9 +20,9 @@
 @import "components/tabs.css";
 
 /* contents */
-@import "contents/members.css";
-@import "contents/mission.css";
-@import "contents/mypage.css";
+@import "contents/members.css"; /* 회원가입 */
+@import "contents/mission.css"; /* 놀이동산 */
+@import "contents/mypage.css"; /* My엔돌스타 */
 
 /* utilities */
 @import "utilities.css";

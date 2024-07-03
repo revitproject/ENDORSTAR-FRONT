@@ -49,9 +49,7 @@
 
               <div class="wrap-textarea">
                 <!-- 문의유형 선택시 textarea 'disabled' 속성 삭제 -->
-                <textarea id="byteTextarea" placeholder="답변을 적어주세요." maxlength="1000" class="inp-textarea" disabled>
-FAQ에서 궁금한 내용에 대한 답을 찾지 못하셨다면, 1:1 문의하기에 남겨주세요. 자세한 내용과 함께 캡쳐본을 전달해주시면 빠르게 조치해드릴 수 있어요!
-                </textarea>
+                <textarea id="byteTextarea" class="inp-textarea" placeholder="FAQ에서 궁금한 내용에 대한 답을 찾지 못하셨다면, 1:1 문의하기에 남겨주세요. 자세한 내용과 함께 캡쳐본을 전달해주시면 빠르게 조치해드릴 수 있어요!" maxlength="1000" disabled></textarea>
                 <div class="byte-info">
                   <span id="byteCount" class="byte">0</span>/1000자
                 </div>
@@ -65,8 +63,8 @@ FAQ에서 궁금한 내용에 대한 답을 찾지 못하셨다면, 1:1 문의�
                 </ul>
                 <!-- 이미지 등록 후 노출 -->
                 <div class="upload-thumb">
-                  <!-- class
-                  이미지 최대 등록 개수 초과시 btn-upload 버튼에 'disabled' 클래스 추가 
+                  <!-- btn-upload class:
+                    이미지 최대 등록 개수 초과시 btn-upload 버튼에 'disabled' 클래스 추가 
                   -->
                   <button id="registerPhotoBtn" class="btn-upload">
                     <span class="ico-add">+</span>
@@ -77,32 +75,28 @@ FAQ에서 궁금한 내용에 대한 답을 찾지 못하셨다면, 1:1 문의�
               </div>
             </div>
             <div class="tab-content" data-tab-content="tab2">
-              <div class="wrap-list-qna">
-                <!-- flag-status class guide:
+              <div class="list-box is-qna wrap-list-qna">
+                <!-- flag-status class:
                     대기중 - is-waiting / 완료 - is-complete
                 -->
                 <ul>
-                  <li class="list-qna-item">
-                    <p class="cap-l tit">유형 유형<span class="flag-status is-waiting">답변 대기중</span></p>
-                    <a href="#none" class="list-qna-desc">
+                  <li class="list-box-item">
+                    <p class="cap-l subject">유형 유형<span class="flag-status is-waiting">답변 대기중</span></p>
+                    <a href="#none" class="list-box-tit">
                       $문의 내용$
                     </a>
                     <p class="cap-m date">2024.06.20 16:01</p>
-                    <button type="button" class="list-qna-anchor"><span class="hidden">더보기</span></button>
+                    <button type="button" class="list-qna-link"><span class="hidden">더보기</span></button>
                   </li>
-                  <li class="list-qna-item">
-                    <p class="cap-l tit">유형 유형<span class="flag-status is-complete">답변 완료</span></p>
-                    <a href="#none" class="list-qna-desc">
+                  <li class="list-box-item">
+                    <p class="cap-l subject">유형 유형<span class="flag-status is-complete">답변 완료</span></p>
+                    <a href="#none" class="list-box-tit">
                       $문의 내용 문의 내용 문의 내용 문의 내용 문의 내용 문의 내용 문의 내용 문의 내용 문의 내용 문의 내용 문의 내용$
                     </a>
                     <p class="cap-m date">2024.06.20 16:01</p>
-                    <button type="button" class="list-qna-anchor"><span class="hidden">더보기</span></button>
+                    <button type="button" class="list-qna-link"><span class="hidden">더보기</span></button>
                   </li>
                 </ul>
-              </div>
-              <!-- 데이터 없는 경우  'no-result' 클래스 추가 -->
-              <div class="wrap-list-qna no-result">
-                <p>문의하신 내용이 없습니다.</p>
               </div>
             </div>
           </div>
@@ -146,7 +140,7 @@ FAQ에서 궁금한 내용에 대한 답을 찾지 못하셨다면, 1:1 문의�
 
 	<!-- page script -->
   <script>
-    // UI확인용 스크립트, 개발시 삭제
+    // UI 확인용 스크립트, 개발시 삭제
     document.addEventListener("DOMContentLoaded", () => {
       initPhotoRegistration({
         registerBtnId: "registerPhotoBtn", // 사진등록 버튼 id

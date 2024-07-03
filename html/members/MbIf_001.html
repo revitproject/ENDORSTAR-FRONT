@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap members">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+				<h1 class="header-title">아이디 찾기</h1>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head">
+        <p class="desc">가입 시 입력한 이름과 휴대폰번호를 입력해주세요.</p>
+      </div>
+      <div class="wrap-body">
+        <div class="area-form">
+          <div class="wrap-inp">
+            <label for="inpName" class="lb-inp">이름</label>
+            <input type="text" id="inpName" class="inp-base" placeholder="실명 입력" data-required>
+          </div>
+          <div class="wrap-inp">
+            <label for="inpPhonenum" class="lb-inp">휴대폰번호</label>
+            <input type="tel" id="inpPhonenum" class="inp-base" maxlength="11" placeholder="’-’없이 숫자만 입력" data-required>
+          </div>
+        </div>
+
+        <ul class="list-base" data-bullet="dot">
+          <li>아이디/비밀번호 찾기 시 본인인증을 진행해요</li>
+          <li>아이디/비밀번호 찾기 시 제공되는 정보는<br>회원인증 이외의 용도로 이용 또는 저장하지 않아요</li>
+          <li>인증 문자가 도착하지 않은 경우 ‘해피머니’ 연락처<br>(1588-5245)가 스팸으로 분류되어 있는지 확인해 주세요.</li>
+        </ul>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" class="btn is-primary" disabled data-submit>본인인증하기</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+ <!-- page script -->
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const requiredInputs = document.querySelectorAll('input[data-required]');
+    const submitButton = document.querySelector('button[data-submit]');
+
+    function checkInputs() {
+      let allFilled = true;
+      requiredInputs.forEach(input => {
+        if (input.value.trim() === '') {
+          allFilled = false;
+        }
+      });
+
+      submitButton.disabled = !allFilled;
+    }
+
+    requiredInputs.forEach(input => {
+      input.addEventListener('input', checkInputs);
+    });
+  });
+</script>
+<!-- //page script -->
+	</body>
+</html>

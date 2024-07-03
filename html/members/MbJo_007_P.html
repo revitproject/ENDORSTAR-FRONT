@@ -7,14 +7,22 @@
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
+  <style>
+    /* 임시 스타일 */
+    .terms .wrap-body {
+      min-height: 70vh;
+      margin-top: 2rem;
+      background: var(--grays-6);
+    }
+  </style>
 </head>
 <body> 
 	<!-- base-wrap -->
-	<div class="base-wrap mypage">
+	<div class="base-wrap terms">
 		<!-- header -->
 		<header class="base-header">
-			<div class="wrap-header">
-				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+			<div class="wrap-header is-end">
+				<button type="button" class="btn-ico btn-close" onclick="history.back()"><span class="hidden">닫기</span></button> <!-- 임시 history.back() 설정 -->
 			</div>
 		</header>
 		<!-- // header -->
@@ -22,27 +30,22 @@
 		<!-- base-content -->
 		<main class="base-content">
       <div class="wrap-head">
-        <h2 class="tit-xl">엔돌스타 이용안내</h2>
+        <h2 class="title"></h2>
       </div>
       <div class="wrap-body">
-        <div class="list-box">
-          <ul>
-            <li class="list-box-item">
-              <a href="./MyGu_002.html" class="list-link">엔돌스타 육성 방법</a>
-            </li>
-            <li class="list-box-item">
-              <a href="./MyGu_003.html" class="list-link">엔돌캐시, 골드해머 적립</a>
-            </li>
-            <li class="list-box-item">
-              <a href="./MyGu_004.html" class="list-link">엔돌캐시, 골드해머 사용</a>
-            </li>
-          </ul>
-        </div>
+        <!-- 약관 내용 수급 전 -->
       </div>
 		</main>
 		<!-- //base-content -->
 
     <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button class="btn is-primary">확인</button>
+				</div>
+			</div>
+    </footer>
     <!-- // footer -->
 	</div>
 	<!-- //base-wrap -->
@@ -53,7 +56,7 @@
 	<script src="../../resources/js/common/ui.common.js"></script>
   <script src="../../resources/js/common/ui.template.js"></script>
 
-	<!-- page script -->
+  <!-- page script -->
   <!-- //page script -->
 	</body>
 </html>

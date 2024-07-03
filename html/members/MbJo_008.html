@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap terms">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+				<h1 class="header-title">약관 동의</h1>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head">
+        <h2 class="tit-xl">
+          엔돌스타 회원가입 약관을<br>
+          동의해 주세요.
+        </h2>
+        <p class="desc">
+          지금 엔돌스타 이용약관에 <span class="text-primary">모두 동의</span>하시면<br>
+          엔돌스타에서 사용 할 수 있는 <span class="text-primary">리워드</span>를 드려요.
+        </p>
+        <div class="label-reward">X<span class="text-primary">500</span></div>
+        <p class="desc">(선택) 마케팅 수신 동의를 모두 동의해 주세요.</p>
+      </div>
+      <div class="wrap-body">
+        <div class="wrap-group">
+          <div class="wrap-allcheck-box">
+            <div class="allcheck-head">
+              <div class="form-checkbox">
+                <label><input type="checkbox" class="inp-checkbox">약관 전체 동의</label>
+              </div>
+              <button type="button" class="btn-ico btn-toggle">
+                <span class="hidden">약관 전체 보기</span>
+              </button>
+            </div>
+            <ul class="allcheck-body open">
+              <li>
+                <div class="wrap-checkbox required">
+                  <div class="form-checkbox">
+                    <label><input type="checkbox" class="inp-checkbox is-none">[필수] 서비스이용약관 동의</label>
+                  </div> 
+                  <button type="button" class="btn-ico btn-view" data-term-type="serviceTerms">
+                    <span class="hidden">약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="wrap-checkbox required">
+                  <div class="form-checkbox">
+                    <label><input type="checkbox" class="inp-checkbox is-none">[필수] 엔돌캐시 이용약관 동의</label>
+                  </div>
+                  <button type="button" class="btn-ico btn-view" data-term-type="cashTerms">
+                    <span class="hidden">약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="wrap-checkbox required">
+                  <div class="form-checkbox">
+                    <label><input type="checkbox" class="inp-checkbox is-none">[필수] 개인정보 처리방침 동의</label>
+                  </div>
+                  <button type="button" class="btn-ico btn-view" data-term-type="privacyPolicy">
+                    <span class="hidden">약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="wrap-checkbox required">
+                  <div class="form-checkbox">
+                    <label><input type="checkbox" class="inp-checkbox is-none">[필수] 청소년보호정책 동의</label>
+                  </div>
+                  <button type="button" class="btn-ico btn-view" data-term-type="youthPolicy">
+                    <span class="hidden">약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="area-subcheck">
+                  <div class="wrap-checkbox option">
+                    <div class="form-checkbox">
+                      <label><input type="checkbox" class="inp-checkbox is-none">(선택) 해피머니 회원정보 이용 동의</label>
+                    </div>
+                    <button type="button" class="btn-ico btn-view">
+                      <span class="hidden">약관보기</span>
+                    </button>
+                  </div>
+                  <div class="wrap-checkbox options option">
+                    <div class="form-checkbox">
+                      <label><input type="checkbox" class="inp-checkbox is-none">(선택) 마케팅 수신 동의</label>
+                    </div>
+                    <button type="button" class="btn-ico btn-view">
+                      <span class="hidden">약관보기</span>
+                    </button>
+                  </div>
+                  <div class="wrap-checkbox option-item">
+                    <div class="form-checkbox">
+                      <label><input type="checkbox" class="inp-checkbox is-none">SMS</label>
+                    </div>
+                    <div class="form-checkbox">
+                      <label><input type="checkbox" class="inp-checkbox is-none">이메일</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" class="btn is-primary" disabled>다음</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+	<!-- page script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const allCheckContainer = document.querySelector('.wrap-allcheck-box');
+      const mainCheckbox = document.querySelector('.allcheck-head .inp-checkbox');
+      const requiredCheckboxes = document.querySelectorAll('.wrap-checkbox.required .inp-checkbox');
+      const optInCheckbox = document.querySelector('.wrap-checkbox.options .inp-checkbox');
+      const subCheckboxes = document.querySelectorAll('.wrap-checkbox.option-item .inp-checkbox');
+      const nextButton = document.querySelector('.wrap-footer .btn');
+      const toggleButton = document.querySelector('.btn-toggle');
+      const viewButtons = document.querySelectorAll('.btn-view');
+      const allCheckboxBody = document.querySelector('.allcheck-body');
+    
+      // 메인 체크박스 및 '다음' 버튼의 상태 업데이트
+      function updateMainCheckbox() {
+        const allRequiredChecked = Array.from(requiredCheckboxes).every(checkbox => checkbox.checked);
+        mainCheckbox.checked = allRequiredChecked; // 메인 체크박스 상태 업데이트
+        nextButton.disabled = !allRequiredChecked; // '다음' 버튼 활성화 상태 업데이트
+      }
+    
+      // 선택 동의 체크박스
+      function updateOptInCheckbox() {
+        const allOptInChecked = Array.from(subCheckboxes).every(checkbox => checkbox.checked);
+        optInCheckbox.checked = allOptInChecked;
+      }
+    
+      // 약관 전체 동의 체크박스 변경 이벤트
+      mainCheckbox.addEventListener('change', function() {
+        requiredCheckboxes.forEach(checkbox => {
+          checkbox.checked = this.checked;
+        });
+        updateMainCheckbox();
+      });
+    
+      // 체크박스 변경 감지 및 처리
+      allCheckContainer.addEventListener('change', function(event) {
+        const target = event.target;
+        if (target.classList.contains('inp-checkbox')) {
+          if (!target.closest('.allcheck-head')) {
+            updateMainCheckbox();
+          }
+    
+          if (target === optInCheckbox) {
+            subCheckboxes.forEach(subCheckbox => {
+              subCheckbox.checked = optInCheckbox.checked;
+            });
+          }
+    
+          if (target.closest('.option-item')) {
+            updateOptInCheckbox();
+          }
+        }
+      });
+    
+      // 토글 버튼 클릭 이벤트
+      toggleButton.addEventListener('click', function() {
+        this.classList.toggle('is-active');
+        allCheckboxBody.classList.toggle('open');
+      });
+    
+      // 약관 보기 버튼 클릭 이벤트
+      viewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const termType = this.closest('.wrap-checkbox').getAttribute('data-term-type');
+          window.postMessage({
+            action: 'viewTerm',
+            termType: termType
+          });
+        });
+      });
+    
+      // 페이지 로드 시 초기 상태 업데이트
+      updateMainCheckbox();
+      updateOptInCheckbox();
+    });
+  </script>    
+  <!-- //page script -->
+	</body>
+</html>

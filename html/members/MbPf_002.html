@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap members">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+				<h1 class="header-title">비밀번호 변경</h1>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head">
+        <p class="desc">안전한 이용을 위해 새로운 비밀번호를 만들어 주세요.</p>
+      </div>
+      <div class="wrap-body">
+        <div class="area-form">
+          <!-- validation 체크시 is-error 클래스 추가 -->
+          <div class="form-vaildation is-error">
+            <div class="wrap-inp">
+              <label for="inpPw" class="lb-inp">새 비밀번호</label>
+              <input type="password" id="inpPw" class="inp-base" minlength="8" maxlength="15" placeholder="영문/숫자/특수기호 포함 8~15자 이상" required>
+            </div>
+            <p class="validation" id="pwValidationMessage">Inline Validation</p>
+          </div>
+          <div class="form-vaildation">
+            <div class="wrap-inp">
+              <label for="inpRePw" class="lb-inp">새 비밀번호 재입력</label>
+              <input type="password" id="inpRePw" class="inp-base" minlength="8" maxlength="15" placeholder="비밀번호를 한번 더 입력해주세요." required>
+            </div>
+            <p class="validation" id="rePwValidationMessage"></p>
+          </div>
+        </div>
+
+        <ul class="list-base" data-bullet="dot">
+          <li>비밀번호 8~12자 영문,숫자, 특수문자(!,@,$)로 조합해 주세요.</li>
+          <li>3자리 이상 반복 또는 연속된 문자, 숫자는 사용할 수 없어요.</li>
+          <li>이전에 사용한 적이 없는 비밀번호가 안전해요.</li>
+          <li>아이디와 주민등록번호, 생일, 전화번호 등 개인정보와 관련된 숫자, 연속된 숫자, 반복된 문자 등 다른 사람이 쉽게 알아낼 수 있는 비밀번호는 사용을 자제해 주세요.</li>
+        </ul>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" class="btn is-primary">변경하기</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+ <!-- page script -->
+  <!-- //page script -->
+	</body>
+</html>
