@@ -4,6 +4,13 @@
   color: var(--grays-3);
   font-weight: 400;
 }
+/* 이용안내 슬라이드 */
+.mypage .wrap-info-slide .swiper-slide {
+  padding-bottom: 4rem;
+}
+.mypage .wrap-info-slide .swiper-pagination-bullet-active {
+  background: var(--grays-2);
+}
 
 /* 1:1 문의 */
 .mypage .flag-status {
@@ -38,9 +45,6 @@
   margin-top: 1rem;
 }
 .mypage .thumbnail-update {
-  /* position: absolute;
-  bottom: 1.4rem;
-  left: 50%; */
   display: block;
   width: 1.2rem;
   height: 1.2rem;
