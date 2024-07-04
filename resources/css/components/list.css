@@ -265,6 +265,8 @@
 .list-box .list-link .status {
   display: flex;
   align-items: center;
+}
+.list-box .cap-l.status {
   color: var(--grays-3);
   font-weight: 400;
 }

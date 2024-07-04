@@ -75,8 +75,10 @@
           </div>
 
           <!-- 검색 결과 없는 CASE -->
-          <div class="faq-search-result no-result">
-            <p>해당 검색어를 포함한 내용이 없어요.</p>
+          <div class="faq-search-noresult">
+            <div class="no-result">
+              <p>해당 검색어를 포함한 내용이 없어요.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -106,7 +108,7 @@
       const resultAutoList = document.querySelector('.result-autolist');
       const resultList = document.querySelector('.result-list');
       const resultKey = document.querySelector('.result-key');
-      const noResult = document.querySelector('.no-result');
+      const noResult = document.querySelector('.faq-search-noresult');
 
       const faqData = [
         { key: '챌린지', text: '챌린지 참여는 어떻게 하나요?' },

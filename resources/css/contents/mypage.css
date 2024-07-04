@@ -160,7 +160,7 @@
   padding-bottom: 12.2rem;
 }
 .mypage .wrap-faqlist .ui-tab.is-round {
-  margin-top: 2rem;
+  margin-top: 3.2rem;
 }
 .mypage .wrap-faqlist .form-searchbox + .ui-tab {
   margin-top: 2rem;
@@ -182,7 +182,6 @@
 .mypage .wrap-faqlist .list-box .list-link .status {
   display: block;
   width: 100%;
-  color: var(--grays-3);
 }
 .mypage .wrap-faqlist .list-box .list-link .desc {
   margin-top: .2rem;
@@ -196,6 +195,9 @@
   padding: 2rem;
   background-color: #fff;
   z-index: 1;
+}
+.mypage .wrap-bottom-fixed .wrap-select {
+  margin-top: 0;
 }
 .mypage .wrap-faq-update {
   padding: 1.6rem 8.6rem 1.6rem 1.6rem;
@@ -298,11 +300,19 @@
 
 
 /* 공지사항 */
+.mypage .list-box.is-notice .desc {
+  color: var(--grays-1);
+}
+.mypage .wrap-notice {
+  margin-top: .4rem;
+}
 
 /* 이용약관 */
 .wrap-terms {
   /* 임시 style */
   min-height: 70vh;
   padding: 2rem;
+  color: var(--grays-1);
+  font-size: 1.5rem;
   background: var(--grays-6);
 }

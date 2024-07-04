@@ -26,7 +26,8 @@
       </div>
       <div class="wrap-body">
         <div class="wrap-qnalist is-detail">
-          <div class="question dynamic-content">
+          <!-- 1:1문의 질문 -->
+          <div class="qna-panel question">
             <div class="wrap-question-tit">
               <strong class="mark">Q</strong>
               <div class="question-tit">
@@ -38,8 +39,7 @@
             <div class="question-item">
               <p class="question-txt">
                 $문의 내용$$문의 내용$$문의 내용$$문의 내용$
-                $문의 내용$
-                $문의 내용$$문의 내용$
+                $문의 내용$$문의 내용$$문의 내용$$문의 내용$
               </p>
               <div class="question-thumblist">
                 <ul class="thumbnail-container">
@@ -56,18 +56,10 @@
               </div>
             </div>
           </div>
-          <div class="answer">
-            <div class="wrap-answer-tit dynamic-content">
-              <strong class="mark">Q</strong>
-              <div class="answer-tit">
-                <p class="tit-xxs">1:1 문의 답변</p>
-              </div>
-            </div>
-            <div class="answer-item">
-              <!-- 데이터 없는 경우  'no-result' 클래스 추가 -->
-              <div class="no-result">
-                <p class="no-result-txt">현재 답변 내용이 없습니다.</p>
-              </div>
+          <!-- 1:1문의 답변 -->
+          <div class="qna-panel answer">
+            <div class="no-result">
+              <p>현재 답변 내용이 없습니다.</p>
             </div>
           </div>
         </div>
@@ -86,60 +78,7 @@
 	<script src="../../resources/js/common/ui.common.js"></script>
   <script src="../../resources/js/common/ui.template.js"></script>
 
-  <!-- page script -->
-  <script>
-    // noresult 중앙 정렬
-    const adjustNoResultHeight = () => {
-      const noResultElement = document.querySelector('.no-result');
-      const header = document.querySelector('.base-header');
-      const footer = document.querySelector('.base-footer');
-      const baseContent = document.querySelector('.base-content');
-      const wrapHead = document.querySelector('.wrap-head');
-      const dynamicContents = document.querySelectorAll('.dynamic-content'); // 유동적인 컨텐츠 요소들
-
-      if (noResultElement && baseContent) {
-        const getElementHeight = element => element ? element.offsetHeight : 0;
-
-        const headerHeight = getElementHeight(header);
-        const footerHeight = getElementHeight(footer);
-        const wrapHeadHeight = getElementHeight(wrapHead);
-        const viewportHeight = window.innerHeight;
-
-        const dynamicContentHeight = Array.from(dynamicContents).reduce((totalHeight, element) => {
-          if (element !== wrapHead) {
-            return totalHeight + element.offsetHeight;
-          }
-          return totalHeight;
-        }, 0);
-
-        const layoutHeight = viewportHeight - headerHeight - footerHeight;
-        const baseContentHeight = layoutHeight - dynamicContentHeight - wrapHeadHeight;
-        const noResultHeight = baseContentHeight;
-
-        noResultElement.style.height = `${noResultHeight}px`;
-
-        const noResultTxt = noResultElement.querySelector('.no-result-txt');
-        if (noResultTxt) {
-          const noResultTxtHeight = noResultTxt.offsetHeight;
-          const paddingTop = (noResultHeight - noResultTxtHeight) / 2;
-          noResultElement.style.paddingTop = `${paddingTop}px`;
-          noResultElement.style.paddingBottom = `${paddingTop}px`;
-        }
-
-        console.log(`headerHeight: ${headerHeight}`);
-        console.log(`footerHeight: ${footerHeight}`);
-        console.log(`wrapHeadHeight: ${wrapHeadHeight}`);
-        console.log(`dynamicContentHeight: ${dynamicContentHeight}`);
-        console.log(`viewportHeight: ${viewportHeight}`);
-        console.log(`layoutHeight: ${layoutHeight}`);
-        console.log(`baseContentHeight: ${baseContentHeight}`);
-        console.log(`noResultHeight: ${noResultHeight}`);
-      }
-    };
-
-    document.addEventListener('DOMContentLoaded', adjustNoResultHeight);
-    window.addEventListener('resize', adjustNoResultHeight);
-  </script>
+	<!-- page script -->
   <!-- //page script -->
 	</body>
 </html>
