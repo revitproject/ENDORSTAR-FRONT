@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap mypage">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head">
+        <h2 class="tit-xl">내정보수정</h2>
+      </div>
+      <div class="wrap-body">
+        <div class="wrap-mypage">
+          <form id="" action="" method="">
+            <!-- validation 체크시 is-error 클래스 추가 -->
+            <div class="form-vaildation is-error">
+              <div class="wrap-inp">
+                <label for="inpNickname" class="lb-inp">닉네임</label>
+                <input type="text" id="inpNickname" class="inp-base" placeholder="" value="홍길동메시">
+              </div>
+              <p class="validation">Validation 문구 노출 영역</p>
+            </div>
+            <div class="form-text">
+              <div class="wrap-inp inbtn is-readonly">
+                <label for="inpName" class="lb-inp">이름</label>
+                <input type="text" id="inpName" class="inp-base" value="홍길동" readonly>
+                <button type="button" class="btn is-checked">변경</button>
+              </div>
+              <p class="tip-text">개명으로 이름이 변경된 경우만 수정이 가능합니다.</p>
+            </div>
+            <div class="form-text">
+              <div class="wrap-inp inbtn is-readonly">
+                <label for="inpPhonenum" class="lb-inp">휴대폰번호</label>
+                <input type="tel" id="inpPhonenum" class="inp-base" maxlength="11" value="010-0000-0000" readonly>
+                <button type="button" class="btn is-checked">변경</button>
+              </div>
+              <p class="tip-text">비밀번호 재발급 시 사용됩니다.</p>
+            </div>
+            <!-- validation 체크시 is-error 클래스 추가 -->
+            <div class="form-vaildation is-error">
+              <div class="wrap-inp inbtn">
+                <label for="inpEmail" class="lb-inp">이메일 주소</label>
+                <input type="email" id="inpEmail" class="inp-base" maxlength="11" value="$이메일 주소$">
+                <button type="button" class="btn is-checked">중복체크</button>
+              </div>
+              <p class="validation">Validation 문구 노출 영역</p>
+            </div>
+            <!-- validation 체크시 is-error 클래스 추가 -->
+            <div class="form-vaildation is-error">
+              <div class="wrap-inp inbtn is-readonly">
+                <label for="inpPassword" class="lb-inp">비밀번호</label>
+                <input type="password" id="inpPassword" class="inp-base" maxlength="11" placeholder="로그인 시 사용되는 비밀번호" readonly>
+                <button type="button" class="btn is-checked" onclick="location.href='./MyAc_003.html'">변경</button>
+              </div>
+              <p class="validation">Validation 문구 노출 영역</p>
+            </div>
+          </form>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" class="btn is-secondary-1">취소</button>
+          <button type="button" class="btn is-primary">변경</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+  <!-- page script -->
+  <!-- //page script -->
+	</body>
+</html>

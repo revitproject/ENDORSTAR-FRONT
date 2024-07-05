@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap mypage">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head">
+        <h2 class="tit-xl">조르기</h2>
+        <p class="desc">친구에게 엔돌캐시를 받아보세요.</p>
+      </div>
+      <div class="wrap-body">
+        <div class="wrap-inp">
+          <label for="inpCash" class="lb-inp">엔돌캐시 조르기</label>
+          <input type="text" id="inpCash" class="inp-base" value="0">
+        </div>
+        <div class="wrap-inp is-readonly">
+          <label for="inpGift" class="lb-inp">조르기할 친구의 닉네임</label>
+          <input type="text" id="inpGift" class="inp-base" value="홍길동메시" readonly>
+        </div>
+        <div class="wrap-box is-total">
+          <dl>
+            <dt><span class="txt">총 엔돌캐시 조르기</span></dt>
+            <dd><em class="text-primary">0,000,000</em></dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="wrap-accordion open">
+        <div class="accordion-head">
+          <h3 class="accordion-tit">유의사항</h3>
+          <button type="button" class="btn-ico"><span class="hidden">더보기</span></button>
+        </div>
+        <div class="accordion-panel">
+          <ul class="list-base" data-bullet="dot">
+            <li class="text-grays-1">엔돌캐시는 1,000 단위로만 요청이 가능합니다.</li>
+            <li>선물 받은 엔돌캐시는 선물이 불가능 합니다.</li>
+            <li>선물하기, 선물받기 등 엔돌캐시 내역 조회는 포인트 내역에서 확인가능해요.</li>
+          </ul>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" class="btn is-primary">선물하기</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+  <!-- page script -->
+  <!-- //page script -->
+	</body>
+</html>

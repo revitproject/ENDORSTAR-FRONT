@@ -64,37 +64,8 @@
 .members .userinfo-benefit .wrap-point-change .change-item.is-endor::before {
   background-image: url('../../images/page/img-endorcash.png');
 }
-.members .wrap-box {
-  padding: 1.6rem;
-  border: .1rem solid var(--grays-4);
-  border-radius: 1.2rem;
-}
-.members .wrap-box dl {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .members .wrap-group {
   margin-top: 2.4rem;
-}
-.members .wrap-box {
-  margin: 1rem 0;
-}
-.members .wrap-box.bg {
-  background: var(--grays-6);
-  border: 0;
-}
-.members .wrap-box dl + dl {
-  margin-top: 1.4rem;
-}
-.members .wrap-box dt {
-  color: var(--grays-2);
-}
-.members .wrap-box dd {
-  color: var(--grays-1);
-}
-.members .wrap-box dd > em {
-  font-weight: 600;
 }
 .members .area-form-checkbox {
   display: flex;

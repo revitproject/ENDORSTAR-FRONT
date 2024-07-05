@@ -86,6 +86,11 @@ body {
 .base-content .wrap-head.line {
   border-bottom: .1rem solid var(--button-4);
 }
+.base-content .wrap-head.is-both {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 
 /* base-footer */
 .base-wrap.nofooter .base-content {

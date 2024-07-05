@@ -188,17 +188,70 @@ function initPhotoRegistration(config) {
   updatePhotoCount();
 }
 
+// 아코디언
+// function initAccordion() {
+//   const accordions = document.querySelectorAll('.wrap-accordion');
+
+//   accordions.forEach(accordion => {
+//     const btn = accordion.querySelector('.btn-ico');
+//     const panel = accordion.querySelector('.accordion-panel');
+
+//     btn.addEventListener('click', function () {
+//       const isOpen = panel.classList.contains('open');
+//       if (isOpen) {
+//         panel.classList.remove('open');
+//         accordion.classList.remove('open');
+//         panel.style.maxHeight = null;
+//         panel.style.opacity = 0;
+//       } else {
+//         panel.classList.add('open');
+//         accordion.classList.add('open');
+//         panel.style.maxHeight = panel.scrollHeight + "px";
+//         panel.style.opacity = 1;
+//       }
+//       btn.setAttribute('aria-expanded', !isOpen);
+//     });
+//   });
+// }
+
 class ApplicationInit {
   constructor() {
     document.addEventListener('DOMContentLoaded', () => {
       this.initComponents();
     });
   }
-
+  
   initComponents() {
     this.tabManager = new TabManager();
+    this.initAccordion();
+  }
+
+  // 아코디언
+  initAccordion() {
+    const accordions = document.querySelectorAll('.wrap-accordion');
+
+    accordions.forEach(accordion => {
+      const btn = accordion.querySelector('.btn-ico');
+      const panel = accordion.querySelector('.accordion-panel');
+
+      btn.addEventListener('click', function () {
+        const isOpen = panel.classList.contains('open');
+        if (isOpen) {
+          panel.classList.remove('open');
+          accordion.classList.remove('open');
+          panel.style.maxHeight = null;
+          panel.style.opacity = 0;
+        } else {
+          panel.classList.add('open');
+          accordion.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.style.opacity = 1;
+        }
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
   }
 }
 
-// 애플리케이션 초기화
+// 인스턴스 생성
 new ApplicationInit();

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap mypage">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head">
+        <h2 class="tit-xl">회원탈퇴</h2>
+        <p class="desc">
+          그 동안 엔돌스타를 이용해주셔서 감사드립니다.<br>
+          탈퇴 사유를 적어주시면 더 나은 엔돌스타를 만들기 위한<br>
+          소중한 자료로 사용하겠습니다.
+        </p>
+      </div>
+      <div class="wrap-body">
+        <div class="wrap-withdrawal">
+          <div class="wrap-inp is-readonly">
+            <label for="inpId" class="lb-inp">아이디</label>
+            <input type="text" id="inpId" class="inp-base" placeholder="" value="$가입시 설정한 아이디$" readonly>
+          </div>
+          <div class="wrap-inp is-readonly">
+            <label for="inpName" class="lb-inp">이름</label>
+            <input type="text" id="inpName" class="inp-base" placeholder="" value="홍길동" readonly>
+          </div>
+          <div class="wrap-inp is-readonly">
+            <label for="inpCash" class="lb-inp">엔돌캐시</label>
+            <input type="text" id="inpCash" class="inp-base" placeholder="" value="00,000" readonly>
+          </div>
+          <div class="wrap-inp is-readonly">
+            <label for="inpGold" class="lb-inp">골드해머</label>
+            <input type="text" id="inpGold" class="inp-base" placeholder="" value="00,000" readonly>
+          </div>
+          <h3 class="tit-xxs">탈퇴사유</h3>
+          <div class="form-radio is-text">
+            <label>
+              <input type="radio" name="withdrawal" class="inp-radio">
+              <span class="inp-radiotxt">캐시 적립이 부족해요</span>
+            </label>
+            <label>
+              <input type="radio" name="withdrawal" class="inp-radio">
+              <span class="inp-radiotxt">제휴 상품이 부족해요</span>
+            </label>
+            <label>
+              <input type="radio" name="withdrawal" class="inp-radio">
+              <span class="inp-radiotxt">육성 난이도가 너무 높아요</span>
+            </label>
+            <label>
+              <input type="radio" name="withdrawal" class="inp-radio">
+              <span class="inp-radiotxt">앱 사용이 불편해요</span>
+            </label>
+            <label>
+              <input type="radio" name="withdrawal" class="inp-radio" id="radioOther">
+              <span class="inp-radiotxt">기타</span>
+            </label>
+          </div>
+          <div class="wrap-textarea">
+            <textarea id="byteTextarea" placeholder="탈퇴사유 내용을 입력해주세요.(최대 100자)" maxlength="100" class="inp-textarea" readonly></textarea>
+            <div class="byte-info">
+              <span id="byteCount" class="byte">0</span>/100자
+            </div>
+          </div>
+          <p class="tip-text">
+            탈퇴 전 아래 내용을 꼭 확인 하신 후 항목에 체크해 주세요.<br>
+            부주의한 탈퇴로 인해 야기되는 제반 사항은 고객께서 감수하셔야 하는 부분이므로 내용을 잘 확인하시길 바랍니다.
+            더 나은 서비스를 위해 노력하는 엔돌스타가 되겠습니다.
+            감사합니다.
+          </p>
+          <div class="wrap-agree-checkbox">
+            <div class="form-checkbox">
+              <label><input type="checkbox" class="inp-checkbox">개인정보가 모두 삭제됩니다.</label>
+            </div>
+            <div class="form-checkbox">
+              <label><input type="checkbox" class="inp-checkbox">재가입시 탈퇴계정은 다시 사용할 수 없습니다.</label>
+            </div> 
+            <div class="form-checkbox">
+              <label><input type="checkbox" class="inp-checkbox">골드해머, 엔돌스타 잔액은 모두 소멸되며, 복구할 수 없습니다.</label>
+            </div> 
+            <div class="form-checkbox">
+              <label><input type="checkbox" class="inp-checkbox">소셜 로그인 또는 인증 이력이 있는 경우 (카카오, 네이버 등), 탈퇴 시 해당 소셜 이용동의가 함께 해지됩니다.</label>
+            </div>  
+          </div>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" id="confirmButton" class="btn is-primary" disabled>확인</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+  <!-- page script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // initByteTextarea 호출
+      initByteTextarea("byteTextarea", "byteCount", 100); //textareaId, byteCountId, maxLength
+
+      // 변수 정의
+      const radioName = "withdrawal"; // 탈퇴사유 radio name
+      const checkboxSelector = ".wrap-agree-checkbox input[type='checkbox']";
+      const textareaId = "byteTextarea";
+      const radioOtherText = "기타";
+      const confirmButtonId = "confirmButton"; // 확인 버튼 id
+
+      const confirmButton = document.getElementById(confirmButtonId);
+      const textarea = document.getElementById(textareaId);
+
+      // 이벤트 리스너 추가
+      document.querySelectorAll(`input[name="${radioName}"]`).forEach(radio => {
+        radio.addEventListener('change', handleRadioChange);
+      });
+
+      document.querySelectorAll(checkboxSelector).forEach(checkbox => {
+        checkbox.addEventListener('change', updateConfirmButtonState);
+      });
+
+      if (textarea) {
+        textarea.addEventListener('input', updateConfirmButtonState);
+      }
+
+      // 라디오 버튼 변경 처리 함수
+      function handleRadioChange() {
+        if (this.nextElementSibling.textContent.trim() === radioOtherText) {
+          textarea.removeAttribute('readonly');
+        } else {
+          textarea.setAttribute('readonly', true);
+          textarea.value = '';
+        }
+        updateConfirmButtonState();
+      }
+
+      // 확인 버튼 상태 업데이트 함수
+      function updateConfirmButtonState() {
+        const isRadioChecked = document.querySelector(`input[name="${radioName}"]:checked`) !== null;
+        const areAllCheckboxesChecked = document.querySelectorAll(checkboxSelector).length === document.querySelectorAll(`${checkboxSelector}:checked`).length;
+        const isTextareaFilled = textarea.readOnly || textarea.value.trim().length > 0;
+
+        if (confirmButton) {
+          confirmButton.disabled = !(isRadioChecked && areAllCheckboxesChecked && isTextareaFilled);
+        } else {
+          // 네이티브 처리용 콘솔 출력
+          console.log(`CTA 활성 상태: ${isRadioChecked && areAllCheckboxesChecked && isTextareaFilled}`);
+        }
+      }
+    });
+  </script>
+  <!-- //page script -->
+	</body>
+</html>

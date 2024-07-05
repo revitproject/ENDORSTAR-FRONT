@@ -75,6 +75,13 @@
   background-color: var(--grays-4);
 }
 
+/* size */
+.btn.is-h32 {
+  height: 3.2rem;
+  padding: .6rem 1.6rem;
+  font-size: 1.3rem;
+}
+
 /* icon */
 .btn-ico {
   display: inline-flex;

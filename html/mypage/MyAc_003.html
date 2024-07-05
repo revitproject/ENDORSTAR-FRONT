@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap mypage">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-head">
+        <h2 class="tit-xl">비밀번호 변경</h2>
+        <p class="desc">
+          엔돌스타는 회원님의 소중한 개인정보 보호를 위해<br>
+          <span class="text-primary">3개월 주기로 비밀번호를 변경</span>하실 것을 권장하고<br>
+          있습니다.
+        </p>
+      </div>
+      <div class="wrap-body">
+        <div class="wrap-pwchange">
+          <div class="wrap-box is-bg">
+            <p class="text-grays-3">마지막 비밀번호 변경</p>
+            <em class="date">YYYY.MM.DD hh:mm:ss</em>
+          </div>
+
+          <!-- 
+            class:
+            wrap-inp 태그에 is-focus 추가시 foucs ui 반영        
+          -->
+          <div class="wrap-inp wrap-password">
+            <label for="inpPw" class="lb-inp">현재 비밀번호</label>
+            <input type="password" id="inpPw" class="inp-base inp-password" placeholder="" value="123456">
+            <!--
+              class:
+              btn-masking-pw 태그에 is-off 추가시 비밀번호 숨기기 아이콘으로 변경
+             -->
+            <button type="button" class="btn-masking-pw" data-toggle="inpPw"><span class="hidden">비밀번호 보이기</span></button>
+          </div>
+           <!-- validation 체크시 is-error 클래스 추가 -->
+          <div class="form-vaildation is-error">
+            <div class="wrap-inp wrap-password">
+              <label for="inpNewpw" class="lb-inp">새로운 비밀번호</label>
+              <input type="password" id="inpNewpw" class="inp-base inp-password" placeholder="새로운 비밀번호를 입력하세요.">
+              <button type="button" class="btn-masking-pw" data-toggle="inpNewpw"><span class="hidden">비밀번호 보이기</span></button>
+            </div>
+            <p class="validation">Validation 문구 노출 영역</p>
+          </div>
+          <div class="form-vaildation is-error">
+            <div class="wrap-inp wrap-password">
+              <label for="inpNewpwchk" class="lb-inp">새로운 비밀번호 확인</label>
+              <input type="password" id="inpNewpwchk" class="inp-base inp-password" placeholder="새로운 비밀번호를 한번 더 입력하세요.">
+              <button type="button" class="btn-masking-pw" data-toggle="inpNewpwchk"><span class="hidden">비밀번호 보이기</span></button>
+            </div>
+            <p class="validation">Validation 문구 노출 영역</p>
+          </div>
+
+          <ul class="list-base" data-bullet="dot">
+            <li>비밀번호는 8~12자 영문, 숫자, 특수문자 [!, @, $]로 조합해주세요.</li>
+            <li>사용 가능한 특수 문자는 다음과 같습니다. [!, @, $]</li>
+            <li>3자리 이상 반복 또는 연속된 문자, 숫자는 사용할 수 없습니다.</li>
+            <li>이전에 사용한 적이 없는 비밀번호가 안전합니다.</li>
+            <li>아이디와 주민등록번호, 생일, 전화번호 등 개인정보와 관련된 숫자, 연속된 숫자, 반복된 문자 등 다른 사람이 쉽게 알아낼 수 있는 비밀번호는 사용을 피해주시기 바랍니다.</li>
+          </ul>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" class="btn is-secondary-1">취소</button>
+          <button type="button" class="btn is-primary">수정</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+  <!-- page script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const passwordToggleSelector = '.btn-masking-pw';
+      const inputClass = 'inp-password';
+      const wrapPasswordClass = 'wrap-password';
+      const hiddenClass = 'hidden';
+    
+      // 이벤트 리스너
+      document.body.addEventListener('click', handlePasswordToggleClick);
+      document.body.addEventListener('focusin', handleFocusIn);
+      document.body.addEventListener('focusout', handleFocusOut);
+    
+      // 비밀번호 마스킹 클릭 이벤트 처리 함수
+      function handlePasswordToggleClick(event) {
+        if (event.target.closest(passwordToggleSelector)) {
+          const button = event.target.closest(passwordToggleSelector);
+          const inputId = button.getAttribute('data-toggle');
+          togglePassword(inputId, button);
+        }
+      }
+      // 입력 필드 포커스 인 이벤트 처리 함수
+      function handleFocusIn(event) {
+        if (event.target.classList.contains(inputClass)) {
+          const wrap = event.target.closest(`.${wrapPasswordClass}`);
+          if (wrap) {
+            wrap.classList.add('is-focus');
+          }
+        }
+      }
+      // 입력 필드 포커스 아웃 이벤트 처리 함수
+      function handleFocusOut(event) {
+        if (event.target.classList.contains(inputClass)) {
+          const wrap = event.target.closest(`.${wrapPasswordClass}`);
+          if (wrap) {
+            wrap.classList.remove('is-focus');
+          }
+        }
+      }
+      // 비밀번호 필드 타입 토글 및 버튼 상태 업데이트 함수
+      function togglePassword(inputId, button) {
+        const input = document.getElementById(inputId);
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        button.classList.toggle('is-off', type === 'text');
+        const span = button.querySelector(`.${hiddenClass}`);
+        span.textContent = type === 'text' ? '비밀번호 숨기기' : '비밀번호 보이기';
+      }
+    });
+  </script>  
+  <!-- //page script -->
+	</body>
+</html>
