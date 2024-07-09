@@ -235,9 +235,10 @@
   width: 1.8rem;
   height: 1.8rem;
   min-width: 1.8rem;
-  height: 1.8rem;
+  min-height: 1.8rem;
   background-position: 50%;
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 .members .reward-text .ico-goldhammer::before {
   background-image: url("../../images/ico/ico-hammer.svg");
