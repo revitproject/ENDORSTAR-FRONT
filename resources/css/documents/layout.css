@@ -62,7 +62,7 @@ body {
 	margin: 0;
 	width: calc(100% - 12rem);
 	color: var(--grays-1);
-	font-size: 2rem;
+	font-size: 1.8rem;
 	font-weight: 500;
 	transform: translateX(-50%);
 }

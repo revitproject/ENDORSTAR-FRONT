@@ -29,18 +29,18 @@
         <div class="area-form">
           <div class="wrap-inp">
             <label for="inpName" class="lb-inp">이름</label>
-            <input type="text" id="inpName" class="inp-base" placeholder="실명 입력" data-required>
+            <input type="text" id="inpName" class="inp-base" placeholder="실명 입력">
           </div>
           <div class="wrap-inp">
             <label for="inpPhonenum" class="lb-inp">휴대폰번호</label>
-            <input type="tel" id="inpPhonenum" class="inp-base" maxlength="11" placeholder="’-’없이 숫자만 입력" data-required>
+            <input type="tel" id="inpPhonenum" class="inp-base inp-phone" maxlength="13" placeholder="’-’없이 숫자만 입력"> <!-- maxlength '-'포함 13 -->
           </div>
         </div>
 
         <ul class="list-base" data-bullet="dot">
-          <li>아이디/비밀번호 찾기 시 본인인증을 진행해요</li>
-          <li>아이디/비밀번호 찾기 시 제공되는 정보는<br>회원인증 이외의 용도로 이용 또는 저장하지 않아요</li>
-          <li>인증 문자가 도착하지 않은 경우 ‘해피머니’ 연락처<br>(1588-5245)가 스팸으로 분류되어 있는지 확인해 주세요.</li>
+          <li>아이디/비밀번호 찾기 시 본인인증을 진행해요.</li>
+          <li>아이디/비밀번호 찾기 시 제공되는 정보는<br class="mbr">회원인증 이외의 용도로 이용 또는 저장하지 않아요.</li>
+          <li>인증 문자가 도착하지 않은 경우 ‘해피머니’ 연락처<br class="mbr">(1588-5245)가 스팸으로 분류되어 있는지 확인해 주세요.</li>
         </ul>
       </div>
 		</main>
@@ -50,7 +50,7 @@
     <footer class="base-footer">
       <div class="wrap-footer">
 				<div class="btn-group">
-          <button type="button" class="btn is-primary" disabled data-submit>본인인증하기</button>
+          <button type="button" class="btn is-primary">본인인증하기</button>
 				</div>
 			</div>
     </footer>
@@ -64,28 +64,29 @@
 	<script src="../../resources/js/common/ui.common.js"></script>
   <script src="../../resources/js/common/ui.template.js"></script>
 
- <!-- page script -->
- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const requiredInputs = document.querySelectorAll('input[data-required]');
-    const submitButton = document.querySelector('button[data-submit]');
-
-    function checkInputs() {
-      let allFilled = true;
-      requiredInputs.forEach(input => {
-        if (input.value.trim() === '') {
-          allFilled = false;
+  <!-- page script -->
+  <script>
+    // 휴대폰번호 입력 포맷팅
+    function formatPhoneNumber(inputElement) {
+      inputElement.addEventListener('input', function (event) {
+        let value = event.target.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자 제거
+        if (value.length > 11) {
+          value = value.slice(0, 11); // 최대 11자리 숫자까지만 허용
         }
+        if (value.length > 3 && value.length <= 7) {
+          value = value.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+        } else if (value.length > 7) {
+          value = value.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
+        }
+        event.target.value = value;
       });
-
-      submitButton.disabled = !allFilled;
     }
 
-    requiredInputs.forEach(input => {
-      input.addEventListener('input', checkInputs);
+    document.addEventListener('DOMContentLoaded', function () {
+      const phoneInput = document.getElementById('inpPhonenum');
+      formatPhoneNumber(phoneInput);
     });
-  });
-</script>
-<!-- //page script -->
+  </script>
+  <!-- //page script -->
 	</body>
 </html>

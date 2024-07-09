@@ -8,6 +8,9 @@
   color: var(--grays-2);
   font-weight: 400;
 }
+.members .tit-xxs {
+  color: var(--grays-1);
+}
 /* 회원정보 사용안내 */
 .members .userinfo-benefit {
   padding: 3rem 2.8rem;
@@ -71,10 +74,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 3.4rem;
 }
 .members .area-form-checkbox .form-checkbox > label {
   font-weight: 700;
+}
+.members .wrap-inp-group .form-radio {
+  flex: 1;
+}
+.members .form-auth {
+  display: none;
+}
+.members .form-auth.is-active {
+  display: block;
 }
 
 /* 약관 */
@@ -89,32 +101,34 @@
   align-items: center;
   margin-top: 1.2rem;
   padding: .6rem 1.2rem;
-  color: var(--grays-2);
-  font-size: 1.5rem;
-  font-weight: 700;
+  color: var(--grays-1);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.02rem;
   border: .1rem solid var(--button-5);
   border-radius: .6rem;
 }
 .terms .wrap-head .label-reward::before {
   content: '';
   display: inline-block;
-  width: 3.2rem;
-  height: 3.2rem;
-  margin-right: .6rem;
+  width: 3rem;
+  height: 3rem;
+  margin-right: .5rem;
   background: url("../../images/ico/ico-hammer.svg") no-repeat 50% / 100%;
 }
 .terms .wrap-head .label-reward .text-primary {
-  margin-left: .6rem;
+  margin-left: .8rem;
   font-size: 2rem;
+  font-weight: 700;
 }
-.terms .wrap-head .label-reward + .desc {
-  margin-top: 2rem;
+.terms .wrap-allcheck-box {
+  margin-top: 2.4rem;
 }
 .terms .wrap-allcheck-box .allcheck-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2.4rem;
   padding: 1.4rem 1.6rem;
   background: var(--grays-6);
   border-radius: .6rem;
@@ -133,9 +147,13 @@
 .terms .wrap-allcheck-box .allcheck-body {
   display: none;
   padding: 2rem .6rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 .terms .wrap-allcheck-box .allcheck-body.open {
   display: block;
+  max-height: 1000px;
 }
 .terms .wrap-allcheck-box .allcheck-body .wrap-checkbox {
   display: flex;
@@ -163,6 +181,7 @@
 }
 .terms .wrap-allcheck-box .wrap-checkbox.option-item .form-checkbox > label {
   color: var(--grays-2);
+  font-size: 1.4rem;
 }
 /* 회원가입 완료 */
 .members .wrap-signup-complete::before {
@@ -170,31 +189,60 @@
   display: block;
   width: 100%;
   height: 25.6rem;
+  margin: .3rem 0 2.7rem;
   background: url("../../images/page/img-signup-complete.png") no-repeat 50% / contain;
 }
 .members .wrap-signup-complete .tit-xs {
   margin-bottom: 1rem;
 }
-.members .wrap-signup-complete .wrap-box em {
+.members .wrap-signup-complete .wrap-box dt {
+  min-width: 13rem;
+}
+.members .wrap-signup-complete .wrap-box:last-child {
+  margin-bottom: 0;
+}
+.members .wrap-signup-complete .wrap-box .text-primary {
+  display: inline-block;
+  margin-left: .6rem;
   font-weight: 700;
 }
-.members .reward-text {
-  display: inline-flex;
+.members .wrap-signup-complete .reward-text {
+  display: flex;
   align-items: center;
 }
-.members .reward-text[class*="ico-"]::before {
+.members .wrap-signup-complete .wrap-box dl {
+  align-items: flex-start;
+  line-height: 2.2rem;
+}
+.members .wrap-signup-complete .wrap-box dl + dl {
+  margin-top: 1rem;
+}
+.members .reward-text em:not(.text-primary) {
+  min-width: 4.8rem;
+}
+.members .reward-text [class*="ico-"] {
+  display: inline-flex;
+  position: relative;
+  padding-left: 2.2rem;
+}
+.members .reward-text [class*="ico-"]::before {
   content: '';
+  position: absolute;
+  left: 0;
+  top: .2rem;
   display: inline-block;
   margin-right: .4rem;
   width: 1.8rem;
   height: 1.8rem;
+  min-width: 1.8rem;
+  height: 1.8rem;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.members .reward-text.ico-goldhammer::before {
+.members .reward-text .ico-goldhammer::before {
   background-image: url("../../images/ico/ico-hammer.svg");
 }
-.members .reward-text.ico-endorcash::before {
+.members .reward-text .ico-endorcash::before {
   background-image: url("../../images/ico/ico-endorcash.svg");
 }
 .members .wrap-profile {
@@ -209,6 +257,7 @@
 }
 .members .wrap-profile .user-id {
   color: var(--grays-1);
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.4rem;
 }
@@ -218,4 +267,14 @@
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2.2rem;
+}
+
+/* mediaquery */
+@media (min-width: 426px) {
+  .list-base li {
+    word-break: keep-all;
+  }
+  .list-base .mbr {
+    display: none;
+  }
 }

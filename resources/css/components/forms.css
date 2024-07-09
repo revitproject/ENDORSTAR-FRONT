@@ -9,7 +9,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0;
-  padding: 1.2rem 1.6rem;
+  padding: 1.1rem 1.6rem;
   color: var(--grays-1);
   font-weight: 500;
   border: .1rem solid var(--button-5);
@@ -54,7 +54,14 @@
   border: 0;
   border-radius: 0;
 }
+.inp-base::placeholder {
+  color: #B0B0B0;
+}
 .wrap-inp.is-readonly {
+  color: #B0B0B0;
+  background-color: var(--grays-6);
+}
+.wrap-inp.is-readonly .inp-base {
   color: #B0B0B0;
   background-color: var(--grays-6);
 }

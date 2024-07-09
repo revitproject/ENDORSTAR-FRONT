@@ -32,7 +32,7 @@ class TabManager {
   }
 }
 
-// textarea byte
+// textarea byte 체크
 function initByteTextarea(textareaId, byteCountId, maxLength) {
   const textarea = document.getElementById(textareaId);
   const byteCount = document.getElementById(byteCountId);
@@ -187,32 +187,6 @@ function initPhotoRegistration(config) {
   toggleSubmitButton();
   updatePhotoCount();
 }
-
-// 아코디언
-// function initAccordion() {
-//   const accordions = document.querySelectorAll('.wrap-accordion');
-
-//   accordions.forEach(accordion => {
-//     const btn = accordion.querySelector('.btn-ico');
-//     const panel = accordion.querySelector('.accordion-panel');
-
-//     btn.addEventListener('click', function () {
-//       const isOpen = panel.classList.contains('open');
-//       if (isOpen) {
-//         panel.classList.remove('open');
-//         accordion.classList.remove('open');
-//         panel.style.maxHeight = null;
-//         panel.style.opacity = 0;
-//       } else {
-//         panel.classList.add('open');
-//         accordion.classList.add('open');
-//         panel.style.maxHeight = panel.scrollHeight + "px";
-//         panel.style.opacity = 1;
-//       }
-//       btn.setAttribute('aria-expanded', !isOpen);
-//     });
-//   });
-// }
 
 class ApplicationInit {
   constructor() {

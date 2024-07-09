@@ -342,9 +342,6 @@
   align-items: flex-start;
   line-height: 2.2rem;
 }
-.mypage .wrap-mypage .wrap-box.is-bg dl + dl {
-  margin-top: 1.2rem;
-}
 .mypage .wrap-mypage .tip-text {
   margin: 1.2rem 0 2rem;
 }
@@ -442,10 +439,12 @@
 .mypage .wrap-box.is-total dl {
   align-items: flex-start;
 }
+.mypage .wrap-box.is-total dt {
+  min-width: 14rem;
+}
 .mypage .wrap-box.is-total dt .txt {
   display: inline-flex;
   align-items: center;
-  min-width: 14rem;
   color: var(--grays-1);
   font-size: 1.4rem;
   font-weight: 500;

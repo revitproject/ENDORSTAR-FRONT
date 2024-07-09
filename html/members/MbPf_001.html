@@ -29,11 +29,11 @@
         <div class="area-form">
           <div class="wrap-inp">
             <label for="inpName" class="lb-inp">아이디</label>
-            <input type="text" id="inpName" class="inp-base" placeholder="아이디를 입력해주세요." data-required>
+            <input type="text" id="inpName" class="inp-base" placeholder="아이디를 입력해주세요.">
           </div>
           <div class="wrap-inp">
             <label for="inpId" class="lb-inp">이름</label>
-            <input type="text" id="inpId" class="inp-base" placeholder="이름을 입력해주세요." data-required>
+            <input type="text" id="inpId" class="inp-base" placeholder="이름을 입력해주세요.">
           </div>
         </div>
 
@@ -50,7 +50,7 @@
     <footer class="base-footer">
       <div class="wrap-footer">
 				<div class="btn-group">
-          <button type="button" class="btn is-primary" disabled data-submit>본인인증하기</button>
+          <button type="button" class="btn is-primary">본인인증하기</button>
 				</div>
 			</div>
     </footer>
@@ -64,28 +64,7 @@
 	<script src="../../resources/js/common/ui.common.js"></script>
   <script src="../../resources/js/common/ui.template.js"></script>
 
- <!-- page script -->
- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const requiredInputs = document.querySelectorAll('input[data-required]');
-    const submitButton = document.querySelector('button[data-submit]');
-
-    function checkInputs() {
-      let allFilled = true;
-      requiredInputs.forEach(input => {
-        if (input.value.trim() === '') {
-          allFilled = false;
-        }
-      });
-
-      submitButton.disabled = !allFilled;
-    }
-
-    requiredInputs.forEach(input => {
-      input.addEventListener('input', checkInputs);
-    });
-  });
-</script>
-<!-- //page script -->
+  <!-- page script -->
+  <!-- //page script -->
 	</body>
 </html>
