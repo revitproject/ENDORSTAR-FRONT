@@ -622,6 +622,8 @@
   box-shadow: 0px 4px 62px 0px #0000001F;
   border: .2rem solid;
   border-color: rgba(255,255,255,.15);
+  /* border-color: #B06FE2; */
+  border-color: rgba(176, 111, 226, 0.5);
   border-radius: 1.2rem;
   /* border-image-source: linear-gradient(72.55deg, rgba(255, 255, 255, 0.14) 22.83%, rgba(255, 255, 255, 0.06) 74.82%); */
 }
@@ -645,8 +647,9 @@
   margin-top: 2.4rem;
 }
 .rankingboard .wrap-ranking-list {
-  padding: 2rem;
+  padding: 2rem 2rem 10.6rem;
   background: #fff;
+  overflow-y: auto;
 }
 .rankingboard .ranking-info {
   position: relative;
@@ -680,18 +683,17 @@
    color: var(--grays-1);
    font-size: 1.1rem;
    font-weight: 700;
-   line-height: 1.1rem;
+   line-height: 1.2rem;
    letter-spacing: -0.06rem;
 }
 .rankingboard .ranking-item .level::before {
   content: '';
+  position: absolute;
+  z-index: -1;
   display: block;
   width: 2.2rem;
   height: 2.2rem;
-  position: absolute;
-  z-index: -1;
-  box-shadow: 0px 2px 4px 0px #00000026;
-  background-size: 2.2rem;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -774,53 +776,133 @@
   height: 7.4rem;
   background: url('../../images/page/img-level-bronze.png') no-repeat 50% 50% / 100%;
 }
-.wrap-ranking-list .tbl-ranking {
-  border: 0;
-  border-collapse: separate;
+.ranking-list-item.is-mylevel .ranking-content {
+  border: .1rem solid var(--primary);
+  border-radius: .4rem;
+  box-shadow: 0px 3px 5px 0px #F161221F;
 }
-.tbl-ranking > colgroup + tbody > tr > th {
-  padding: .6rem .6rem;
-  background-color: transparent;
+.ranking-list-item.is-mylevel .ranking-content .ranking-rank {
+  color: var(--primary);
 }
-.tbl-ranking > tbody > tr > th,
-.tbl-ranking > tbody > tr > td {
-  height: 3.6rem;
+.ranking-list-item.is-mylevel .ranking-content .score {
+  font-weight: 700;
+}
+.ranking-list-item + .ranking-list-item {
+  margin-top: .8rem;
+}
+.ranking-list-item .ranking-content {
+  display: flex;
+  align-items: center;
+  line-height: 2.2rem;
+  padding: .7rem 1.2rem;
+}
+.ranking-list-item .ranking-content .ranking-rank {
+  flex: 1;
+  max-width: 2.3rem;
+  color: var(--grays-3);
+  font-size: 1.5rem;
   font-weight: 500;
 }
-.tbl-ranking > tbody > tr > td {
-  text-align: left;
-}
-.tbl-ranking > tbody > tr > td .nickname {
+.ranking-list-item .ranking-content .ranking-list-info {
+  display: inline-flex;
+  align-items: center;
+  flex: 3;
+  color: var(--grays-1);
   font-size: 1.5rem;
+  font-weight: 500;
 }
-.tbl-ranking > tbody > tr > td .name {
+.ranking-list-item .ranking-content .ranking-list-info .name {
+  display: inline-block;
   margin-left: .4rem;
-  font-size: 1.2rem;
   color: var(--grays-3);
+  font-size: 1.2rem;
 }
-.tbl-ranking > tbody > tr > .score {
-  padding: .6rem 1.2rem;
-  text-align: right;
+.ranking-list-item .ranking-content .score {
+  display: inline-flex;
+  justify-content: flex-end;
+  flex: 1;
+  color: var(--grays-1);
+  font-size: 1.4rem;
+  font-weight: 500;
 }
-.tbl-ranking > colgroup + tbody > tr > td {
-  padding: .6rem .6rem;
+.ranking-list-item .ranking-list-info {
+  min-width: 11.4rem;
 }
-.tbl-ranking tr.is-mylevel th,
-.tbl-ranking tr.is-mylevel td {
-  border-top: .1rem solid var(--primary);
-  border-bottom: .1rem solid var(--primary);
+.ranking-list-item .ranking-list-info::before {
+  content: '';
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0 .4rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
 }
-.tbl-ranking tr.is-mylevel th {
-  border-left: .1rem solid var(--primary);
-  border-radius: .6rem 0 0 .6rem;
+.ranking-list-item.is-soulstar .ranking-list-info::before {
+  background-image: url("../../images/ico/ico-lv-soulstar.png");
 }
-.tbl-ranking tr.is-mylevel td:last-child {
-  border-right: .1rem solid var(--primary);
-  border-radius: 0 .6rem .6rem 0;
+.ranking-list-item.is-timestar .ranking-list-info::before {
+  background-image: url("../../images/ico/ico-lv-timerstar.png");
 }
-.tbl-ranking tr.is-mylevel th,
-.tbl-ranking tr.is-mylevel td {
-  box-shadow: 0px 3px 5px 0px #F161221F;
+.ranking-list-item.is-powerstar .ranking-list-info::before {
+  background-image: url("../../images/ico/ico-lv-powerstar.png");
+}
+.ranking-list-item.is-minestar .ranking-list-info::before {
+  background-image: url("../../images/ico/ico-lv-minestar.png");
+}
+.ranking-list-item.is-endorstar .ranking-list-info::before {
+  background-image: url("../../images/ico/ico-lv-endorstar.png");
+}
+.wrap-myranking {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 1.6rem 2rem 2.1rem;
+  box-shadow: 0px 0px 20px 0px #00000024;
+  border-radius: 1rem 1rem 0 0;
+}
+.wrap-myranking .title {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--grays-2);
+  font-size: 1.4rem;
+}
+.wrap-myranking .ranking-list-item .ranking-content .ranking-rank {
+  min-width: 2rem;
+  color: var(--grays-1);
+  font-weight: 700;
+}
+.wrap-myranking .ranking-list-item .ranking-content .score {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.wrap-myranking .btn-add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: .4rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+.wrap-myranking .btn-add::after {
+  content: '';
+  display: inline-block;
+  width: .8rem;
+  height: .8rem;
+  background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5H9' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5 1L5 9' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A") no-repeat 50% / 100%;
+}
+.wrap-myranking .ranking-list-item .ranking-content {
+  padding: 0;
+}
+.wrap-myranking .ranking-list-item .ranking-content .ranking-list-info {
+  flex: auto;
 }
 
 /* mediaquery */
