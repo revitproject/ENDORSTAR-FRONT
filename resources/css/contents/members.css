@@ -115,7 +115,7 @@
   width: 3rem;
   height: 3rem;
   margin-right: .5rem;
-  background: url("../../images/ico/ico-hammer.svg") no-repeat 50% / 100%;
+  background: url("../../images/ico/ico-hammer-lg.png") no-repeat 50% / 100%;
 }
 .terms .wrap-head .label-reward .text-primary {
   margin-left: .8rem;
@@ -241,10 +241,10 @@
   background-size: 100%;
 }
 .members .reward-text .ico-goldhammer::before {
-  background-image: url("../../images/ico/ico-hammer.svg");
+  background-image: url("../../images/ico/ico-hammer.png");
 }
 .members .reward-text .ico-endorcash::before {
-  background-image: url("../../images/ico/ico-endorcash.svg");
+  background-image: url("../../images/ico/ico-endorcash.png");
 }
 .members .wrap-profile {
   display: flex;

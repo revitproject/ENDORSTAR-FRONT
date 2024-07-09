@@ -142,6 +142,7 @@
   height: 6.8rem;
   border: .1rem solid var(--button-5);
   border-radius: .6rem;
+  overflow: hidden;
 }
 .mypage .question-thumblist .thumbnail img {
   width: 100%;
