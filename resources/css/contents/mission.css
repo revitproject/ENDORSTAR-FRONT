@@ -553,13 +553,11 @@
 }
 .rankingboard .wrap-body {
   position: relative;
-  /* background: linear-gradient(180deg, #7B32DD 7.8%, #DE75D4 69.05%, #FFDCA7 89.5%, #FFFFFF 95.32%); */
 }
 .rankingboard .wrap-triangle {
   position: relative;
   width: 100%;
   height: 45.4vh; 
-  /* z-index: 0; */
   overflow: hidden;
 }
 .rankingboard .wrap-triangle::before {
@@ -585,7 +583,6 @@
   width: 120%;
   height: 106%;
   /* background: linear-gradient(0deg, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.15) 54.5%, rgba(255, 197, 234, 0) 100%); */
-  /* background: linear-gradient(0deg, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.35) 54.5%, #FFC5EA 100%); */
   background: linear-gradient(to bottom, rgba(255, 197, 234, 0) 0%, rgba(255, 197, 234, 0.4) 50%, rgba(255, 197, 234, 0) 100%);
   
   clip-path: polygon(50% 100%, 100% 0%, 0% 0%); 
@@ -598,7 +595,6 @@
   width: 179%;
   height: 106%;
   /* background: linear-gradient(0deg, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.35) 54.5%, rgba(255, 197, 234, 0) 100%); */
-  /* background: linear-gradient(0deg, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.35) 54.5%, #FFC5EA 100%); */
   background: linear-gradient(to bottom, rgba(255, 197, 234, 0) 0%, rgba(255, 197, 234, 0.4) 50%, rgba(255, 197, 234, 0) 100%);
   clip-path: polygon(50% 100%, 100% 0%, 0% 0%);
   opacity: 0.4;
@@ -655,14 +651,13 @@
 .rankingboard .wrap-ranking {
   position: relative;
   top: .1rem;
-  height: calc(100% - 10.5rem);
+  height: calc(100% - 8.5rem);
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   margin: 2.4rem -2rem 0;
   background: url('../../images/page/img-effect-light.png') no-repeat 50% 0 / 90%;
 }
-
 .rankingboard .ranking-item {
   position: relative;
   flex: 1;
@@ -673,14 +668,12 @@
 }
 .rankingboard .ranking-item.is-silver {
   z-index: 2;
-  transform: translateX(1rem);
+  transform: translateX(.6rem);
 }
 .rankingboard .ranking-item.is-bronze {
   z-index: 1;
-  transform: translateX(-1rem);
+  transform: translateX(-.6rem);
 }
-
-
 .rankingboard .ranking-item .ranking-text {
   text-align: center;
 }
@@ -720,22 +713,6 @@
   color: #4E2803;
   background: url('../../images/page/ico-level-bronze.png') no-repeat 50% / 100%;
 }
-.rankingboard .ranking-item.is-mylevel .ranking-box {
-  border: .1rem solid var(--primary);
-}
-.rankingboard .ranking-item.is-mylevel .ranking-box .score {
-  border-color: var(--primary);
-}
-.rankingboard .ranking-box {
-  text-align: center;
-  background: linear-gradient(180deg, #FFF9E0 0%, #FFB84E 100%),
-              linear-gradient(90deg, rgba(255, 138, 0, 0) 54.56%, rgba(213, 115, 0, 0.35) 87.8%);
-  border: .1rem solid rgba(255, 227, 182, 0.6);
-  border-radius: .8rem .8rem 0 0;
-}
-.rankingboard .ranking-item.is-gold .ranking-box {
-  background: linear-gradient(180deg, #FFF9E0 0%, #FFB84E 100%);
-}
 .rankingboard .ranking-item .score {
   position: absolute;
   bottom: -1rem;
@@ -752,35 +729,55 @@
   transform: translateX(-50%);
   box-shadow: 0 .4rem 1rem 0 rgba(0, 0, 0, 0.08);
 }
-.rankingboard .ranking-item .ranking-box strong {
-  display: block;
-  padding-bottom: .5rem;
-  font-family: 'SCoreDream';
-  color: #CB691F;
-  font-size: 3.8rem;
-  font-weight: 900;
-  line-height: 1.6;
-}
-.rankingboard .ranking-item.is-silver .ranking-box {
-  min-height: 6.5rem;
-}
-.rankingboard .ranking-item.is-gold .ranking-box {
+.rankingboard .ranking-item .ranking-box {
   display: inline-flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   min-width: 100%;
-  min-height: 9.2rem;
+  text-align: center;
+  background: linear-gradient(180deg, #FFF9E0 0%, #FFB84E 100%),
+              linear-gradient(90deg, rgba(255, 138, 0, 0) 54.56%, rgba(213, 115, 0, 0.35) 87.8%);
+  border: .1rem solid rgba(255, 227, 182, 0.6);
   border-bottom: 0;
+  border-radius: .8rem .8rem 0 0;
 }
-.rankingboard .ranking-item.is-gold .ranking-box strong {
-  padding-bottom: 1rem;
-  font-size: 4.6rem;
+.rankingboard .ranking-item.is-mylevel .ranking-box {
+  border: .1rem solid var(--primary);
+}
+.rankingboard .ranking-item.is-mylevel .ranking-box .score {
+  border-color: var(--primary);
+}
+.rankingboard .ranking-item.is-gold .ranking-box {
+  min-height: 9.4rem;
+  background: linear-gradient(180deg, #FFF9E0 0%, #FFB84E 100%);
+  border-bottom: .1rem solid rgba(255, 227, 182, 0.6);
+}
+.rankingboard .ranking-item.is-silver .ranking-box {
+  min-height: 6.7rem;
+  padding-right: .6rem;
 }
 .rankingboard .ranking-item.is-bronze .ranking-box {
-  min-height: 4.7rem;
+  min-height: 5.3rem;
+  padding-left: .6rem;
+}
+.rankingboard .ranking-box strong {
+  display: block;
+  padding-top: .4rem;
+  font-family: 'SCoreDream';
+  color: #CB691F;
+  font-weight: 900;
+}
+.rankingboard .ranking-item.is-gold .ranking-box strong {
+  font-size: 4.6rem;
+  line-height: 4.5rem;
+}
+.rankingboard .ranking-item.is-silver .ranking-box strong {
+  font-size: 3.6rem;
+  line-height: 3.8rem;
 }
 .rankingboard .ranking-item.is-bronze .ranking-box strong {
-  padding-bottom: .1rem;
+  font-size: 3rem;
+  line-height: 3.8rem;
 }
 .rankingboard .ranking-item .ranking-img {
   min-height: 7.4rem;

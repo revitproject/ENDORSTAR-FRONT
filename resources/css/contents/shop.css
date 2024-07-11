@@ -46,6 +46,9 @@
 .shop .reward-text .ico-endorcash::before {
   background-image: url("../../images/ico/ico-endorcash.png");
 }
+.shop .wrap-box.is-cash .reward-text {
+  color: var(--grays-1);
+}
 .shop .wrap-box.is-cash dd .text-primary {
   font-weight: 700;
 }
@@ -75,4 +78,10 @@
 }
 .shop .form-validation.is-right .inp-base {
   text-align: right;
+}
+.shop .form-validation:not(.is.error) .wrap-inp {
+  min-height: 5.6rem;
+}
+.shop .is-complete .wrap-notice {
+  margin-top: 13rem;
 }

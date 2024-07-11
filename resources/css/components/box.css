@@ -32,6 +32,9 @@
 .wrap-box dd > em {
   font-weight: 600;
 }
+.wrap-box dd > em.bold {
+  font-weight: 700;
+}
 
 /* box - bg */
 .wrap-box.is-bg {
