@@ -28,7 +28,7 @@
         <div class="wrap-mypage">
           <form id="" action="" method="">
             <!-- validation 체크시 is-error 클래스 추가 -->
-            <div class="form-vaildation is-error">
+            <div class="form-validation is-error">
               <div class="wrap-inp">
                 <label for="inpNickname" class="lb-inp">닉네임</label>
                 <input type="text" id="inpNickname" class="inp-base" placeholder="" value="홍길동메시">
@@ -52,7 +52,7 @@
               <p class="tip-text">비밀번호 재발급 시 사용됩니다.</p>
             </div>
             <!-- validation 체크시 is-error 클래스 추가 -->
-            <div class="form-vaildation is-error">
+            <div class="form-validation is-error">
               <div class="wrap-inp inbtn">
                 <label for="inpEmail" class="lb-inp">이메일 주소</label>
                 <input type="email" id="inpEmail" class="inp-base" maxlength="11" value="$이메일 주소$">
@@ -61,7 +61,7 @@
               <p class="validation">Validation 문구 노출 영역</p>
             </div>
             <!-- validation 체크시 is-error 클래스 추가 -->
-            <div class="form-vaildation is-error">
+            <div class="form-validation is-error">
               <div class="wrap-inp inbtn is-readonly">
                 <label for="inpPassword" class="lb-inp">비밀번호</label>
                 <input type="password" id="inpPassword" class="inp-base" maxlength="11" placeholder="로그인 시 사용되는 비밀번호" readonly>
@@ -95,6 +95,13 @@
   <script src="../../resources/js/common/ui.template.js"></script>
 
   <!-- page script -->
+  <script>
+    // 휴대폰번호 입력 포맷팅
+    document.addEventListener('DOMContentLoaded', function () {
+      const phoneInput = document.getElementById('inpPhonenum');
+      formatPhoneNumber(phoneInput);
+    });
+  </script>
   <!-- //page script -->
 	</body>
 </html>

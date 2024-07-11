@@ -67,7 +67,7 @@
   padding: .5rem 1.4rem;
   color: var(--grays-2);
   font-size: 1.4rem;
-  letter-spacing: -0.01rem;
+  letter-spacing: -0.009rem;
   border: .1rem solid var(--button-4);
   border-radius: 2rem;
 }

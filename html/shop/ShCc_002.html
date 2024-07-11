@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>엔돌스타</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body> 
+	<!-- base-wrap -->
+	<div class="base-wrap shop">
+		<!-- header -->
+		<header class="base-header">
+			<div class="wrap-header">
+				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
+				<h1 class="header-title">해피캐시교환</h1>
+			</div>
+		</header>
+		<!-- // header -->
+	
+		<!-- base-content -->
+		<main class="base-content">
+      <div class="wrap-body">
+        <div class="userinfo-benefit is-sm">
+          <div class="wrap-point-change">
+            <div class="change-item is-endorcash">
+              <span>엔돌캐시</span>
+            </div>
+            <div class="change-item is-happycash">
+              <span>해피캐시</span>
+            </div>
+          </div>
+        </div>
+        <div class="wrap-group">
+          <h3 class="tit-xxs">해피머니 계정 정보</h3>
+          <div class="wrap-box">
+            <dl>
+              <dt>아이디</dt>
+              <dd>happymong1234</dd>
+            </dl>
+          </div>
+          <div class="wrap-box is-cash">
+            <dl>
+              <dt class="reward-text"><span class="ico-happycash"><em>해피캐시</em></span></dt>
+              <dd><span class="text-primary"><em class="number">5,000</em>원</span></dd>
+            </dl>
+            <dl>
+              <dt class="reward-text"><span class="ico-endorcash"><em>엔돌캐시</em></span></dt>
+              <dd><span class="text-primary"><em class="number">4,530</em>원</span></dd>
+            </dl>
+          </div>
+          <!-- validation체크시 'is-error' 클래스 추가 -->
+          <div class="form-validation">
+            <div class="wrap-inp">
+              <label for="inpExchangeCash" class="lb-inp">교환 예정 금액</label>
+              <div class="wrap-group">
+                <input type="tel" id="inpExchangeCash" class="inp-base" placeholder="교환 할 엔돌캐시를 입력해주세요." pattern="[0-9]*" inputmode="numeric">
+                <span class="suffix">원</span>
+              </div>
+            </div>
+            <p class="tip-text">최소 3,000원 이상, 100단위로 입력</p>
+            <p id="validationMessage" class="validation">Inline Validation 메시지</p>
+          </div>
+        
+        </div>
+        <div class="wrap-notice">
+          <div class="notice-head">
+            <h3 class="tit-notice">유의사항</h3>
+          </div>
+          <div class="notice-panel">
+            <ul class="list-base notice-txt" data-bullet="dot">
+              <li>교환 시 위 해피머니 계정 정보로 해피캐시가 충전되요.</li>
+              <li>엔돌캐시를 해피캐시로 교환 후 취소는 불가해요.</li>
+              <li>교환 된 해피캐시는 해피머니 앱 또는 홈페이지에서 확인이 가능해요.</li>
+              <li>엔돌캐시 교환으로 인한 해피캐시 보유한도가 2,000,000원을초과할 경우 교환이 불가해요.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+		</main>
+		<!-- //base-content -->
+
+    <!-- footer -->
+    <footer class="base-footer">
+      <div class="wrap-footer">
+				<div class="btn-group">
+          <button type="button" id="btnExchange" class="btn is-primary" disabled>교환하기</button>
+				</div>
+			</div>
+    </footer>
+    <!-- // footer -->
+	</div>
+	<!-- //base-wrap -->
+	
+	<!-- js library -->
+	<script src="../../resources/js/lib/jquery.min.js"></script>
+	<!-- js base -->
+	<script src="../../resources/js/common/ui.common.js"></script>
+  <script src="../../resources/js/common/ui.template.js"></script>
+
+	<!-- page script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const inpExchangeCash = document.getElementById('inpExchangeCash');
+      const labelExchangeCash = document.querySelector('.lb-inp');
+      const validationMessage = document.getElementById('validationMessage');
+      const formValidation = document.querySelector('.form-validation');
+      const tipText = document.querySelector('.tip-text');
+      const suffix = document.querySelector('.suffix'); // '원'
+      const exchangeButton = document.getElementById('btnExchange'); // 교환하기 버튼
+
+      inpExchangeCash.addEventListener('input', function () {
+        let rawInput = this.value.replace(/[^0-9]/g, '');
+        let numericValue = parseInt(rawInput, 10) || 0;
+
+        // Label, suffix, tip-text 상태 조정
+        labelExchangeCash.style.display = rawInput.length > 0 ? 'block' : 'none';
+        suffix.style.visibility = rawInput.length > 0 ? 'visible' : 'hidden';
+        tipText.style.display = rawInput.length > 0 ? 'none' : 'block';
+        formValidation.classList.toggle('is-right', rawInput.length > 0);
+
+        // 세 자리마다 쉼표 추가 및 '원' 접미사 표시
+        this.value = numericValue.toLocaleString('ko-KR');
+
+        // 입력 금액에 따른 유효성 검사
+        if (numericValue < 3000 || numericValue % 100 !== 0) {
+          formValidation.classList.add('is-error');
+          validationMessage.style.display = 'block';
+          validationMessage.textContent = "교환은 최소 3,000원 이상, 100단위로 입력해주세요.";
+          exchangeButton.disabled = true; // 버튼 비활성화
+        } else {
+          formValidation.classList.remove('is-error');
+          validationMessage.style.display = 'none';
+          exchangeButton.disabled = false; // 버튼 활성화
+        }
+
+        // 입력 필드가 비어 있을 때 처리
+        if (rawInput.length === 0) {
+          formValidation.classList.remove('is-right', 'is-error');
+          validationMessage.style.display = 'none';
+          this.value = '';
+          exchangeButton.disabled = true; // 버튼 비활성화
+        }
+      });
+    });
+  </script>
+  <!-- //page script -->
+	</body>
+</html>

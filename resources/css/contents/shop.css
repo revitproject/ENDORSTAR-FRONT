@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.userinfo-benefit .wrap-point-change .change-item.is-happycash::before {
+  background-image: url('../../images/page/img-happycash.png');
+}
+.shop .wrap-notice {
+  margin-top: 2.4rem;
+}
+.shop .tit-notice {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.shop .userinfo-benefit.is-sm {
+  margin-top: 2rem;
+}
+.shop .userinfo-benefit.is-sm .wrap-point-change {
+  margin: 0;
+}
+.shop .userinfo-benefit.is-sm .text-primary.number {
+  font-weight: 700;
+}
+.shop .reward-text [class*="ico-"] {
+  display: inline-flex;
+  position: relative;
+  padding-left: 2.2rem;
+}
+.shop .reward-text [class*="ico-"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .2rem;
+  display: inline-block;
+  margin-right: .4rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.shop .reward-text .ico-happycash::before {
+  background-image: url("../../images/ico/ico-happycash.png");
+}
+.shop .reward-text .ico-endorcash::before {
+  background-image: url("../../images/ico/ico-endorcash.png");
+}
+.shop .wrap-box.is-cash dd .text-primary {
+  font-weight: 700;
+}
+.shop .wrap-box.is-cash + .wrap-inp,
+.shop .wrap-box.is-cash + .form-validation {
+  margin-top: 2.4rem;
+}
+.shop .wrap-box.is-cash .wrap-inp.is-right .inp-base {
+  text-align: right;
+}
+.shop .tip-text {
+  margin-top: 1rem;
+}
+.shop .form-validation .wrap-group {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+.shop .form-validation .lb-inp,
+.shop .form-validation .validation {
+  display: none;
+}
+.shop .form-validation .suffix {
+  visibility: hidden;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+}
+.shop .form-validation.is-right .inp-base {
+  text-align: right;
+}

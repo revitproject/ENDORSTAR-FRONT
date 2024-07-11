@@ -12,58 +12,52 @@
 	<!-- base-wrap -->
 	<div class="base-wrap shop">
 		<!-- header -->
-		<header class="base-header">
+		<!-- <header class="base-header">
 			<div class="wrap-header">
 				<button type="button" class="btn-ico btn-prev"><span class="hidden">이전</span></button>
-				<h1 class="header-title">해피머니 회원정보 사용 안내</h1>
+				<h1 class="header-title">캐시교환 완료</h1>
 			</div>
-		</header>
+		</header> -->
 		<!-- // header -->
 	
 		<!-- base-content -->
 		<main class="base-content">
       <div class="wrap-head">
-        <h2 class="tit-xl">
-          <span class="user-name">$김해피$</span>님<br>
-          엔돌스타에 오신걸 환영합니다.
-        </h2>
-        <p class="desc">해피머니 회원은 기존 ID로 간편하게 가입할 수 있어요.</p>
+        <h2 class="tit-xl">캐시교환 완료</h2>
       </div>
       <div class="wrap-body">
-        <div class="userinfo-benefit">
-          <p class="tit-s">
-            <span class="text-primary">해피머니 계정 사용 시</span>에만<br>
-            드리는 특별한 혜택
-          </p>
+        <div class="userinfo-benefit is-sm mt-0">
           <div class="wrap-point-change">
-            <div class="change-item is-hammerpoint">
-              <span>해머 포인트</span>
-            </div>
             <div class="change-item is-endorcash">
               <span>엔돌캐시</span>
+              <em class="text-primary number">3,000원</em>
+            </div>
+            <div class="change-item is-happycash">
+              <span>해피캐시</span>
+              <em class="text-primary number">3,000원</em>
             </div>
           </div>
-          <p class="cap-l">
-            해피머니에서 보유 중인 해머포인트를<br>
-            엔돌스타에서 사용할 수 있는 엔돌캐시로 변환하세요.
-          </p>
         </div>
         <div class="wrap-group">
-          <h3 class="tit-xxs">해피머니 정보</h3>
-          <div class="wrap-box">
+          <h3 class="tit-xxs">교환 후 잔여 캐시정보</h3>
+          <div class="wrap-box is-cash">
             <dl>
-              <dt>아이디</dt>
-              <dd>happymong1234</dd>
-            </dl>
-            <dl>
-              <dt>보유 해머포인트</dt>
-              <dd><em>500</em> 톤</dd>
+              <dt class="reward-text"><span class="ico-endorcash"><em>엔돌캐시</em></span></dt>
+              <dd><span class="text-primary"><em class="number">1,530</em>원</span></dd>
             </dl>
           </div>
-          <p class="cap-l">
-            사용중인 해피머니 계정이 확인되었어요.<br>
-            엔돌스타 회원가입 없이 해피머니 계정으로 사용이 가능해요.
-          </p>
+        </div>
+        <div class="wrap-notice">
+          <div class="notice-head">
+            <h3 class="tit-notice">유의사항</h3>
+          </div>
+          <div class="notice-panel">
+            <ul class="list-base notice-txt" data-bullet="dot">
+              <li>엔돌캐시를 해피캐시로 교환 후 취소는 불가해요.</li>
+              <li>교환 된 해피캐시는 해피머니앱 또는 홈페이지에서 확인이 가능해요.</li>
+              <li>정상적으로 캐시 교환이 처리가 되지 않은 경우 My엔돌스타>고객지원>1:1문의에 남겨주세요.</li>
+            </ul>
+          </div>
         </div>
       </div>
 		</main>
@@ -73,7 +67,7 @@
     <footer class="base-footer">
       <div class="wrap-footer">
 				<div class="btn-group">
-          <button class="btn is-primary">확인</button>
+          <button type="button" id="btnExchange" class="btn is-primary">확인</button>
 				</div>
 			</div>
     </footer>

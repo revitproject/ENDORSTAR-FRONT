@@ -7,7 +7,7 @@
   color: var(--grays-2);
   font-size: 1.3rem;
   line-height: 1.5;
-  letter-spacing: -0.011rem;
+  letter-spacing: -0.008rem;
   word-break: break-word;
 }
 .list-base > li:not(:first-child) {
@@ -305,4 +305,26 @@
   height: 2.4rem;
   background: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 1L10 7L4 13' stroke='%23888888' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 100% 50% / 1.4rem;
   transform: translateY(-50%);
+}
+
+.tip-text {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--grays-2);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.008rem;
+  word-break: break-word;
+}
+.tip-text::before {
+  content: "";
+  position: absolute;
+  left: 0.2em;
+  top: 0.65em;
+  width: 0.4rem;
+  height: 0.4rem;
+  line-height: 1.5;
+  background-color: var(--grays-3);
+  border-radius: 50%;
 }

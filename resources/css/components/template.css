@@ -100,7 +100,7 @@
 	display: inline-block;
 	color: var(--grays-4);
 	font-size: 0;
-	letter-spacing: -1px;
+	letter-spacing: -0.01rem;
 	vertical-align: top;
 }
 .guide-link-blank::before {

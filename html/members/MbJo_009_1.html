@@ -39,7 +39,7 @@
             <div class="wrap-inp-group">
               <div class="wrap-inp is-readonly">
                 <label for="inpBirthday" class="lb-inp">생년월일</label>
-                <input type="text" id="inpBirthday" class="inp-base" placeholder="ex. 19980201" value="2020년 2월 22일" readonly>
+                <input type="text" id="inpBirthday" class="inp-base" maxlength="8" placeholder="ex. 19980201" value="2020년 2월 22일" readonly>
               </div>
               <div class="wrap-inp is-readonly">
                 <label for="inpGender" class="lb-inp">성별</label>
@@ -50,7 +50,7 @@
               <label for="inpEmail" class="lb-inp">이메일</label>
               <input type="email" id="inpEmail" class="inp-base" placeholder="이메일 입력해주세요." value="happymong@happy.com" readonly>
             </div>
-            <div class="form-vaildation">
+            <div class="form-validation">
               <div class="wrap-inp inbtn is-active">
                 <label for="inpNickname" class="lb-inp">닉네임</label>
                 <input type="text" id="inpNickname" class="inp-base is-cancel" value="나는진짜몽">
@@ -59,7 +59,7 @@
               </div>
               <p class="validation"></p>
             </div>
-            <div class="form-vaildation">
+            <div class="form-validation">
               <div class="wrap-inp">
                 <label for="inpFrcode" class="lb-inp">친구코드</label>
                 <input type="text" id="inpFrcode" class="inp-base" placeholder="(선택)친구코드를 입력해세요.">
@@ -100,41 +100,45 @@
 
   <!-- page script -->
   <script>
-    // UI확인용 스크립트
-    const nicknameInput = document.getElementById('inpNickname');
-    const cancelNicknameButton = document.getElementById('btnCancelNickname');
-
-    // 닉네임 input 취소버튼
-    nicknameInput.addEventListener('input', function () {
-      cancelNicknameButton.style.display = 'inline-block';
-    });
-
-    cancelNicknameButton.addEventListener('click', function () {
-      nicknameInput.value = '자동생성된닉네임';
-      this.style.display = 'none';
-    });
-
-    // 공통 클래스 토글 함수
-    function toggleButtonClass(input) {
-      const parent = input.closest('.wrap-inp.inbtn');
-      if (parent) {
-        const button = parent.querySelector('.is-checked');
-        if (button) {
-          if (input.value.trim() !== '') {
-            button.classList.add('on');
-          } else {
-            button.classList.remove('on');
-          }
+    // UI 확인용 스크립트
+    document.addEventListener('DOMContentLoaded', function() {
+      const nicknameInput = document.getElementById('inpNickname'); // 닉네임 input
+      const cancelNicknameButton = document.getElementById('btnCancelNickname'); // 닉네임 input 취소버튼
+      const phoneInput = document.getElementById('inpPhonenum'); // 휴대폰번호 input
+  
+      // 닉네임 input 이벤트
+      nicknameInput.addEventListener('input', function () {
+        cancelNicknameButton.style.display = 'inline-block';
+      });
+  
+      // 취소 버튼 클릭 이벤트
+      cancelNicknameButton.addEventListener('click', function () {
+        nicknameInput.value = '자동생성된닉네임';
+        this.style.display = 'none';
+      });
+  
+      // 공통 클래스 토글 함수
+      function toggleButtonClass(input) {
+        const parent = input.closest('.wrap-inp.inbtn');
+        if (parent) {
+          const button = parent.querySelector('.is-checked');
+          button.classList.toggle('on', input.value.trim() !== '');
         }
       }
-    }
-
-    document.querySelectorAll('.wrap-inp .inp-base').forEach(input => {
-      input.addEventListener('input', function() {
-        toggleButtonClass(this);
+  
+      // 모든 입력 필드에 클래스 토글 함수 적용
+      document.querySelectorAll('.wrap-inp .inp-base').forEach(input => {
+        input.addEventListener('input', function() {
+          toggleButtonClass(this);
+        });
       });
+  
+      // 휴대폰 번호 포맷팅 적용
+      if (phoneInput) {
+        formatPhoneNumber(phoneInput); 
+      }
     });
-  </script>
+  </script>  
   <!-- //page script -->
 	</body>
 </html>

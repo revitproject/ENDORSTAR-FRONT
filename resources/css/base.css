@@ -24,6 +24,7 @@
 @import "contents/members.css"; /* 회원가입 */
 @import "contents/mission.css"; /* 놀이동산 */
 @import "contents/mypage.css"; /* My엔돌스타 */
+@import "contents/shop.css"; /* 엔도르핀샵 */
 
 /* utilities */
 @import "utilities.css";

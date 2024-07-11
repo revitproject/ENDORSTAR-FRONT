@@ -67,21 +67,6 @@
   <!-- page script -->
   <script>
     // 휴대폰번호 입력 포맷팅
-    function formatPhoneNumber(inputElement) {
-      inputElement.addEventListener('input', function (event) {
-        let value = event.target.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자 제거
-        if (value.length > 11) {
-          value = value.slice(0, 11); // 최대 11자리 숫자까지만 허용
-        }
-        if (value.length > 3 && value.length <= 7) {
-          value = value.replace(/(\d{3})(\d{1,4})/, '$1-$2');
-        } else if (value.length > 7) {
-          value = value.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
-        }
-        event.target.value = value;
-      });
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
       const phoneInput = document.getElementById('inpPhonenum');
       formatPhoneNumber(phoneInput);

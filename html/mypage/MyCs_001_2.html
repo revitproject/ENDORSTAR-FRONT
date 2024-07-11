@@ -68,60 +68,60 @@
 	<script src="../../resources/js/common/ui.common.js"></script>
   <script src="../../resources/js/common/ui.template.js"></script>
 
- <!-- page script -->
-<script>
-  // noresult 중앙 정렬
-  const adjustNoResultHeight = () => {
-    const noResultElement = document.querySelector('.no-result');
-    const header = document.querySelector('.base-header');
-    const footer = document.querySelector('.base-footer');
-    const baseContent = document.querySelector('.base-content');
-    const wrapHead = document.querySelector('.wrap-head');
-    const dynamicContents = document.querySelectorAll('.dynamic-content'); // 유동적인 컨텐츠 요소들
+  <!-- page script -->
+  <script>
+    // noresult 중앙 정렬
+    const adjustNoResultHeight = () => {
+      const noResultElement = document.querySelector('.no-result');
+      const header = document.querySelector('.base-header');
+      const footer = document.querySelector('.base-footer');
+      const baseContent = document.querySelector('.base-content');
+      const wrapHead = document.querySelector('.wrap-head');
+      const dynamicContents = document.querySelectorAll('.dynamic-content'); // 유동적인 컨텐츠 요소들
 
-    if (noResultElement && baseContent) {
-      const getElementHeight = element => element ? element.offsetHeight : 0;
+      if (noResultElement && baseContent) {
+        const getElementHeight = element => element ? element.offsetHeight : 0;
 
-      const headerHeight = getElementHeight(header);
-      const footerHeight = getElementHeight(footer);
-      const wrapHeadHeight = getElementHeight(wrapHead);
-      const viewportHeight = window.innerHeight;
+        const headerHeight = getElementHeight(header);
+        const footerHeight = getElementHeight(footer);
+        const wrapHeadHeight = getElementHeight(wrapHead);
+        const viewportHeight = window.innerHeight;
 
-      const dynamicContentHeight = Array.from(dynamicContents).reduce((totalHeight, element) => {
-        if (element !== wrapHead) {
-          return totalHeight + element.offsetHeight;
+        const dynamicContentHeight = Array.from(dynamicContents).reduce((totalHeight, element) => {
+          if (element !== wrapHead) {
+            return totalHeight + element.offsetHeight;
+          }
+          return totalHeight;
+        }, 0);
+
+        const layoutHeight = viewportHeight - headerHeight - footerHeight;
+        const baseContentHeight = layoutHeight - dynamicContentHeight - wrapHeadHeight;
+        const noResultHeight = baseContentHeight;
+
+        noResultElement.style.height = `${noResultHeight}px`;
+
+        const noResultTxt = noResultElement.querySelector('.no-result-txt');
+        if (noResultTxt) {
+          const noResultTxtHeight = noResultTxt.offsetHeight;
+          const paddingTop = (noResultHeight - noResultTxtHeight) / 2;
+          noResultElement.style.paddingTop = `${paddingTop}px`;
+          noResultElement.style.paddingBottom = `${paddingTop}px`;
         }
-        return totalHeight;
-      }, 0);
 
-      const layoutHeight = viewportHeight - headerHeight - footerHeight;
-      const baseContentHeight = layoutHeight - dynamicContentHeight - wrapHeadHeight;
-      const noResultHeight = baseContentHeight;
-
-      noResultElement.style.height = `${noResultHeight}px`;
-
-      const noResultTxt = noResultElement.querySelector('.no-result-txt');
-      if (noResultTxt) {
-        const noResultTxtHeight = noResultTxt.offsetHeight;
-        const paddingTop = (noResultHeight - noResultTxtHeight) / 2;
-        noResultElement.style.paddingTop = `${paddingTop}px`;
-        noResultElement.style.paddingBottom = `${paddingTop}px`;
+        console.log(`headerHeight: ${headerHeight}`);
+        console.log(`footerHeight: ${footerHeight}`);
+        console.log(`wrapHeadHeight: ${wrapHeadHeight}`);
+        console.log(`dynamicContentHeight: ${dynamicContentHeight}`);
+        console.log(`viewportHeight: ${viewportHeight}`);
+        console.log(`layoutHeight: ${layoutHeight}`);
+        console.log(`baseContentHeight: ${baseContentHeight}`);
+        console.log(`noResultHeight: ${noResultHeight}`);
       }
+    };
 
-      console.log(`headerHeight: ${headerHeight}`);
-      console.log(`footerHeight: ${footerHeight}`);
-      console.log(`wrapHeadHeight: ${wrapHeadHeight}`);
-      console.log(`dynamicContentHeight: ${dynamicContentHeight}`);
-      console.log(`viewportHeight: ${viewportHeight}`);
-      console.log(`layoutHeight: ${layoutHeight}`);
-      console.log(`baseContentHeight: ${baseContentHeight}`);
-      console.log(`noResultHeight: ${noResultHeight}`);
-    }
-  };
-
-  document.addEventListener('DOMContentLoaded', adjustNoResultHeight);
-  window.addEventListener('resize', adjustNoResultHeight);
-</script>
+    document.addEventListener('DOMContentLoaded', adjustNoResultHeight);
+    window.addEventListener('resize', adjustNoResultHeight);
+  </script>
   <!-- //page script -->
 	</body>
 </html>

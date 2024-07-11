@@ -61,6 +61,22 @@ function initByteTextarea(textareaId, byteCountId, maxLength) {
   // textarea.focus();
 }
 
+// 휴대폰번호 입력 포맷팅
+function formatPhoneNumber(inputElement) {
+  inputElement.addEventListener('input', function (event) {
+    let value = event.target.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자 제거
+    if (value.length > 11) {
+      value = value.slice(0, 11); // 최대 11자리 숫자까지만 허용
+    }
+    if (value.length > 3 && value.length <= 7) {
+      value = value.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+    } else if (value.length > 7) {
+      value = value.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
+    }
+    event.target.value = value;
+  });
+}
+
 // 이미지 업로드 초기화 함수
 function initPhotoRegistration(config) {
   const registerBtn = document.getElementById(config.registerBtnId); // 등록 버튼
@@ -188,6 +204,23 @@ function initPhotoRegistration(config) {
   updatePhotoCount();
 }
 
+// 입력 필드 포커스
+document.querySelectorAll('.inp-base').forEach(input => {
+  input.addEventListener('focus', (event) => {
+    const parentWrapper = event.target.closest('.wrap-inp');
+    if (parentWrapper) {
+      parentWrapper.classList.add('is-focus');
+    }
+  });
+
+  input.addEventListener('blur', (event) => {
+    const parentWrapper = event.target.closest('.wrap-inp');
+    if (parentWrapper) {
+      parentWrapper.classList.remove('is-focus');
+    }
+  });
+});
+
 class ApplicationInit {
   constructor() {
     document.addEventListener('DOMContentLoaded', () => {
@@ -227,5 +260,5 @@ class ApplicationInit {
   }
 }
 
-// 인스턴스 생성
+// 인스턴스 생성 UI 컴포넌트 관리
 new ApplicationInit();

@@ -80,34 +80,34 @@
   flex: 1;
   margin-top: 0;
 }
-/* vaildation */
-.form-vaildation {
+/* validation */
+.form-validation {
   margin: 1rem 0;
 }
-.form-vaildation .validation {
+.form-validation .validation {
   margin-top: .4rem;
   font-size: 1.1rem;
   line-height: 1.8rem;
 }
-.form-vaildation.is-error .lb-inp,
-.form-vaildation.is-error .validation {
+.form-validation.is-error .lb-inp,
+.form-validation.is-error .validation {
   color: var(--system-1);
 }
-.form-vaildation.is-error .wrap-inp {
+.form-validation.is-error .wrap-inp {
   border-color: var(--system-1);
 }
-.form-vaildation.is-warning .lb-inp,
-.form-vaildation.is-warning .validation {
+.form-validation.is-warning .lb-inp,
+.form-validation.is-warning .validation {
   color: var(--system-2);
 }
-.form-vaildation.is-warning .wrap-inp {
+.form-validation.is-warning .wrap-inp {
   border-color: var(--system-2);
 }
-.form-vaildation.is-complete .lb-inp,
-.form-vaildation.is-complete .validation {
+.form-validation.is-complete .lb-inp,
+.form-validation.is-complete .validation {
   color: var(--system-3);
 }
-.form-vaildation.is-complete .wrap-inp {
+.form-validation.is-complete .wrap-inp {
   border-color: var(--system-3);
 }
 
