@@ -236,28 +236,44 @@ class ApplicationInit {
   // 아코디언
   initAccordion() {
     const accordions = document.querySelectorAll('.wrap-accordion');
-
+    const header = document.querySelector('header'); // 고정된 header 요소 선택
+  
     accordions.forEach(accordion => {
       const btn = accordion.querySelector('.btn-ico');
       const panel = accordion.querySelector('.accordion-panel');
-
+      const head = accordion.querySelector('.accordion-head');
+  
       btn.addEventListener('click', function () {
-        const isOpen = panel.classList.contains('open');
+        const isOpen = accordion.classList.contains('open');
+  
+        // 모든 아코디언을 닫기
+        accordions.forEach(acc => {
+          const otherPanel = acc.querySelector('.accordion-panel');
+          const otherBtn = acc.querySelector('.btn-ico');
+          if (acc !== accordion) {
+            acc.classList.remove('open');
+            otherPanel.style.maxHeight = null;
+            otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+  
+        // 현재 아코디언 열기/닫기
         if (isOpen) {
-          panel.classList.remove('open');
           accordion.classList.remove('open');
           panel.style.maxHeight = null;
-          panel.style.opacity = 0;
         } else {
-          panel.classList.add('open');
           accordion.classList.add('open');
           panel.style.maxHeight = panel.scrollHeight + "px";
-          panel.style.opacity = 1;
+  
+          // 스크롤 애니메이션 추가
+          const headerHeight = header ? header.offsetHeight : 0; // header 높이 계산
+          const offsetTop = head.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
         btn.setAttribute('aria-expanded', !isOpen);
       });
     });
-  }
+  }  
 }
 
 // 인스턴스 생성 UI 컴포넌트 관리

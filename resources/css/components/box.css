@@ -74,6 +74,9 @@
   padding: 2rem 2rem 0;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
+.wrap-accordion.is-bg.open {
+  border-bottom: .1rem solid #DDD;
+}
 .wrap-accordion.open .accordion-panel {
   display: block;
   max-height: 40rem;
@@ -82,11 +85,18 @@
 .wrap-accordion .accordion-panel .list-base li {
   line-height: 2rem;
 }
-
 .wrap-accordion.is-bg {
-  padding: 2rem 0;
+  padding: 0;
   margin-top: 0;
-  background: var(--grays-6);
+  border-top: 0;
+  background: #FAFAFA;
+}
+.wrap-accordion.is-bg.open .accordion-panel {
+  padding-bottom: 2rem;
+}
+.wrap-accordion.is-bg .accordion-head {
+  padding: 1.8rem 2rem;
+  border-bottom: .1rem solid #DDD;
 }
 .wrap-accordion.is-bg .accordion-tit {
   font-size: 1.5rem;
@@ -94,17 +104,15 @@
 .wrap-accordion.is-bg .is-step .step {
   display: block;
 }
-.wrap-accordion.is-bg [data-bullet=icon] li {
-  
-} 
 .wrap-accordion.is-bg [data-bullet=icon] li em {
   display: block;
+  width: 100%;
   margin-bottom: .4rem;
   color: var(--grays-1);
   font-size: 1.5rem;
 }
 .wrap-accordion.is-bg .list-base[data-bullet=icon] > li:before {
-  background-color: orange;
+  border-radius: 50%;
 }
 [data-icon-id="acco-offline"] li:nth-child(1)::before {
   background-image: url("../../images/ico/ico-introduce1.png");

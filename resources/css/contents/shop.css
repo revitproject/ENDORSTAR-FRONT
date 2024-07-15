@@ -178,6 +178,7 @@
 }
 .wrap-voucher .wrap-box {
   margin: 2.4rem 0 3.2rem;
+  border-radius: .4rem;
 }
 .wrap-voucher .wrap-box dl {
   justify-content: flex-start;
