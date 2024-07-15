@@ -85,3 +85,125 @@
 .shop .is-complete .wrap-notice {
   margin-top: 13rem;
 }
+.box-voucher {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 18rem;
+  background: var(--grays-6);
+  border-radius: 1.2rem;
+}
+.box-voucher .status {
+  position: absolute;
+  top: 1.4rem;
+  left: 1.5rem;
+  z-index: 1;
+  padding: .2rem .9rem;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  background: #FF3D4E;
+  border-radius: 1.5rem;
+  letter-spacing: -0.02rem;
+}
+.box-voucher .img-voucher {
+  width: 13.4rem;
+  height: 14.6rem;
+  text-align: center;
+}
+.box-voucher .stamp {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem;
+  background: url('../../images/page/img-stamp-voucher.png') no-repeat 50% / 100%;
+}
+.voucher-head {
+  margin: 2rem 0 2.4rem;
+  padding-bottom: 2rem;
+  border-bottom: .1rem solid var(--button-4);
+}
+.voucher-head .wrap-count .count {
+  color: var(--grays-2);
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.voucher-head .wrap-count .text-primary {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.voucher-head .name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  letter-spacing: -0.023rem;
+}
+.voucher-head .wrap-price {
+  margin-top: 1.6rem;
+}
+.voucher-head .wrap-price .text-primary {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+.voucher-head .wrap-price .price {
+  font-size: 2.2rem;
+  line-height: 3rem;
+  letter-spacing: -0.02rem;
+}
+.voucher-head .wrap-price .price strong {
+  font-weight: 700;
+  line-height: 3.2rem;
+  letter-spacing: -0.028rem;
+}
+.voucher-head .wrap-price .del {
+  color: var(--grays-3);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.voucher-body .txt-xs {
+  font-weight: 600;
+}
+.voucher-body .desc {
+  margin-top: .4rem;
+  color: var(--grays-3);
+  font-size: 1.4rem;
+  word-break: break-all;
+}
+.wrap-voucher .wrap-box {
+  margin: 2.4rem 0 3.2rem;
+}
+.wrap-voucher .wrap-box dl {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.wrap-voucher .wrap-box dl + dl {
+  margin-top: 1.4rem;
+}
+.wrap-voucher .wrap-box dt {
+  min-width: 6.8rem;
+  color: var(--grays-1);
+  font-weight: 600;
+}
+.wrap-voucher .wrap-box dd {
+  margin-left: 1rem;
+  color: var(--grays-3);
+}
+.wrap-voucher.is-complete .voucher-body .tit-xxs {
+  margin-top: 2.4rem;
+}
+.wrap-voucher.is-complete .wrap-box {
+  margin-top: 1rem;
+}
+.wrap-voucher.is-complete .wrap-box dl {
+  justify-content: space-between;
+}
+.wrap-voucher.is-complete .wrap-box em.text-primary {
+  font-weight: 700;
+}

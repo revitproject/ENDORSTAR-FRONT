@@ -239,6 +239,26 @@
   text-indent: -0.1em;
 }
 
+.list-base[data-bullet=icon] li:not(:first-child) {
+  margin-top: 2rem;
+}
+.list-base[data-bullet=icon] > li {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 7.4rem;
+}
+.list-base[data-bullet=icon] > li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem;
+  min-width: 6.4rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+} 
+
 /* list box */
 .list-box .list-box-item {
   border-bottom: .1rem solid var(--button-4);

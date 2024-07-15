@@ -578,26 +578,25 @@
   height: 100%;
 }
 .rankingboard .triangle1 {
-  top: -3%;
+  top: -22%;
   left: 50%;
-  width: 120%;
-  height: 106%;
-  /* background: linear-gradient(0deg, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.15) 54.5%, rgba(255, 197, 234, 0) 100%); */
-  background: linear-gradient(to bottom, rgba(255, 197, 234, 0) 0%, rgba(255, 197, 234, 0.4) 50%, rgba(255, 197, 234, 0) 100%);
-  
-  clip-path: polygon(50% 100%, 100% 0%, 0% 0%); 
-  opacity: 0.4;
+  width: 139%;
+  height: 142%;
+  background: linear-gradient(to bottom, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.35) 54.5%, #FFC5EA 100%);
+  clip-path: polygon(50% 100%, 100% 0%, 0% 0%);
+  opacity: .4;
+  filter: blur(1rem);
   transform: translateX(-50%);
 }
 .rankingboard .triangle2 {
-  top: -3%;
+  top: -27%;
   left: 50%;
-  width: 179%;
-  height: 106%;
-  /* background: linear-gradient(0deg, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.35) 54.5%, rgba(255, 197, 234, 0) 100%); */
-  background: linear-gradient(to bottom, rgba(255, 197, 234, 0) 0%, rgba(255, 197, 234, 0.4) 50%, rgba(255, 197, 234, 0) 100%);
+  width: 207%;
+  height: 142%;
+  background: linear-gradient(to bottom, rgba(255, 197, 234, 0) 31%, rgba(255, 197, 234, 0.35) 54.5%, #FFC5EA 100%);
   clip-path: polygon(50% 100%, 100% 0%, 0% 0%);
-  opacity: 0.4;
+  opacity: .4;
+  filter: blur(1rem);
   transform: translateX(-50%);
 }
 .rankingboard .area-rankingboard {
@@ -620,7 +619,7 @@
   text-align: center;
   background: rgba(255,255,255,.15);
   border: .1rem solid ;
-  box-shadow: 0px 4px 62px 0px #0000001F;
+  box-shadow: 1px 1px 8px 0px #873ACA4D;
   border: .2rem solid;
   border-color: rgba(255,255,255,.15);
   border-color: rgba(176, 111, 226, 0.5);
@@ -655,7 +654,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  margin: 2.4rem -2rem 0;
+  margin: 2.4rem -1.4rem 0;
   background: url('../../images/page/img-effect-light.png') no-repeat 50% 0 / 90%;
 }
 .rankingboard .ranking-item {
@@ -663,7 +662,7 @@
   flex: 1;
 }
 .rankingboard .ranking-item.is-gold {
-  transform: translateY(-.2rem); 
+  transform: translateY(-.1rem); 
   z-index: 3; 
 }
 .rankingboard .ranking-item.is-silver {
@@ -673,6 +672,31 @@
 .rankingboard .ranking-item.is-bronze {
   z-index: 1;
   transform: translateX(-.6rem);
+}
+.rankingboard .ranking-item.is-mylevel .score {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.rankingboard .ranking-item.is-mylevel .ranking-box strong {
+  color: var(--primary);
+}
+.rankingboard .ranking-item.is-mylevel .ranking-img {
+  position: relative;
+}
+.rankingboard .ranking-item.is-mylevel .ranking-info::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  z-index: -1;
+  display: inline-block;
+  opacity: 0.4;
+  width: 12.7rem;
+  height: 8rem;
+  background: linear-gradient(to bottom, rgba(222, 117, 212, 0.2) 15.27%, rgba(228, 139, 198, 0.5) 23.02%, rgba(255, 255, 255, 0.8) 53.37%);
+  clip-path: polygon(50% 100%, 100% 0%, 0% 0%);
+  filter: blur(1rem);
+  transform: translateX(-50%);
 }
 .rankingboard .ranking-item .ranking-text {
   text-align: center;
@@ -783,20 +807,37 @@
   min-height: 7.4rem;
   margin: 0 auto;
 }
+.rankingboard .ranking-item .ranking-img {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .rankingboard .ranking-item.is-gold .ranking-img {
   width: 11.2rem;
   height: 8.9rem;
-  background: url('../../images/page/img-level-gold.png') no-repeat 50% 50% / 100%;
+  background-image: url('../../images/page/img-level-gold.png');
 }
 .rankingboard .ranking-item.is-silver .ranking-img {
   width: 8.8rem;
   height: 7.4rem;
-  background: url('../../images/page/img-level-silver.png') no-repeat 50% 50% / 100%;
+  background-image: url('../../images/page/img-level-silver.png');
 }
 .rankingboard .ranking-item.is-bronze .ranking-img {
   width: 8.8rem;
   height: 7.4rem;
-  background: url('../../images/page/img-level-bronze.png') no-repeat 50% 50% / 100%;
+  background-image: url('../../images/page/img-level-bronze.png');
+}
+.rankingboard .ranking-item.is-mylevel .ranking-img {
+  filter: drop-shadow(0px 0px 50px #FFAC0A)
+          drop-shadow(0px 0px 24px #FFFFFF)
+          drop-shadow(0px 0px 10px #FFFFFFCC);
+  z-index: -1;
+}
+.rankingboard .ranking-item.is-mylevel .ranking-text {
+  z-index: 3;
+}
+.rankingboard .ranking-item.is-mylevel .ranking-box {
+  z-index: 3;
 }
 .ranking-list-item.is-mylevel .ranking-content {
   border: .1rem solid var(--primary);

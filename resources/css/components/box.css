@@ -76,9 +76,51 @@
 }
 .wrap-accordion.open .accordion-panel {
   display: block;
-  max-height: 200px;
+  max-height: 40rem;
   opacity: 1;
 }
 .wrap-accordion .accordion-panel .list-base li {
   line-height: 2rem;
+}
+
+.wrap-accordion.is-bg {
+  padding: 2rem 0;
+  margin-top: 0;
+  background: var(--grays-6);
+}
+.wrap-accordion.is-bg .accordion-tit {
+  font-size: 1.5rem;
+}
+.wrap-accordion.is-bg .is-step .step {
+  display: block;
+}
+.wrap-accordion.is-bg [data-bullet=icon] li {
+  
+} 
+.wrap-accordion.is-bg [data-bullet=icon] li em {
+  display: block;
+  margin-bottom: .4rem;
+  color: var(--grays-1);
+  font-size: 1.5rem;
+}
+.wrap-accordion.is-bg .list-base[data-bullet=icon] > li:before {
+  background-color: orange;
+}
+[data-icon-id="acco-offline"] li:nth-child(1)::before {
+  background-image: url("../../images/ico/ico-introduce1.png");
+}
+[data-icon-id="acco-offline"] li:nth-child(2)::before {
+  background-image: url("../../images/ico/ico-introduce2.png");
+}
+[data-icon-id="acco-offline"] li:nth-child(3)::before {
+  background-image: url("../../images/ico/ico-introduce3.png");
+}
+[data-icon-id="acco-online"] li:nth-child(1)::before {
+  background-image: url("../../images/ico/ico-introduce1.png");
+}
+[data-icon-id="acco-online"] li:nth-child(2)::before {
+  background-image: url("../../images/ico/ico-introduce4.png");
+}
+[data-icon-id="acco-online"] li:nth-child(3)::before {
+  background-image: url("../../images/ico/ico-introduce5.png");
 }
