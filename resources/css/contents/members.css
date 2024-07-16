@@ -97,16 +97,65 @@
 }
 
 /* 약관 */
-.terms .wrap-head {
-  padding-bottom: 0;
+.wrap-terms {
+  height: calc(100vh - 6rem - 8.2rem - 10.6rem); /* calc(100vh - header - title - footer) */
+  padding: 1rem 1rem 1.8rem;
+  background: var(--grays-6);
+  border-radius: .6rem;
 }
+.wrap-terms .scroll-content {
+  height: 100%;
+  padding-right: 1rem;
+  overflow-y: auto;
+  color: var(--grays-2);
+  font-size: 1.3rem;
+  font-weight: 400;
+  word-break: break-all;
+}
+.wrap-terms .terms-h4 + .terms-desc,
+.wrap-terms .terms-desc + .terms-h4,
+.wrap-terms .terms-h4 + [class^="list-"] {
+  margin-top: 2rem;
+}
+.wrap-terms .terms-h2 {
+  margin-bottom: 1rem;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+  letter-spacing: -0.02rem;
+}
+.wrap-terms .terms-h3 + .terms-h4 {
+  margin-top: 2.4rem;
+}
+.wrap-terms .terms-h3 {
+  color: var(--grays-2);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 2rem;
+  letter-spacing: -0.01rem;
+}
+.wrap-terms .terms-h4 {
+  color: var(--grays-2);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: -0.01rem;
+}
+.wrap-terms .list-base + .list-base {
+  margin-top: 2rem;
+}
+.wrap-terms .list-base li:not(:first-child) {
+  margin-top: 0;
+}
+/* 약관 동의 */
 .terms .wrap-head .desc {
   margin-top: 1.2rem;
 }
 .terms .wrap-head .label-reward {
   display: inline-flex;
   align-items: center;
-  margin-top: 1.2rem;
+  margin: 1.2rem 0 .4rem;
   padding: .6rem 1.2rem;
   color: var(--grays-1);
   font-size: 2rem;
@@ -128,9 +177,6 @@
   margin-left: .8rem;
   font-size: 2rem;
   font-weight: 700;
-}
-.terms .wrap-allcheck-box {
-  margin-top: 2.4rem;
 }
 .terms .wrap-allcheck-box .allcheck-head {
   display: flex;

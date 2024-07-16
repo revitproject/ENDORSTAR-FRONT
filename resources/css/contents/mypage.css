@@ -311,10 +311,9 @@
 }
 
 /* 이용약관 */
-.wrap-terms {
+.mypage .wrap-terms {
   /* 임시 style */
-  min-height: 70vh;
-  padding: 2rem;
+  padding: 1rem;
   color: var(--grays-1);
   font-size: 1.5rem;
   background: var(--grays-6);
