@@ -493,7 +493,7 @@
   height: 100%;
   padding: 0;
 }
-.mission .wrap-gateway {
+.mission .wrap-img {
   margin: 0 -5.1rem;
 }
 .mission .event-gateway .wrap-body {
@@ -508,14 +508,15 @@
   z-index: 1;
 }
 .mission .event-gateway .wrap-body img {
-  width: 100%; 
+  width: 100%;
+  max-width: 46.2rem; 
   height: auto;
   object-fit: cover; 
   z-index: 1;
 }
 .mission .event-gateway .wrap-body .desc {
   width: 100%;
-  padding: .8rem 5.1rem 4rem;
+  padding: .8rem 2rem 4rem;
   color: var(--grays-2);
   font-size: 1.5rem;
   font-weight: 600;
@@ -531,9 +532,6 @@
   bottom: 0;
   background: transparent;
   z-index: 2;
-}
-.mission .event-gateway .mbr {
-  display: none;
 }
 
 /* 랭킹보드 */
@@ -996,13 +994,6 @@
   .mission .bingo-reward .btn-reward .reward-state {
     padding: 0.2rem 1rem;
     font-size: 1.2rem;
-  }
-  .mission .event-gateway .wrap-body .desc {
-    padding: .8rem 3rem 4rem;
-    word-break: keep-all;
-  }
-  .mission .event-gateway .mbr {
-    display: block;
   }
 }
 @media (min-width: 768px) {
