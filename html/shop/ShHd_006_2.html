@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMS 발송 이미지 B안</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    /* reset */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      line-height: 1.5;
+    }
+    dl, dt, dd, p {
+      padding: 0;
+      margin: 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-style: none;
+    }
+    /* MMS */
+    .coupon {
+      width: 100%;
+      max-width: 744px;
+      margin: 0 auto;
+    }
+    .coupon .coupon-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid #DDD;
+      box-sizing: border-box;
+    }
+    .coupon .coupon-header img {
+      width: 114px;
+      height: auto;
+    }
+    .coupon .coupon-body {
+      padding: 10px 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .coupon .coupon-body img {
+      display: block;
+      margin: 0 auto;
+    }
+    .coupon .amount {
+      display: inline-flex;
+      align-items: center;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .coupon .amount::before {
+      content: '₩';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      color: #000000;
+      font-size: 18px;
+    }
+    .coupon .voucher-number {
+      margin: 0;
+      color: #000000;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    .coupon .auth-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+      width: auto;
+      padding: 2px 20px;
+      color: #fff;
+      font-size: 13px;
+      background: #000000;
+      border-radius: 4px;
+    }
+    .coupon .auth-code > span {
+      margin-left: 4px;
+      color: inherit;
+      font-size: inherit;
+    }
+  </style>
+</head>
+<body> 
+  <div class="coupon">
+    <div class="coupon-header">
+      <img src="../../resources/images/temp/logo-happymoney.png" alt="해피머니 로고">
+      <strong class="amount">3,000</strong>
+    </div>
+    <div class="preview">
+      <img src="../../resources/images/temp/img-coupon.png" alt="해피머니 모바일 상품권 이미지">
+    </div>
+    <div class="coupon-body">
+      <div class="img-barcode">
+        <img src="../../resources/images/temp/img-barcode.png" alt="바코드 이미지">
+      </div>
+      <p class="voucher-number">0000 0000 0000 0000</p>
+    </div>
+  </div>
+	</body>
+</html>
