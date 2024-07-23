@@ -45,8 +45,10 @@
   -webkit-line-clamp: 3;
   overflow: hidden;
   height: calc(2.2rem * 3); 
+  font-size: 1.5rem;
   line-height: 2.2rem; 
   text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 /* qna, 이미지 등록 (mission/mypage 공통 사용) */
@@ -455,6 +457,7 @@
   padding: .4rem 2rem;
   color: #fff;
   font-size: 1.3rem;
+  font-weight: 700;
   line-height: 2rem;
   background: var(--grays-4);
   border-radius: 0 0 1.2rem 1.2rem;
@@ -471,6 +474,16 @@
   background-position: 50%;
   background-size: 100%;
   transform: translate(-50%, -50%);
+}
+.mission .bingo-reward .btn-reward.is-complete {
+  background-color: var(--grays-5);
+}
+.mission .bingo-reward .btn-reward.is-complete span {
+  color: var(--grays-2);
+}
+.mission .bingo-reward .btn-reward.is-complete .reward-state {
+  color: #fff;
+  background: var(--grays-2);
 }
 .mission .bingo-reward div .btn-reward.is-before::before {
   width: 4rem;
@@ -493,7 +506,7 @@
   height: 100%;
   padding: 0;
 }
-.mission .wrap-img {
+.mission .event-gateway .wrap-img {
   margin: 0 -5.1rem;
 }
 .mission .event-gateway .wrap-body {
@@ -891,6 +904,8 @@
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
+  min-width: 2.4rem;
+  min-height: 2.4rem;
   margin: 0 .4rem;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -995,6 +1010,29 @@
     padding: 0.2rem 1rem;
     font-size: 1.2rem;
   }
+  .ranking-list-item .ranking-content {
+    padding: .7rem 1rem;
+  }
+  .ranking-list-item .ranking-content .ranking-rank {
+    max-width: 1.8rem;
+    font-size: 1.4rem;
+  }
+  .ranking-list-item .ranking-content .ranking-list-info {
+    font-size: 1.4rem;
+  }
+  .ranking-list-item .ranking-content .score {
+    font-size: 1.3rem;
+  }
+  .ranking-list-item .ranking-content .ranking-list-info .name {
+    font-size: 1.1rem;
+  }
+  .ranking-list-item .ranking-list-info::before {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
+    margin: 0 0.2rem;
+  }
 }
 @media (min-width: 768px) {
   .mission .wrap-bingo,
@@ -1003,7 +1041,13 @@
     max-width: 96rem;
     margin: 3rem auto 0;
   }
-  .mission .wrap-bingo .bingo-box .bingo-item .btn-bingo {
+  .mission .wrap-bingo .bingo-box .bingo-item .btn-bingo,
+  .mission .bingo-reward .btn-reward span,
+  .mission .bingo-reward .btn-reward .reward-state {
+    font-size: 1.4rem;
+  }
+  .mission .bingo-reward .btn-reward .reward-state {
+    padding: 0.6rem 2rem;
     font-size: 1.4rem;
   }
   .mission .bingo-reward div .btn-reward::before {

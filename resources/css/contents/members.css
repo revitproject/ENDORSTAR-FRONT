@@ -118,14 +118,17 @@
   margin-top: 2rem;
 }
 .wrap-terms .terms-h2 {
-  margin-bottom: 1rem;
   color: var(--grays-1);
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 2.8rem;
   letter-spacing: -0.02rem;
 }
-.wrap-terms .terms-h3 + .terms-h4 {
+.wrap-terms .terms-h2 {
+  margin-bottom: 1rem;
+}
+.wrap-terms .terms-h3,
+.wrap-terms .terms-h4 {
   margin-top: 2.4rem;
 }
 .wrap-terms .terms-h3 {
